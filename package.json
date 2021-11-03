@@ -1,0 +1,22 @@
+{
+	"name": "lwind",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css",
+		"production": "NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"autoprefixer": "^10.3.7",
+		"laravel-mix": "^6.0.31",
+		"postcss": "^8.3.9",
+		"resolve-url-loader": "^4.0.0",
+		"sass": "^1.42.1",
+		"sass-loader": "^12.1.0",
+		"tailwindcss": "^2.2.16"
+	}
+}
