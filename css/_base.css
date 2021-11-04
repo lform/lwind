@@ -1,0 +1,10 @@
+/*@tailwind base;*/
+@layer base {
+	a {
+		color: theme('colors.primary.DEFAULT');
+	}
+
+	body {
+		background: #fffaaa;
+	}
+}
