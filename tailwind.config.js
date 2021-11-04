@@ -7,9 +7,14 @@ module.exports = {
 	darkMode: false,
 	theme: {
 		fontFamily: {
-			body: ['Roboto', 'sans-serif'],
-			header: ['Oswald', 'sans-serif'],
-			subheader: ['Oswald', 'sans-serif'],
+			body: ['Roboto', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif'],
+			header: ['Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif'],
+			subheader: [
+				'Oswald',
+				'Impact',
+				'Franklin Gothic Bold',
+				'sans-serif',
+			],
 		},
 		fontSize: {
 			// Modular Scale Reference: https://www.modularscale.com/?16&px&1.125
@@ -40,24 +45,24 @@ module.exports = {
 		// },
 		colors: {
 			primary: {
-				300: '#333',
+				light: '#333',
 				DEFAULT: '#999',
-				700: '#ddd',
+				dark: '#ddd',
 			},
 			secondary: {
-				300: '#333',
+				light: '#333',
 				DEFAULT: '#999',
-				700: '#ddd',
+				dark: '#ddd',
 			},
-			tertiary: {
-				300: '#333',
-				DEFAULT: '#999',
-				700: '#ddd',
-			},
+			// tertiary: {
+			// 	light: '#333',
+			// 	DEFAULT: '#999',
+			// 	dark: '#ddd',
+			// },
 			accent: {
-				1: '#fab',
-				2: '#6f2',
-				3: '#0ad',
+				light: '#333',
+				DEFAULT: '#999',
+				dark: '#ddd',
 			},
 			gray: {
 				100: '#1f2d3d',
@@ -71,20 +76,22 @@ module.exports = {
 				DEFAULT: '#111',
 			},
 			white: '#fefefe',
-			alert: {
-				success: '#0f0',
-				warning: '#ff0',
-				error: '#f00',
+			feedback: {
+				success: '#6dcff6',
+				warning: '#fdf0a9',
+				error: '#f69679',
 			},
-			anchor: {
-				300: 'colors.brand-1-300',
-				DEFAULT: 'colors.brand-1',
-				700: 'colors.brand-1.700',
-			},
-			input: {
-				DEFAULT: 'colors.brand-1.700',
+			element: {
+				input: '#fefefe',
+				anchor: '#333',
+				'anchor-light': '#333',
+				'anchor-dark': '#333',
 			},
 		},
+		container: (theme) => ({
+			center: true,
+			padding: theme('spacing.4'),
+		}),
 		extend: {
 			spacing: {
 				xs: '0.25rem',
@@ -98,5 +105,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [require('./plugins/buttons')],
+	// plugins: [require('./plugins/buttons')],
 };
