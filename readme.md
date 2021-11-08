@@ -22,9 +22,9 @@ Lpress Privacy Templates: https://xd.adobe.com/view/ed8a8031-ba1f-4099-8857-19ca
 
 ## Questions
 
--   Agree on breakpoints
--   Agree on color naming
--   Agree on components to be defined
+-   Agree on breakpoints - DONE
+-   Agree on color naming - DONE
+-   Agree on components to be defined - DONE
     -   Buttons
     -   Form components
     -   Form Messages
@@ -32,5 +32,5 @@ Lpress Privacy Templates: https://xd.adobe.com/view/ed8a8031-ba1f-4099-8857-19ca
     -   Richtext (prose)
     -   Pagination
     -   Navigation
--   Agree on precss mixins
--   Agree on defaults
+-   Agree on precss mixins - DONE
+-   Agree on defaults - DONE
