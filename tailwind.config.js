@@ -17,11 +17,13 @@ module.exports = {
 			],
 		},
 		fontSize: {
-			// Modular Scale Reference: https://www.modularscale.com/?16&px&1.125
+			// The font-scaling system uses Modular Scale
+			// Base is 16px with 1.125x scaling
+			// Reference: https://www.modularscale.com/?16&px&1.125
 			'-ms-3': rem(10),
 			'-ms-2': rem(12),
 			'-ms-1': rem(14),
-			ms0: '1rem',
+			'ms-0': rem(16),
 			'ms-1': rem(18),
 			'ms-2': rem(20),
 			'ms-3': rem(22),
@@ -44,6 +46,7 @@ module.exports = {
 		//   '2xl': '1536px',
 		// },
 		colors: {
+			// Primary & Secondary should have main color, then up-shade and down-shade
 			primary: {
 				light: '#333',
 				DEFAULT: '#999',
@@ -59,20 +62,21 @@ module.exports = {
 			// 	DEFAULT: '#999',
 			// 	dark: '#ddd',
 			// },
+			// Accents should be added as numeric items
 			accent: {
-				light: '#333',
-				DEFAULT: '#999',
-				dark: '#ddd',
+				1: '#333',
+				2: '#999',
+				3: '#ddd',
 			},
-			gray: {
+			grey: {
 				100: '#1f2d3d',
 				300: '#3c4858',
-				DEFAULT: '#c0ccda',
+				500: '#c0ccda',
 				700: '#e0e6ed',
 				900: '#f9fafc',
 			},
 			black: {
-				trans: 'rgba(0,0,0,0.7)',
+				transparent: 'rgba(0,0,0,0.7)',
 				DEFAULT: '#111',
 			},
 			white: '#fefefe',
@@ -81,11 +85,19 @@ module.exports = {
 				warning: '#fdf0a9',
 				error: '#f69679',
 			},
-			element: {
-				input: '#fefefe',
-				anchor: '#333',
-				'anchor-light': '#333',
-				'anchor-dark': '#333',
+			social: {
+				facebook: '#3b5998',
+				flickr: '#ff0084',
+				houzz: '#7ac142',
+				instagram: '#833ab4',
+				linkedin: '#0976b4',
+				medium: 'rgba(0, 0, 0, 0.84)',
+				pinterest: '#cc2127',
+				rss: '#f26522',
+				tumblr: '#35465c',
+				twitter: '#55acee',
+				youtube: '#b31217',
+				vimeo: '#1ab7ea',
 			},
 		},
 		container: (theme) => ({
@@ -102,8 +114,7 @@ module.exports = {
 			},
 		},
 	},
-	variants: {
-		extend: {},
-	},
+	// TODO Add plugins
+	// TODO Add pre-css plugins
 	// plugins: [require('./plugins/buttons')],
 };
