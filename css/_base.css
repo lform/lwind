@@ -4,6 +4,12 @@
 		color: theme('colors.primary.DEFAULT');
 	}
 
+	input:not([type='checkbox'], [type='radio']),
+	textarea,
+	select {
+		background-color: theme('colors.white');
+	}
+
 	body {
 		background: #fffaaa;
 	}
