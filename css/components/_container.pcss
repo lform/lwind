@@ -1,8 +1,9 @@
 @layer components {
-	/* `container` class defaults to max, add smaller variants below */
+	/* `container` class defaults to max-width of 2xl, add smaller variants below */
 	.container-sm,
 	.container-md,
-	.container-lg {
+	.container-lg,
+	.container-xl {
 		@apply container;
 	}
 
@@ -15,6 +16,10 @@
 	}
 
 	.container-lg {
+		max-width: theme('screens.lg');
+	}
+
+	.container-xl {
 		max-width: theme('screens.lg');
 	}
 }
