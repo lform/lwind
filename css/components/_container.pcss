@@ -1,10 +1,8 @@
-/*@tailwind utilities;*/
-
-@layer utilities {
+@layer components {
+	/* `container` class defaults to max, add smaller variants below */
 	.container-sm,
 	.container-md,
-	.container-lg,
-	.container-xl {
+	.container-lg {
 		@apply container;
 	}
 
@@ -19,16 +17,4 @@
 	.container-lg {
 		max-width: theme('screens.lg');
 	}
-
-	.container-xl {
-		max-width: theme('screens.xl');
-	}
-
-	.btn {
-		background: #123456;
-	}
 }
-
-/*.btn {*/
-/*	color: #123456;*/
-/*}*/

@@ -1,0 +1,32 @@
+@layer components {
+	.btn {
+		/* Default button */
+		@apply py-2 px-4 bg-primary text-primary-fore text-ms-0;
+
+		/* Color Variants */
+		&.btn-secondary {
+			@apply bg-secondary text-secondary-fore;
+		}
+
+		&.btn-tertiary {
+			@apply bg-tertiary  text-tertiary-fore;
+		}
+
+		/* Size Variants */
+		&.btn-xs {
+			@apply py-1 px-2 -text-ms-2;
+		}
+
+		&.btn-sm {
+			@apply py-1.5 px-3 -text-ms-1;
+		}
+
+		&.btn-lg {
+			@apply py-3 px-5 text-ms-1;
+		}
+
+		&.btn-xl {
+			@apply py-3 px-6 text-ms-2;
+		}
+	}
+}
