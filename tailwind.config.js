@@ -1,6 +1,6 @@
 const em = (px) => `${px / 16}em`;
-const rem = (px) => ({ [px]: `${px / 16}rem` });
-const px = (num) => ({ [num]: `${num}px` });
+const rem = (px) => `${px / 16}rem`;
+const px = (num) => `${num}px`;
 
 module.exports = {
 	purge: [],
@@ -46,22 +46,25 @@ module.exports = {
 		//   '2xl': '1536px',
 		// },
 		colors: {
-			// Primary & Secondary should have main color, then up-shade and down-shade
+			// Primary, secondary, tertiary should have the main brand colors, then up-shade and down-shade
 			primary: {
 				light: '#333',
 				DEFAULT: '#999',
 				dark: '#ddd',
+				fore: '#fff',
 			},
 			secondary: {
 				light: '#333',
 				DEFAULT: '#999',
 				dark: '#ddd',
+				fore: '#fff',
 			},
-			// tertiary: {
-			// 	light: '#333',
-			// 	DEFAULT: '#999',
-			// 	dark: '#ddd',
-			// },
+			tertiary: {
+				light: '#333',
+				DEFAULT: '#999',
+				dark: '#ddd',
+				fore: '#fff',
+			},
 			// Accents should be added as numeric items
 			accent: {
 				1: '#333',
@@ -79,7 +82,10 @@ module.exports = {
 				transparent: 'rgba(0,0,0,0.7)',
 				DEFAULT: '#111',
 			},
-			white: '#fefefe',
+			white: {
+				transparent: 'rgba(255,255,255,0.7)',
+				DEFAULT: '#fefefe',
+			},
 			feedback: {
 				success: '#6dcff6',
 				warning: '#fdf0a9',
@@ -112,9 +118,49 @@ module.exports = {
 				l: '2rem',
 				xl: '4rem',
 			},
+			// Controls rich-text styling (tailwind typography plugin)
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						lineHeight: 1.5,
+						a: {
+							color: theme('colors.primary'),
+						},
+					},
+				},
+				sm: {
+					css: {
+						fontSize: rem(14),
+						lineHeight: 1.5,
+					},
+				},
+				lg: {
+					css: {
+						fontSize: rem(18),
+						lineHeight: 1.5,
+					},
+				},
+				xl: {
+					css: {
+						fontSize: rem(20),
+						lineHeight: 1.5,
+					},
+				},
+				'2xl': {
+					css: {
+						fontSize: rem(22),
+						lineHeight: 1.5,
+					},
+				},
+			}),
 		},
 	},
 	// TODO Add plugins
 	// TODO Add pre-css plugins
-	// plugins: [require('./plugins/buttons')],
+	plugins: [
+		require('@tailwindcss/typography')({
+			className: 'rich-text',
+		}),
+		require('@tailwindcss/forms'),
+	],
 };
