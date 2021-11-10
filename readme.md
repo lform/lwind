@@ -57,6 +57,10 @@ for the flexibility required to implement designs produced using the Lform desig
 -   **Feedback colors** from forms / interactions are specified in the `success`, `warning`, and `error` colors
 -   **Social media brand colors** are defined in the `social` keys
 
+## Font Sizing
+
+-   TODO Explain font sizing scale system
+
 ## Plugins
 
 -   [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography)
