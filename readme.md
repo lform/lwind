@@ -10,6 +10,8 @@ for the flexibility required to implement designs produced using the Lform desig
 
 -   `npm run dev` - Builds development version of tailwind file
 
+-   `npm run watch` - Watches & builds development version of tailwind file
+
 -   `npm run production` - Builds development version of tailwind file
 
 ## Resources

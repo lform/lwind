@@ -1,11 +1,12 @@
 {
 	"name": "lwind",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css",
-		"production": "NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css --minify"
+		"dev": "npx tailwindcss -i ./css/app.pcss -o ./dist/app.css",
+		"watch": "npx tailwindcss -i ./css/app.pcss -o ./dist/app.css --watch",
+		"production": "NODE_ENV=production npx tailwindcss -i ./css/app.pcss -o ./dist/app.css --minify"
 	},
 	"keywords": [],
 	"author": "",
@@ -14,11 +15,13 @@
 		"autoprefixer": "^10.3.7",
 		"laravel-mix": "^6.0.31",
 		"postcss": "^8.3.9",
+		"postcss-advanced-variables": "^3.0.1",
+		"postcss-import": "^14.0.2",
 		"resolve-url-loader": "^4.0.0",
-		"sass": "^1.42.1",
-		"sass-loader": "^12.1.0",
-		"tailwindcss": "^2.2.16",
-		"postcss-import": "^14.0.2"
+		"tailwindcss": "^2.2.16"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"@tailwindcss/forms": "^0.3.4",
+		"@tailwindcss/typography": "^0.4.1"
+	}
 }
