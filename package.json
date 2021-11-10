@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./css/app.pcss -o ./dist/app.css",
-		"watch": "npx tailwindcss -i ./css/app.pcss -o ./dist/app.css --watch",
-		"production": "NODE_ENV=production npx tailwindcss -i ./css/app.pcss -o ./dist/app.css --minify"
+		"dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
+		"watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
+		"production": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --minify"
 	},
 	"keywords": [],
 	"author": "",

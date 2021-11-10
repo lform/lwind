@@ -6,7 +6,7 @@ mix.webpackConfig({
 	},
 });
 
-mix.postCss('./css/app.pcss', './dist/app.css', [
+mix.postCss('./css/main.pcss', './dist/app.css', [
 	require('postcss-import'),
 	// require('autoprefixer'),
 	require('tailwindcss'),
