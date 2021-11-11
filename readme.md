@@ -14,6 +14,15 @@ for the flexibility required to implement designs produced using the Lform desig
 
 -   `npm run production` - Builds development version of tailwind file
 
+### Gulp
+
+-   TODO Explain gulp setup
+
+### PostCSS Plugins
+
+-
+-   TODO Explain plugins and purpose
+
 ## Resources
 
 -   [Tailwind Documentation](https://tailwindcss.com/docs)
@@ -31,7 +40,9 @@ for the flexibility required to implement designs produced using the Lform desig
 
 -   Lpress Privacy Templates: https://xd.adobe.com/view/ed8a8031-ba1f-4099-8857-19caf1b5b0b7-b8d9/
 
-## Gaps
+## Tailwind Config
+
+### Gaps
 
 -   Designs are implemented using a base gap sizing of 8 pixels.
 -   This is Tailwind's default gap system, refer to the documentation as necessary.
@@ -42,7 +53,7 @@ for the flexibility required to implement designs produced using the Lform desig
     -   `l` = medium gap of `32px` or `2rem`
     -   `xl` = medium gap of `48px` or `3rem`
 
-## Colors
+### Colors
 
 -   **Main colors** are named following a `primary`, `secondary`, `tertiary` logic for the main brand colors.
 
@@ -57,11 +68,13 @@ for the flexibility required to implement designs produced using the Lform desig
 -   **Feedback colors** from forms / interactions are specified in the `success`, `warning`, and `error` colors
 -   **Social media brand colors** are defined in the `social` keys
 
-## Font Sizing
+### Typography
 
 -   TODO Explain font sizing scale system
+-   TODO Explain header utility classes
+-   TODO Explain rich-text / prose usage
 
-## Plugins
+### Plugins
 
 -   [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography)
 
@@ -70,7 +83,7 @@ for the flexibility required to implement designs produced using the Lform desig
 
 -   [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms)
 
-## Utilities
+## Tailwind Utilities
 
 ### Typography
 
