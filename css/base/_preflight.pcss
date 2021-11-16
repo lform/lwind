@@ -1,22 +1,49 @@
 /* Add all preflight options here for base-styling */
 @layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+
+  html {
+    @apply smooth;
+  }
+
+  html,
+  body {
+    @apply w-full text-ms-0;
+  }
+
+  body {
+    @apply flex flex-col bg-white font-body h-full min-h-screen p-0 antialiased leading-6;
+  }
+
   a {
-    color: theme("colors.primary.DEFAULT");
+    @apply text-primary;
   }
 
   input:not([type="checkbox"], [type="radio"]),
   textarea,
   select {
-    background-color: theme("colors.white.DEFAULT");
-  }
-
-  body {
-    /* TODO Place pre-styling here */
+    @apply bg-white;
   }
 
   img {
-    height: auto;
-    max-width: 100%;
-    vertical-align: middle;
+    @apply h-full max-w-full align-middle;
   }
+
+  .site-header,
+  .site-footer {
+    @apply flex-0-auto;
+  }
+
+  .site-main {
+    @apply flex-1-0-auto;
+  }
+
+  .detail-section > *:not(last-child) {
+		@apply my-3.5;
+	}
+}
 }
