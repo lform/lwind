@@ -7,16 +7,18 @@
   }
 
   html {
-    @apply smooth;
+    scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   html,
   body {
-    @apply w-full text-ms-0;
+    @apply w-full;
   }
 
   body {
     @apply flex flex-col bg-white font-body h-full min-h-screen p-0 antialiased leading-6;
+    font-size: 1em;
   }
 
   a {
@@ -30,19 +32,6 @@
   }
 
   img {
-    @apply h-full max-w-full align-middle;
-  }
-
-  .site-header,
-  .site-footer {
-    @apply flex-0-auto;
-  }
-
-  .site-main {
-    @apply flex-1-0-auto;
-  }
-
-  .detail-section > *:not(last-child) {
-    @apply my-3.5;
+    @apply h-auto max-w-full align-middle;
   }
 }
