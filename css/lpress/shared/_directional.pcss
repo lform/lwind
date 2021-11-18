@@ -1,0 +1,22 @@
+.directional {
+  @apply flex flex-col border border-grey-300 rounded-md shadow -text-ms-1;
+
+  .image {
+    @apply flex-full flex-0-auto align-bottom  border-b-8 border-grey-300;
+
+    img {
+      @apply rounded-t-md;
+    }
+  }
+
+  .text-area {
+    @apply text-center flex flex-1-0-auto flex-col p-3 lg:px-6;
+    .title {
+      @apply font-body text-hms-5 font-bold mb-3;
+    }
+  }
+
+  .footer {
+    @apply flex flex-col flex-1-0-auto justify-end;
+  }
+}
