@@ -18,7 +18,8 @@
 		"postcss-advanced-variables": "^3.0.1",
 		"postcss-import": "^14.0.2",
 		"resolve-url-loader": "^4.0.0",
-		"tailwindcss": "^2.2.16"
+		"tailwindcss": "^2.2.16",
+		"tailwindcss-text-indent": "^1.0.2"
 	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.3.4",
