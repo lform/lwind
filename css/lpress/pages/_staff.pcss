@@ -1,23 +1,54 @@
+/* Staff Listing Page  */
 .staff-list {
-  .staff-card {
-    &:first-child {
-      .staff-member {
-        @apply bg-white shadow-md rounded-md mb-20;
-        border-top: solid 25px #a01b44;
+  .staff-category {
+  }
 
-        img {
-          @apply -mt-24;
-        }
-      }
+  .staff-category.featured {
+    ul {
+      @apply lg:grid-cols-4;
+    }
+    .staff-member {
+      border-top: solid 25px #a01b44;
 
-      h2 {
-        @apply mb-28;
+      img {
+        @apply -mt-24;
       }
     }
 
-    &:last-child {
-      ul {
-        @apply lg:grid-cols-5;
+    h2 {
+      @apply mb-28;
+    }
+  }
+
+  .staff-member {
+    img {
+      @apply h-48 w-48 rounded-full shadow-md mb-6 border-grey-300 border-4;
+    }
+  }
+
+  .social-media-list {
+    @apply mt-0;
+  }
+}
+
+/* Staff Details Page */
+.staff-bio {
+  .image-area {
+    img {
+      @apply h-96 w-96 rounded-full border-grey-300 border-4;
+    }
+  }
+
+  .contact-info {
+    border-top: solid 25px #a01b44;
+  }
+
+  .social-media-list {
+    .icon {
+      @apply h-11 w-11 rounded-lg;
+
+      svg {
+        @apply h-7 w-7;
       }
     }
   }
