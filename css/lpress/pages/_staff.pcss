@@ -1,0 +1,24 @@
+.staff-list {
+  .staff-card {
+    &:first-child {
+      .staff-member {
+        @apply bg-white shadow-md rounded-md mb-20;
+        border-top: solid 25px #a01b44;
+
+        img {
+          @apply -mt-24;
+        }
+      }
+
+      h2 {
+        @apply mb-28;
+      }
+    }
+
+    &:last-child {
+      ul {
+        @apply lg:grid-cols-5;
+      }
+    }
+  }
+}
