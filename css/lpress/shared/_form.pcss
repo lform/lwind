@@ -1,0 +1,53 @@
+.contact-form {
+  .input {
+    @apply rounded-sm w-full bg-white leading-normal p-2 border border-grey-500 transition-colors;
+
+    &:required {
+      @apply border-primary border;
+    }
+
+    &:focus {
+      @apply border-secondary outline-none bg-primary;
+    }
+
+    &:focus > label {
+      @apply text-secondary;
+    }
+  }
+
+  .label {
+    @apply uppercase rich-text-sm font-header font-bold text-grey-500;
+
+    &.required {
+      @apply text-primary;
+    }
+  }
+
+  .field-group > * {
+    @apply block;
+  }
+
+  .inputs {
+    &:first-child {
+      @apply grid grid-cols-2 gap-6;
+    }
+  }
+
+  .phone-numbers > :nth-child(odd) {
+    @apply pl-14;
+  }
+
+  .phone-numbers > li {
+    @apply mb-6 w-6/12 text-left;
+  }
+
+  .phone-numbers > li > #text {
+    @apply mb-6;
+  }
+
+  [type="checkbox"] {
+    &:checked {
+      @apply bg-primary border-0;
+    }
+  }
+}
