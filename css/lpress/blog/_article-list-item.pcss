@@ -1,9 +1,10 @@
 .blog-pages-archive {
-  .list-items:first-child {
-    @apply md:col-span-2 md:h-96;
 
+  /* The first blog post shows as a 'featured' post, appears larger and full-width */
+  .blog-post:first-child {
+    @apply md:col-span-2 md:h-96;
     .title {
-      @apply text-ms-8 leading-none;
+      @apply md:text-ms-8;
     }
   }
 }
