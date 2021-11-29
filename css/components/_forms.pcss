@@ -1,1 +1,47 @@
-/* Form styling goes here */
+.form {
+
+	/* Form Input Styling */
+	.input {
+		@apply rounded-sm w-full bg-white leading-normal p-2 border border-grey-500 transition-colors;
+
+		&:required {
+			@apply border-primary border;
+		}
+
+		&:focus {
+			@apply border-secondary outline-none;
+		}
+
+		&:focus > label {
+			@apply text-secondary;
+		}
+	}
+
+	.checkbox-area,
+	.radio-area {
+		@apply grid grid-cols-2 gap-6 mb-6;
+	}
+
+	/* TODO: Fix form color defaults (refer to contact page): https://stefvanlooveren.me/blog/overwrite-input-colors-tailwind-custom-forms-plugin */
+	[type="checkbox"],
+	[type="radio"] {
+		&:checked {
+			@apply bg-primary border-0;
+		}
+	}
+
+	/* Form Label Styling */
+	.label {
+		@apply uppercase rich-text-sm font-header font-bold text-grey-500;
+
+		&.required {
+			@apply text-primary;
+		}
+	}
+
+	/* Input grid for form areas with multiple inputs */
+	.form-control-list-grid {
+		@apply grid grid-cols-2 gap-6;
+	}
+}
+
