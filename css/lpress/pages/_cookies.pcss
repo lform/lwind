@@ -30,5 +30,13 @@
     &:checked + .toggle-label:after {
       left: 2rem;
     }
+
+    &:checked + .toggle-label .on {
+      @apply block;
+    }
+
+    &:checked + .toggle-label .off {
+      @apply hidden;
+    }
   }
 }
