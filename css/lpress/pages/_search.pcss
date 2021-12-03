@@ -3,4 +3,14 @@
   .form-area {
     flex: 0 1 32rem;
   }
+
+  .search-query {
+    &:focus {
+      @apply border-primary shadow-none;
+      --tw-ring-shadow: none;
+    }
+    &:focus + .search-icon {
+      @apply shadow-none border-primary;
+    }
+  }
 }
