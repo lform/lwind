@@ -7,8 +7,13 @@ module.exports = {
 	darkMode: false,
 	theme: {
 		fontFamily: {
-			body: ['Roboto', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif'],
-			header: ['Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif'],
+			body: ['Barlow', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif'],
+			header: [
+				'IBM Plex Sans',
+				'Impact',
+				'Franklin Gothic Bold',
+				'sans-serif',
+			],
 			subheader: [
 				'Oswald',
 				'Impact',
@@ -39,31 +44,31 @@ module.exports = {
 		},
 		// For reference
 		// screens: {
-		//   'sm': '640px',
-		//   'md': '768px',
-		//   'lg': '1024px',
-		//   'xl': '1280px',
-		//   '2xl': '1536px',
+		//   sm: "640px",
+		//   md: "768px",
+		//   lg: "1024px",
+		//   xl: "1280px",
+		//   "2xl": "1536px",
 		// },
 		colors: {
 			// Primary, secondary, tertiary should have the main brand colors, then up-shade and down-shade
 			primary: {
-				light: '#333',
-				DEFAULT: '#999',
-				dark: '#ddd',
-				fore: '#fff',
+				light: '#e52560',
+				DEFAULT: '#a01b44',
+				dark: '#710627',
+				foreground: '#fff',
 			},
 			secondary: {
-				light: '#333',
-				DEFAULT: '#999',
-				dark: '#ddd',
-				fore: '#fff',
+				light: '#fdf0a9',
+				DEFAULT: '#dbc764',
+				dark: '#d0b635',
+				foreground: '#000',
 			},
 			tertiary: {
-				light: '#333',
-				DEFAULT: '#999',
-				dark: '#ddd',
-				fore: '#fff',
+				light: '#d3356c',
+				DEFAULT: '#a01b44',
+				dark: '#710627',
+				foreground: '#fff',
 			},
 			// Accents should be added as numeric items
 			accent: {
@@ -72,15 +77,15 @@ module.exports = {
 				3: '#ddd',
 			},
 			grey: {
-				100: '#1f2d3d',
-				300: '#3c4858',
-				500: '#c0ccda',
-				700: '#e0e6ed',
-				900: '#f9fafc',
+				100: '#f1f1f1',
+				300: '#d2d2d2',
+				500: '#9a9a9a',
+				700: '#5a5a5a',
+				900: '#1a1818',
 			},
 			black: {
 				transparent: 'rgba(0,0,0,0.7)',
-				DEFAULT: '#111',
+				DEFAULT: '#1a1818',
 			},
 			white: {
 				transparent: 'rgba(255,255,255,0.7)',
@@ -104,6 +109,7 @@ module.exports = {
 				twitter: '#55acee',
 				youtube: '#b31217',
 				vimeo: '#1ab7ea',
+				yelp: '#f43939',
 			},
 		},
 		container: (theme) => ({
@@ -122,6 +128,7 @@ module.exports = {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
+						maxWidth: '100%',
 						lineHeight: 1.5,
 						a: {
 							color: theme('colors.primary'),
@@ -155,8 +162,16 @@ module.exports = {
 			}),
 		},
 	},
-	// TODO Add plugins
-	// TODO Add pre-css plugins
+	variants: {
+		extend: {
+			gridColumn: ['first', 'last'],
+			maxHeight: ['focus'],
+			scale: ['focus-within'],
+		},
+	},
+	corePlugins: {
+		container: false,
+	},
 	plugins: [
 		require('@tailwindcss/typography')({
 			className: 'rich-text',
