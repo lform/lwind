@@ -1,75 +1,80 @@
-.site-header {
-  .nav-area {
-    @apply z-10;
-    .nav-lvl-0 {
-      @apply flex items-center justify-center list-none;
-    }
 
-    .submenu {
-      @apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
-    }
+.main-nav {
+	@apply z-10;
 
-    /* General navigation items, applies to all nav items */
-    .nav-link {
-      @apply no-underline uppercase  block font-body;
-    }
+	.nav-lvl-0 {
+		@apply flex items-center justify-center list-none;
+	}
 
-    /* Top level nav items */
-    .lvl-0 > .nav-disclosure > .nav-link,
-    .lvl-0 > .nav-link {
-      @apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-white xl:flex xl:items-center xl:flex-row;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
+	.submenu {
+		@apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
+	}
 
-    /* Second level nav items */
-    .lvl-1 > .nav-link {
-      @apply text-primary text-ms-2 p-3 font-light hover:text-secondary border-grey-500 border-b;
-    }
+	/* General navigation items, applies to all nav items */
 
-    /* Mobile navigation side menu */
-    @media (max-width: 1124px) {
-      @apply fixed bg-primary border-primary-dark border-r-4 text-white top-0 bottom-0 w-60 -left-60 opacity-0;
-      transition: left 0.4s ease, opacity 0.4s ease;
-      &.active {
-        @apply left-0 opacity-100;
-      }
+	.nav-link {
+		@apply no-underline uppercase  block font-body;
+	}
 
-      .nav-lvl-0 {
-        @apply flex-col items-start;
-      }
-      .lvl-0 > .nav-disclosure > .nav-link,
-      .lvl-0 > .nav-link {
-        @apply text-white p-4 text-ms-0 border-primary-dark border-b w-60;
-      }
-    }
-  }
+	/* Top level nav items */
 
-  .search-area {
-    .search-input {
-      &:focus {
-        @apply border-primary shadow-none;
-        --tw-ring-shadow: none;
-      }
-      &:focus + .search-icon {
-        @apply shadow-none border-primary;
-      }
-    }
-  }
+	.lvl-0 > .nav-disclosure > .nav-link,
+	.lvl-0 > .nav-link {
+		@apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-white xl:flex xl:items-center xl:flex-row;
+		transition: background-color 0.4s ease, color 0.4s ease;
+	}
+
+	/* Second level nav items */
+
+	.lvl-1 > .nav-link {
+		@apply text-primary text-ms-2 p-3 font-light hover:text-secondary border-grey-500 border-b;
+	}
+
+	/* Mobile navigation side menu */
+	@media (max-width: 1124px) {
+		@apply fixed bg-primary border-primary-dark border-r-4 text-white top-0 bottom-0 w-60 -left-60 opacity-0;
+		transition: left 0.4s ease, opacity 0.4s ease;
+		&.active {
+			@apply left-0 opacity-100;
+		}
+
+		.nav-lvl-0 {
+			@apply flex-col items-start;
+		}
+
+		.lvl-0 > .nav-disclosure > .nav-link,
+		.lvl-0 > .nav-link {
+			@apply text-white p-4 text-ms-0 border-primary-dark border-b w-60;
+		}
+	}
+}
+
+.search-area {
+	.search-input {
+		&:focus {
+			@apply border-primary shadow-none;
+			--tw-ring-shadow: none;
+		}
+
+		&:focus + .search-icon {
+			@apply shadow-none border-primary;
+		}
+	}
 }
 
 /* Nav toggle area  */
 .nav-toggle {
-  &.active {
-    .icon-menu {
-      @apply hidden;
-    }
+	&.active {
+		.icon-menu {
+			@apply hidden;
+		}
 
-    .icon-close {
-      @apply block;
-    }
+		.icon-close {
+			@apply block;
+		}
 
-    .main-nav {
-      @apply opacity-100;
-    }
-  }
+		.main-nav {
+			@apply opacity-100;
+		}
+	}
 }
