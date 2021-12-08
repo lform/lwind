@@ -13,14 +13,18 @@
     @apply text-center flex flex-1-0-auto flex-col p-3 lg:px-6;
     .title {
       @apply text-ms-5 font-bold mb-3;
+
+      .title-link {
+        @apply text-grey-900;
+      }
     }
 
     .content {
-      @apply -text-ms-1;
+      @apply -text-ms-1 pb-6;
     }
   }
 
   .footer {
-    @apply flex flex-col flex-1-0-auto justify-end;
+    @apply flex flex-col flex-1-0-auto justify-end mb-6;
   }
 }
