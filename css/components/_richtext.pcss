@@ -1,0 +1,61 @@
+.rich-text {
+  .button {
+    @apply no-underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header leading-tight;
+  }
+
+  h1 {
+    @apply text-ms-8;
+  }
+
+  h2 {
+    @apply text-ms-7;
+  }
+
+  h3 {
+    @apply text-ms-6;
+  }
+
+  h4 {
+    @apply text-ms-5;
+  }
+
+  h5 {
+    @apply text-ms-3;
+  }
+
+  h6 {
+    @apply text-ms-1;
+  }
+
+  figure {
+    @apply flex flex-col justify-center text-center mb-4;
+  }
+
+  figcaption {
+  }
+
+  /* TODO custom bullets */
+
+  .pull-center,
+  .aligncenter {
+    @apply text-center mx-auto;
+  }
+
+  @media (min-width: 640px) {
+    .pull-left,
+    .pull-right,
+    .alignleft,
+    .alignright {
+      max-width: 50%;
+    }
+  }
+}

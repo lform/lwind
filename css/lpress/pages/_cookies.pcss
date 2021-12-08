@@ -1,0 +1,42 @@
+.cookie-list {
+  .cookie-setting:last-child {
+    @apply border-b-0;
+  }
+
+  .toggle {
+    z-index: -1;
+  }
+
+  .toggle-label {
+    &:before {
+      content: "";
+      @apply bg-grey-500 border-primary rounded-full border-2 inline-block h-6 w-14;
+      transition: background-color 0.4s ease;
+    }
+
+    &:after {
+      content: "";
+      top: 0.0625rem;
+      @apply absolute h-6 w-6 bg-white rounded-full block border-2 border-primary;
+      transition: background-color 0.4s ease;
+    }
+  }
+
+  [type="checkbox"] {
+    &:checked + .toggle-label:before {
+      @apply bg-primary;
+    }
+
+    &:checked + .toggle-label:after {
+      left: 2rem;
+    }
+
+    &:checked + .toggle-label .on {
+      @apply block;
+    }
+
+    &:checked + .toggle-label .off {
+      @apply hidden;
+    }
+  }
+}

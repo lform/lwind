@@ -1,16 +1,38 @@
 /* Add all preflight options here for base-styling */
 @layer base {
-	a {
-		color: theme('colors.primary.DEFAULT');
-	}
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
 
-	input:not([type='checkbox'], [type='radio']),
-	textarea,
-	select {
-		background-color: theme('colors.white.DEFAULT');
-	}
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
 
-	body {
-		/* TODO Place pre-styling here */
-	}
+  html,
+  body {
+    @apply w-full;
+  }
+
+  body {
+    @apply flex flex-col bg-white font-body h-full min-h-screen p-0 antialiased;
+    line-height: 1.5;
+    font-size: 1em;
+  }
+
+  a {
+    @apply text-primary;
+  }
+
+  input:not([type="checkbox"], [type="radio"]),
+  textarea,
+  select {
+    @apply bg-white;
+  }
+
+  img {
+    @apply h-auto max-w-full align-middle;
+  }
 }

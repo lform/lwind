@@ -1,0 +1,30 @@
+.directional {
+  @apply flex flex-col border border-grey-300 rounded-md shadow;
+
+  .image {
+    @apply flex-full flex-0-auto align-bottom  border-b-8 border-grey-300;
+
+    img {
+      @apply rounded-t-md;
+    }
+  }
+
+  .text-area {
+    @apply text-center flex flex-1-0-auto flex-col p-3 lg:px-6;
+    .title {
+      @apply text-ms-5 font-bold mb-3;
+
+      .title-link {
+        @apply text-grey-900;
+      }
+    }
+
+    .content {
+      @apply -text-ms-1 pb-6;
+    }
+  }
+
+  .footer {
+    @apply flex flex-col flex-1-0-auto justify-end mb-6;
+  }
+}

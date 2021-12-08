@@ -1,32 +1,32 @@
 @layer components {
-	.btn {
-		/* Default button */
-		@apply py-2 px-4 bg-primary text-primary-fore text-ms-0;
+  .button {
+    /* Default button */
+    @apply inline-block py-3 px-6 bg-primary text-primary-fore hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black tracking-widest;
 
-		/* Color Variants */
-		&.btn-secondary {
-			@apply bg-secondary text-secondary-fore;
-		}
+    /* Color Variants */
+    &.button-secondary {
+      @apply bg-secondary text-primary hover:bg-secondary-dark;
+    }
 
-		&.btn-tertiary {
-			@apply bg-tertiary  text-tertiary-fore;
-		}
+    &.button-tertiary {
+      @apply bg-white  text-primary border-primary border-2;
+    }
 
-		/* Size Variants */
-		&.btn-xs {
-			@apply py-1 px-2 -text-ms-2;
-		}
+    /* Size Variants */
+    &.button-xs {
+      @apply py-1 px-2 -text-ms-2;
+    }
 
-		&.btn-sm {
-			@apply py-1.5 px-3 -text-ms-1;
-		}
+    &.button-sm {
+      @apply py-1.5 px-3 -text-ms-1;
+    }
 
-		&.btn-lg {
-			@apply py-3 px-5 text-ms-1;
-		}
+    &.button-lg {
+      @apply py-3 px-5 text-ms-1;
+    }
 
-		&.btn-xl {
-			@apply py-3 px-6 text-ms-2;
-		}
-	}
+    &.button-xl {
+      @apply py-3 px-6 text-ms-2;
+    }
+  }
 }

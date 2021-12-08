@@ -1,25 +1,26 @@
-@layer components {
-	/* `container` class defaults to max-width of 2xl, add smaller variants below */
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl {
-		@apply container;
-	}
+@layer utilities {
+  /* `container` class defaults to max-width of 2xl, add smaller variants below */
+  /* TODO Determine why when this is a component, it causes responsiveness to break media queries no longer applied to compiled CSS */
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    @apply container;
+  }
 
-	.container-sm {
-		max-width: theme('screens.sm');
-	}
+  .container-sm {
+    max-width: theme("screens.sm");
+  }
 
-	.container-md {
-		max-width: theme('screens.md');
-	}
+  .container-md {
+    max-width: theme("screens.md");
+  }
 
-	.container-lg {
-		max-width: theme('screens.lg');
-	}
+  .container-lg {
+    max-width: theme("screens.lg");
+  }
 
-	.container-xl {
-		max-width: theme('screens.lg');
-	}
+  .container-xl {
+    max-width: theme("screens.xl");
+  }
 }

@@ -1,0 +1,31 @@
+.pagination {
+  @apply flex justify-center items-center -text-ms-1 uppercase font-body font-bold mt-6;
+
+  .page-numbers {
+    @apply text-center font-bold no-underline;
+    &:not(.next):not(.prev) {
+      @apply flex justify-center items-center mr-2 bg-white text-primary rounded-full h-6 w-6 border-grey-300 border;
+
+      &:not(.dots) {
+        @apply hover:bg-primary hover:text-white;
+      }
+
+      &.current {
+        @apply bg-primary text-white border-primary border;
+      }
+    }
+
+    &.prev {
+      @apply mr-8;
+    }
+
+    &.next {
+      @apply ml-8;
+    }
+
+    &.prev,
+    &.next {
+      @apply hover:text-primary-dark;
+    }
+  }
+}
