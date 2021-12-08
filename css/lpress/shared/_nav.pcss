@@ -1,26 +1,40 @@
-.main-nav {
-  .nav-lvl-0 {
-    @apply flex items-center justify-center list-none;
+.site-header {
+  .main-nav {
+    .nav-lvl-0 {
+      @apply flex items-center justify-center list-none;
+    }
+
+    .submenu {
+      @apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
+    }
+
+    /* General navigation items, applies to all nav items */
+    .nav-link {
+      @apply no-underline uppercase  block font-body;
+    }
+
+    /* Top level nav items */
+    .lvl-0 > .nav-disclosure > .nav-link,
+    .lvl-0 > .nav-link {
+      @apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-white xl:flex xl:items-center xl:flex-row;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    /* Second level nav items */
+    .lvl-1 > .nav-link {
+      @apply text-primary text-ms-2 p-3 font-light hover:text-secondary border-grey-500 border-b;
+    }
   }
 
-  .submenu {
-    @apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
-  }
-
-  /* General navigation items, applies to all nav items */
-  .nav-link {
-    @apply no-underline uppercase  block font-body;
-  }
-
-  /* Top level nav items */
-  .lvl-0 > .nav-disclosure > .nav-link,
-  .lvl-0 > .nav-link {
-    @apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-white xl:flex xl:items-center xl:flex-row;
-    transition: background-color 0.4s ease, color 0.4s ease;
-  }
-
-  /* Second level nav items */
-  .lvl-1 > .nav-link {
-    @apply text-primary text-ms-2 p-3 font-light hover:text-secondary border-grey-500 border-b;
+  .search-area {
+    .search-input {
+      &:focus {
+        @apply border-primary shadow-none;
+        --tw-ring-shadow: none;
+      }
+      &:focus + .search-icon {
+        @apply shadow-none border-primary;
+      }
+    }
   }
 }
