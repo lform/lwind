@@ -26,13 +26,44 @@
     @apply text-primary;
   }
 
+  img {
+    @apply h-auto max-w-full align-middle;
+  }
+
+  /* Form Element Colors, Overrides Tailwind Form Colors */
+
   input:not([type="checkbox"], [type="radio"]),
   textarea,
   select {
     @apply bg-white;
   }
 
-  img {
-    @apply h-auto max-w-full align-middle;
+  [type='text']:focus,
+  [type='email']:focus,
+  [type='url']:focus,
+  [type='password']:focus,
+  [type='number']:focus,
+  [type='date']:focus,
+  [type='datetime-local']:focus,
+  [type='month']:focus,
+  [type='search']:focus,
+  [type='tel']:focus,
+  [type='time']:focus,
+  [type='week']:focus,
+  [multiple]:focus,
+  textarea:focus,
+  select:focus {
+    --tw-ring-color: theme("colors.primary.light");
+    border-color: var(--tw-ring-color);
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    color: theme("colors.primary.DEFAULT");
+  }
+
+  [type="checkbox"]:focus,
+  [type="radio"]:focus {
+    --tw-ring-color: theme("colors.primary.light");
   }
 }
