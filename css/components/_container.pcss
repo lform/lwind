@@ -1,11 +1,11 @@
 @layer utilities {
-  /* `container` class defaults to max-width of 2xl, add smaller variants below */
-  /* TODO Determine why when this is a component, it causes responsiveness to break media queries no longer applied to compiled CSS */
+  /* Overrides the default container with a fluid container that matches the breakpoints */
+  .container,
   .container-sm,
   .container-md,
   .container-lg,
   .container-xl {
-    @apply container;
+    @apply mx-auto px-4;
   }
 
   .container-sm {
@@ -20,6 +20,8 @@
     max-width: theme("screens.lg");
   }
 
+  /* Default container is max breakpoint size */
+  .container,
   .container-xl {
     max-width: theme("screens.xl");
   }
