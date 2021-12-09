@@ -4,24 +4,43 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
-		"watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
-		"production": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --minify"
+		"dev": "npx gulp",
+		"prod": "npx gulp build --prod",
+		"tailwind-dev": "npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css",
+		"tailwind-watch": "npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css --watch",
+		"tailwind-production": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css --minify"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"browser-sync": "^2.26.12",
+		"gulp": "^4.0.2",
+		"gulp-postcss": "^9.0.1",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-notify": "^3.2.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-rename": "^2.0.0",
+		"gulp-terser": "^2.0.1",
+		"gulp-typescript": "^6.0.0-alpha.1",
+		"gulp-uglify": "^3.0.2"
+	},
+	"dependencies": {
+		"@tailwindcss/forms": "^0.3.4",
+		"@tailwindcss/typography": "^0.4.1",
 		"autoprefixer": "^10.3.7",
 		"postcss": "^8.3.9",
 		"postcss-advanced-variables": "^3.0.1",
 		"postcss-import": "^14.0.2",
+		"postcss-rem": "^2.0.2",
+		"postcss-scss": "^4.0.2",
+		"precss": "^4.0.0",
 		"resolve-url-loader": "^4.0.0",
 		"tailwindcss": "^2.2.16",
-		"tailwindcss-text-indent": "^1.0.2"
-	},
-	"dependencies": {
-		"@tailwindcss/forms": "^0.3.4",
-		"@tailwindcss/typography": "^0.4.1"
+		"tailwindcss-text-indent": "^1.0.2",
+		"tinymce": "^4.9.10",
+		"typescript": "^3.9.7"
 	}
 }
