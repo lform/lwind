@@ -1,0 +1,21 @@
+{
+	"files": [
+		"./js/helpers.ts",
+		"./js/nav/NavToggle.ts",
+		"./js/nav/SubNavigation.ts",
+		"./js/nav/Navigation.ts",
+		"./js/nav/nav.ts",
+		"./js/cookies.ts",
+		"./js/privacy.ts",
+		"./js/main.ts"
+	],
+	"compilerOptions": {
+		"noImplicitAny": true,
+		"target": "es6",
+		"lib": ["es6", "dom", "es2017"],
+		"allowJs": false,
+		"sourceMap": true,
+		"outFile": "./dist/lwind.js",
+		"alwaysStrict": true
+	}
+}
