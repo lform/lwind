@@ -1,8 +1,8 @@
 {
 	"name": "lwind",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "main.pcss",
 	"scripts": {
 		"dev": "npx gulp",
 		"prod": "npx gulp build --prod",
