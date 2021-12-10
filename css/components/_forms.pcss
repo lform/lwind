@@ -44,3 +44,24 @@
 	}
 }
 
+
+/* Form Messages */
+.form-message {
+	@apply bg-grey-100 rounded mb-4 p-4;
+
+	.form-message-header {
+		@apply font-bold mb-2;
+	}
+
+	&.success {
+		background: theme('colors.feedback.success');
+	}
+
+	&.warning {
+		background: theme('colors.feedback.warning');
+	}
+
+	&.error {
+		background: theme('colors.feedback.error');
+	}
+}
