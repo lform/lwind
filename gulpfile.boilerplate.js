@@ -62,7 +62,7 @@ gulp.task('browser-sync', () => {
 gulp.task('watch', () => {
 	gulp.watch('./public/assets/js/*.ts', gulp.series('scripts'));
 	gulp.watch('./public/assets/scss/**/*.scss', gulp.series('styles'));
-	gulp.watch('./public/assets/tailwind/**/*.pcss', gulp.series('styles'));
+	gulp.watch('./public/assets/css/**/*.pcss', gulp.series('styles'));
 	gulp.watch('./resources/views/**/*.*');
 });
 
