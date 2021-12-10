@@ -124,6 +124,10 @@ module.exports = {
 				l: '2rem',
 				xl: '4rem',
 			},
+			flex: {
+				static: '0 0 auto',
+				'grow-auto': '1 0 auto',
+			},
 			// Controls rich-text styling (tailwind typography plugin)
 			typography: (theme) => ({
 				DEFAULT: {
