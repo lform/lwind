@@ -33,13 +33,6 @@ for the flexibility required to implement designs produced using the Lform desig
 
 -   [TailWind UI KIts](https://www.tailwindawesome.com/?type=kit) - For reference for building components
 
--   Design system reference: https://docs.google.com/document/d/1slOYiJ_frHlN9aBx77GASkSxLsiuc_njQ62zQG1an20/edit#
-
--   Lpress
-    Templates: https://xd.adobe.com/view/0b97ba04-4ab1-44a1-ab2b-c871b46dfe42-5ec4/screen/46f924da-14ab-4862-a659-d9effd3ec3f9
-
--   Lpress Privacy Templates: https://xd.adobe.com/view/ed8a8031-ba1f-4099-8857-19caf1b5b0b7-b8d9/
-
 ## Tailwind Config
 
 ### Gaps
@@ -101,61 +94,9 @@ for the flexibility required to implement designs produced using the Lform desig
 
 ## TODOS
 
--   Create build system for Tailwind using Gulp
 -   Create component demo sheet to see Lpress styling at a glance
--   Phase out SASS, use Precss - https://github.com/csstools/precss
--   Add tailwind plugins as default: prose, forms
--   Define preflight options for 'a' color, 'input' background, body, etc - https://tailwindcss.com/docs/preflight
--   Check out ui kits like https://daisyui.com/core/typography/
--   Checkout drilldown kit - https://mmenujs.com/
+-   Implement drilldown kit - https://mmenujs.com/
 -   Configure PurgeCSS
--   Implement base styles
-    -   `a` tags
-    -   Base typography
-    -   Body styling
--   Implement utilities
-    -   Containers
-    -   Headers
 -   Implement components
-    -   Buttons
-    -   Form components & inputs
     -   Form Messages
-    -   Richtext (prose)
-    -   Pagination
-    -   Navigation
     -   Gallery
--   Implement Lpress Templates
-
-    -   Global - Header
-    -   Global - Header Navigation
-    -   Global - Footer
-    -   Page - Content Listing
-    -   Page - Content Detail
-    -   Page - Blog Listing
-    -   Page - Blog Detail
-    -   Page - Resources Listing
-    -   Page - Contact
-    -   Page - Staff Listing
-    -   Page - Staff Detail
-    -   Page - Testimonial Listing
-    -   Page - Glossary Listing
-    -   Page - Partner Listing
-    -   Page - Search Listing
-    -   Page - 404 Page
-    -   Global - Privacy Banner
-    -   Page - Cookies Page
-    -   Page - Privacy Page
-    -   Page - Home
-
--   Agree on breakpoints - DONE
--   Agree on color naming - DONE
--   Agree on components to be defined - DONE
-    -   Buttons
-    -   Form components
-    -   Form Messages
-    -   Containers
-    -   Richtext (prose)
-    -   Pagination
-    -   Navigation
--   Agree on precss mixins - DONE
--   Agree on defaults - DONE

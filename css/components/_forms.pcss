@@ -26,17 +26,9 @@
 		@apply grid grid-cols-2 gap-6 mb-6;
 	}
 
-	/* TODO: Fix form color defaults (refer to contact page): https://stefvanlooveren.me/blog/overwrite-input-colors-tailwind-custom-forms-plugin */
-	[type="checkbox"],
-	[type="radio"] {
-		&:checked {
-			@apply bg-primary border-0;
-		}
-	}
-
 	/* Form Label Styling */
 	.label {
-		@apply uppercase rich-text-sm font-header font-bold text-grey-500;
+		@apply uppercase -text-ms-1 font-header font-bold text-grey-500;
 
 		&.required {
 			@apply text-primary;
