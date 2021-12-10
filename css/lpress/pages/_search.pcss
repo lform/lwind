@@ -1,16 +1,17 @@
 .page-search {
-  .results-text,
-  .form-area {
-    flex: 0 1 rem(512);
-  }
+	.results-text,
+	.form-area {
+		flex: 0 1 rem(512);
+	}
 
-  .search-query {
-    &:focus {
-      @apply border-primary shadow-none;
-      --tw-ring-shadow: none;
-    }
-    &:focus + .search-icon {
-      @apply shadow-none border-primary;
-    }
-  }
+	.search-query {
+		&:focus {
+			@apply border-primary shadow-none;
+			--tw-ring-shadow: none;
+		}
+
+		&:focus + .search-icon {
+			@apply shadow-none border-primary;
+		}
+	}
 }

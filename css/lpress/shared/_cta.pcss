@@ -1,24 +1,24 @@
 .cta-area {
-  .cta {
-    @media (min-width: 640px) {
-      grid-template-columns:
+	.cta {
+		@media (min-width: 640px) {
+			grid-template-columns:
         19.0625rem
         1fr;
-    }
+		}
 
-    /* TODO Fix weird decimal sizing */
-    @media (min-width: 1024px) {
-      grid-template-columns:
+		/* TODO Fix weird decimal sizing */
+		@media (min-width: 1024px) {
+			grid-template-columns:
         rem(305)
         1fr rem(250);
-    }
-  }
+		}
+	}
 
-  .button-area {
-    @media (max-width: 768px) {
-      .button {
-        @apply py-1.5 px-3 -text-ms-1;
-      }
-    }
-  }
+	.button-area {
+		@media (max-width: 768px) {
+			.button {
+				@apply py-1.5 px-3 -text-ms-1;
+			}
+		}
+	}
 }

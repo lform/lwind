@@ -1,48 +1,50 @@
 /* Staff Listing Page  */
 .staff-category-list {
-  .staff-category.featured {
-    .staff-list {
-      @apply lg:grid-cols-4;
-    }
-    .staff-member {
-      @apply shadow-md;
-      border-top: solid 25px #a01b44;
+	.staff-category.featured {
+		.staff-list {
+			@apply lg:grid-cols-4;
+		}
 
-      img {
-        @apply -mt-32;
-      }
-    }
+		.staff-member {
+			@apply shadow-md;
+			border-top: solid 25px #a01b44;
 
-    .category-title {
-      @apply mb-28;
-    }
-  }
+			img {
+				@apply -mt-32;
+			}
+		}
 
-  .staff-member {
-    img {
-      @apply h-48 w-48 shadow-md rounded-full border-grey-300 border-4;
-    }
-  }
+		.category-title {
+			@apply mb-28;
+		}
+	}
 
-  .social-media-list {
-    @apply mt-0 mb-6;
-  }
+	.staff-member {
+		img {
+			@apply h-48 w-48 shadow-md rounded-full border-grey-300 border-4;
+		}
+	}
+
+	.social-media-list {
+		@apply mt-0 mb-6;
+	}
 }
 
 /* Staff Details Page */
 .staff-member-detail {
-  .contact-area {
-    border-top: solid 25px #a01b44;
-  }
+	.contact-area {
+		border-top: solid 25px #a01b44;
+	}
 
-  .social-media-list {
-    @apply flex items-center mb-6;
-    .icon {
-      @apply h-11 w-11 rounded-lg;
+	.social-media-list {
+		@apply flex items-center mb-6;
 
-      svg {
-        @apply h-7 w-7;
-      }
-    }
-  }
+		.icon {
+			@apply h-11 w-11 rounded-lg;
+
+			svg {
+				@apply h-7 w-7;
+			}
+		}
+	}
 }

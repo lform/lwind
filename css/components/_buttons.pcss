@@ -1,32 +1,34 @@
 @layer components {
-  .button {
-    /* Default button */
-    @apply inline-block py-3 px-6 bg-primary text-primary-foreground hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black tracking-widest leading-tight;
+	.button {
+		/* Default button */
+		@apply inline-block py-3 px-6 bg-primary text-primary-foreground hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black tracking-widest leading-tight;
 
-    /* Color Variants */
-    &.button-secondary {
-      @apply bg-secondary text-secondary-foreground hover:bg-secondary-dark;
-    }
+		/* Color Variants */
 
-    &.button-tertiary {
-      @apply bg-tertiary text-tertiary-foreground border-primary border-2;
-    }
+		&.button-secondary {
+			@apply bg-secondary text-secondary-foreground hover:bg-secondary-dark;
+		}
 
-    /* Size Variants */
-    &.button-xs {
-      @apply py-1 px-2 -text-ms-2;
-    }
+		&.button-tertiary {
+			@apply bg-tertiary text-tertiary-foreground border-primary border-2;
+		}
 
-    &.button-sm {
-      @apply py-1.5 px-3 -text-ms-1;
-    }
+		/* Size Variants */
 
-    &.button-lg {
-      @apply py-3 px-5 text-ms-1;
-    }
+		&.button-xs {
+			@apply py-1 px-2 -text-ms-2;
+		}
 
-    &.button-xl {
-      @apply py-3 px-6 text-ms-2;
-    }
-  }
+		&.button-sm {
+			@apply py-1.5 px-3 -text-ms-1;
+		}
+
+		&.button-lg {
+			@apply py-3 px-5 text-ms-1;
+		}
+
+		&.button-xl {
+			@apply py-3 px-6 text-ms-2;
+		}
+	}
 }

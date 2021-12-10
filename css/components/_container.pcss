@@ -1,32 +1,32 @@
 @layer utilities {
-  /* Overrides the default container with a fluid container that matches the breakpoints */
-  .container,
-  .container-sm,
-  .container-md,
-  .container-lg,
-  .container-xl {
-    @apply mx-auto px-4;
-  }
+	/* Overrides the default container with a fluid container that matches the breakpoints */
+	.container,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl {
+		@apply mx-auto px-4;
+	}
 
-  .container-sm {
-    max-width: theme("screens.sm");
-  }
+	.container-sm {
+		max-width: theme("screens.sm");
+	}
 
-  .container-md {
-    max-width: theme("screens.md");
-  }
+	.container-md {
+		max-width: theme("screens.md");
+	}
 
-  .container-lg {
-    max-width: theme("screens.lg");
-  }
+	.container-lg {
+		max-width: theme("screens.lg");
+	}
 
-  .container-xl {
-    max-width: theme("screens.xl");
-  }
+	.container-xl {
+		max-width: theme("screens.xl");
+	}
 
-  /* Default container is max breakpoint size */
-  .container,
-  .container-2xl {
-    max-width: theme("screens.2xl");
-  }
+	/* Default container is max breakpoint size */
+	.container,
+	.container-2xl {
+		max-width: theme("screens.2xl");
+	}
 }
