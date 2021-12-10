@@ -1,6 +1,6 @@
 {
 	"name": "@lform/lwind",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Customized tailwind framework & theme implementation",
 	"main": "package.json",
 	"private": false,
