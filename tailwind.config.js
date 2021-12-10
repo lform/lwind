@@ -111,10 +111,6 @@ module.exports = {
 				yelp: '#f43939',
 			},
 		},
-		container: (theme) => ({
-			center: true,
-			padding: theme('spacing.4'),
-		}),
 		extend: {
 			spacing: {
 				xs: '0.25rem',
