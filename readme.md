@@ -65,6 +65,10 @@ To override the `lwind` package styling, add a file with a matching path & filen
 -   [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) - Used to provide rich-text styling
 -   [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) - Used to provide default baseline form styling
 
+### Breakpoints
+
+The [default breakpoints included in Tailwind are used](https://tailwindcss.com/docs/screens).
+
 ### Spacing / Gaps
 
 -   Designs are implemented using a base spacing sizing of 8 pixels.
@@ -95,26 +99,42 @@ To override the `lwind` package styling, add a file with a matching path & filen
 
 #### Fonts available
 
-There are 3 types of fonts in lwind:
+There are 3 types of fonts in Lwind:
 
--   `body` - The body font used on the site by default
--   `header` - The main header font
--   `subheader` - Usually used for small text items in a utility context, eg blog post dates
+-   `font-body` - The body font used on the site by default
+-   `font-header` - The main header font
+-   `font-subheader` - Usually used for small text items in a utility context, eg blog post dates
 
 #### Font scaling
 
 The font-scaling system uses Modular Scale instead of Tailwind's default
 
--   Base is 16px with 1.125x scaling
--   You can refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list
--   These are invoked with the pattern `text-ms-1`, `text-ms-2` and so on, from `-3` to `12`
--   These also include negative scale values up to `-3`, invoked with `-text-ms-2` and so on
+-   Base is `16px` with `1.125x` scaling
+-   The scale included with Lwind goes from `-3` to `12`
+-   Below are the scales, or you refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list:
+
+    -   `-text-ms-3` = 10px
+    -   `-text-ms-2` = 12px
+    -   `-text-ms-1` = 14px
+    -   `text-ms-0` = 16px
+    -   `text-ms-1` = 18px
+    -   `text-ms-2` = 20px
+    -   `text-ms-3` = 22px
+    -   `text-ms-4` = 25px
+    -   `text-ms-5` = 28px
+    -   `text-ms-6` = 32px
+    -   `text-ms-7` = 36px
+    -   `text-ms-8` = 41px
+    -   `text-ms-9` = 46px
+    -   `text-ms-10` = 52px
+    -   `text-ms-11` = 58px
+    -   `text-ms-12` = 65px
 
 #### Header utility classes
 
-Headers also use modular scale, and utility classes have been added that include the header font with a default line-height of `1.2`
+Modular scale header utility classes have been included that include the header font with a default line-height of `1.2`
 
-These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on, from `-3` to `12`
+These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on
 
 #### Richtext
 
@@ -127,7 +147,7 @@ Tailwind's typography plugin is used for all rich-text areas. The main differenc
 
 ### Buttons
 
-Button classes are baked into lwind and can be invoked with the following options. Buttons use the baseclass and modifier syntax.
+Button classes are baked into Lwind and can be invoked with the following options. Buttons use the baseclass and modifier syntax.
 
 #### Colors
 
@@ -150,7 +170,12 @@ Button classes are baked into lwind and can be invoked with the following option
 
 ### Containers
 
-Tailwind's default containers are disabled in favor of a fluid container system. There are five container sizes that match the default breakpoint sizes. Containers are auto-centered with `margin-left` & `margin-right` set to `auto`. They also have a default padding of `px-4`.
+Tailwind's default containers are disabled in favor of a fluid container system. There are five container sizes that match the [default breakpoint sizes](https://tailwindcss.com/docs/screens).
+
+-   Containers are auto-centered with `margin-left` & `margin-right` set to `auto`.
+-   They also have a default padding of `px-4`.
+
+#### Classes
 
 -   `container` - Max of the `2xl` screen size
 -   `container-xl` - Max of the `xl` screen size
