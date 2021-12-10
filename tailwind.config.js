@@ -3,8 +3,7 @@ const rem = (px) => `${px / 16}rem`;
 const px = (num) => `${num}px`;
 
 module.exports = {
-	purge: [],
-	darkMode: false,
+	content: ['./resources/views/**/*.{html,js,twig}'],
 	theme: {
 		fontFamily: {
 			body: ['Barlow', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif'],
