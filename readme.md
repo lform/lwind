@@ -31,8 +31,11 @@ Gulp builds tailwind via the gulp PostCss plugin. To manually invoke gulp, there
 
 ### JIT Compiling
 
-By default Tailwind 3.0 uses the JIT compiling method.
-TODO FINISH
+By default, Tailwind 3.0 uses the JIT compiling method which means it scans your markup in Html, Twig, and Javascript files for the classes you're using and only builds the classes it finds. If classes do not seem to work, this is likely the culprit.
+
+Previously Tailwind built everything and then purge was run afterwards, but this is no longer the case. JIT results in far faster compile times.
+
+Refer to [the documentation for more information].(https://tailwindcss.com/docs/content-configuration)
 
 ## PostCSS Plugins
 
@@ -46,11 +49,14 @@ The following PostCSS plugins are used:
 
 ### PostCSS Imports & Overriding Lwind
 
--   Imports are setup to read two paths:
-    -   `public/assets/tailwind/css`
-    -   `node_modules/@lform/lwind/css`
--   It first checks the project's `css` directory and uses the matching file if its found, otherwise it falls back to the `lwind` NPM package
--   To override the `lwind` package styling, add a file with a matching path & filename in the project `css` directory
+Imports are setup to read two paths:
+
+-   `public/assets/css`
+-   `node_modules/@lform/lwind/css`
+
+It first checks the project's `css` directory and uses the matching file if its found, otherwise it falls back to the `lwind` NPM package CSS
+
+To override the `lwind` package styling, add a file with a matching path & filename in the project `css` directory
 
 ## Tailwind Config
 
