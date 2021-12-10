@@ -3,8 +3,8 @@ module.exports = {
 	plugins: [
 		require('postcss-import')({
 			path: [
-				'./node_modules/@lform/lwind/css',
 				'./public/assets/tailwind/css',
+				'./node_modules/@lform/lwind/css',
 			],
 		}),
 		require('precss'),
