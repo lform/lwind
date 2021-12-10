@@ -1,16 +1,16 @@
 .cta-area {
 	.cta {
-		@media (min-width: 640px) {
+		@media (min-width: theme('screens.sm')) {
 			grid-template-columns: rem(305px) 1fr;
 		}
 
-		@media (min-width: 1024px) {
+		@media (min-width: theme('screens.md')) {
 			grid-template-columns: rem(305px) 1fr rem(250px);
 		}
 	}
 
 	.button-area {
-		@media (max-width: 768px) {
+		@media (max-width: theme('screens.md')) {
 			.button {
 				@apply py-1.5 px-3 -text-ms-1;
 			}
