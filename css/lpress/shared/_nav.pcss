@@ -7,6 +7,11 @@
 
 	.submenu {
 		@apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
+
+		/* Mobile submenu */
+		@media (max-width: theme('screens.xl')) {
+			@apply w-auto relative text-ms-0;
+		}
 	}
 
 	/* General navigation items, applies to all nav items */
@@ -44,6 +49,11 @@
 		.lvl-0 > .nav-disclosure > .nav-link,
 		.lvl-0 > .nav-link {
 			@apply text-white p-4 text-ms-0 border-primary-dark border-b w-60;
+		}
+
+		.lvl-1 > .nav-disclosure > .nav-link,
+		.lvl-1 > .nav-link {
+			@apply text-ms-0;
 		}
 	}
 }
