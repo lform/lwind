@@ -35,7 +35,7 @@ By default, Tailwind 3.0 uses the JIT compiling method which means it scans your
 
 Previously Tailwind built everything and then purge was run afterwards, but this is no longer the case. JIT results in far faster compile times.
 
-Refer to [the documentation for more information].(https://tailwindcss.com/docs/content-configuration)
+Refer to [the documentation for more information](https://tailwindcss.com/docs/content-configuration).
 
 ## PostCSS Plugins
 
