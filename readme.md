@@ -157,11 +157,11 @@ Button classes are baked into Lwind and can be invoked with the following option
 
 #### Sizing
 
--   button-xs
--   button-sm
--   button - Default size
--   button-lg
--   button-xl
+-   `button-xs`
+-   `button-sm`
+-   `button` - Default size
+-   `button-lg`
+-   `button-xl`
 
 #### Examples
 
