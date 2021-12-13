@@ -1,4 +1,4 @@
-.main-nav {
+.main-nav-area {
 	@apply z-10;
 
 	.nav-lvl-0 {
@@ -7,6 +7,11 @@
 
 	.submenu {
 		@apply bg-white text-ms-2 absolute w-48 border-primary border-b-4 text-primary;
+
+		/* Mobile submenu */
+		@media (max-width: theme('screens.xl')) {
+			@apply w-auto relative text-ms-0;
+		}
 	}
 
 	/* General navigation items, applies to all nav items */
@@ -30,8 +35,8 @@
 	}
 
 	/* Mobile navigation side menu */
-	@media (max-width: 1124px) {
-		@apply fixed bg-primary border-primary-dark border-r-4 text-white top-0 bottom-0 w-60 -left-60 opacity-0;
+	@media (max-width: theme('screens.xl')) {
+		@apply fixed bg-primary border-primary-dark text-white border-r-4 top-0 bottom-0 w-60 -left-60 opacity-0;
 		transition: left 0.4s ease, opacity 0.4s ease;
 		&.active {
 			@apply left-0 opacity-100;
@@ -44,6 +49,11 @@
 		.lvl-0 > .nav-disclosure > .nav-link,
 		.lvl-0 > .nav-link {
 			@apply text-white p-4 text-ms-0 border-primary-dark border-b w-60;
+		}
+
+		.lvl-1 > .nav-disclosure > .nav-link,
+		.lvl-1 > .nav-link {
+			@apply text-ms-0;
 		}
 	}
 }
