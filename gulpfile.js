@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp'),
-	sass = require('gulp-dart-scss'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	minifyJs = require('gulp-terser'),
@@ -19,7 +18,7 @@ const url = assets().url;
 
 // # Process App CSS Files
 gulp.task('styles:site', () =>
-	buildTailwind(assets().collections.tailwind, distPath, 'app')
+	buildTailwind(assets().collections.stylesheets, distPath, 'app')
 );
 
 gulp.task('styles:editor', () =>
@@ -60,9 +59,8 @@ gulp.task('browser-sync', () => {
 
 // # Watch Files For Changes
 gulp.task('watch', () => {
-	gulp.watch('./public/assets/js/*.ts', gulp.series('scripts'));
-	gulp.watch('./public/assets/scss/**/*.scss', gulp.series('styles'));
-	gulp.watch('./public/assets/css/**/*.pcss', gulp.series('styles'));
+	gulp.watch('./js/**/**.ts', gulp.series('scripts'));
+	gulp.watch('./css/**/*.pcss', gulp.series('styles'));
 	gulp.watch('./resources/views/**/*.*');
 });
 
@@ -80,7 +78,7 @@ function buildStyles(files, path, name) {
 		.pipe(plumber({ errorHandler: errorAlert }))
 		.pipe(
 			sass({
-				includePaths: ['./public/assets/scss', './node_modules'],
+				includePaths: ['./scss', './node_modules'],
 			})
 		)
 		.pipe(autoprefixer())
@@ -113,7 +111,7 @@ function transpile() {
 		.src()
 		.pipe(project())
 		.js.pipe(plumber({ errorHandler: errorAlert }))
-		.pipe(gulp.dest('public/assets/js'));
+		.pipe(gulp.dest('./'));
 }
 
 function buildScripts(files, path, name) {

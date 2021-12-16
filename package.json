@@ -1,15 +1,15 @@
 {
 	"name": "@lform/lwind",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Customized tailwind framework & theme implementation",
 	"main": "package.json",
 	"private": false,
 	"scripts": {
 		"dev": "npx gulp",
 		"prod": "npx gulp build --prod",
-		"tailwind-dev": "npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css",
-		"tailwind-watch": "npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css --watch",
-		"tailwind-production": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./public/assets/dist/app.css --minify"
+		"tailwind-dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
+		"tailwind-watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
+		"tailwind-prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
 	},
 	"repository": {
 		"type": "git",
@@ -40,6 +40,7 @@
 		"@tailwindcss/forms": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.0",
 		"autoprefixer": "^10.4.0",
+		"babel-polyfill": "^6.26.0",
 		"postcss": "^8.4.4",
 		"postcss-advanced-variables": "^3.0.1",
 		"postcss-import": "^14.0.2",
