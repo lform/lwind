@@ -5,28 +5,32 @@
 	.container-md,
 	.container-lg,
 	.container-xl {
-		@apply mx-auto px-4;
+		@apply mx-auto;
+		padding-left: theme("containers.padding");
+		padding-right: theme("containers.padding");
+	}
+
+	.container {
+		max-width: theme("containers.DEFAULT");
 	}
 
 	.container-sm {
-		max-width: theme("screens.sm");
+		max-width: theme("containers.sm");
 	}
 
 	.container-md {
-		max-width: theme("screens.md");
+		max-width: theme("containers.md");
 	}
 
 	.container-lg {
-		max-width: theme("screens.lg");
+		max-width: theme("containers.lg");
 	}
 
 	.container-xl {
-		max-width: theme("screens.xl");
+		max-width: theme("containers.xl");
 	}
 
-	/* Default container is max breakpoint size */
-	.container,
 	.container-2xl {
-		max-width: theme("screens.2xl");
+		max-width: theme("containers.2xl");
 	}
 }

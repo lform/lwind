@@ -21,9 +21,6 @@ module.exports = {
 			],
 		},
 		fontSize: {
-			// The font-scaling system uses Modular Scale
-			// Base is 16px with 1.125x scaling
-			// Reference: https://www.modularscale.com/?16&px&1.125
 			'-ms-3': rem(10),
 			'-ms-2': rem(12),
 			'-ms-1': rem(14),
@@ -41,16 +38,9 @@ module.exports = {
 			'ms-11': rem(58),
 			'ms-12': rem(65),
 		},
-		// For reference
-		// screens: {
-		//   sm: "640px",
-		//   md: "768px",
-		//   lg: "1024px",
-		//   xl: "1280px",
-		//   "2xl": "1536px",
-		// },
 		colors: {
-			// Primary, secondary, tertiary should have the main brand colors, then up-shade and down-shade
+			// Primary, secondary, tertiary should have the main brand colors,
+			// then up-shade and down-shade for the light and dark versions
 			primary: {
 				light: '#e52560',
 				DEFAULT: '#a01b44',
@@ -110,6 +100,18 @@ module.exports = {
 				vimeo: '#1ab7ea',
 				yelp: '#f43939',
 			},
+			color: {
+				link: '#a01b44',
+			},
+		},
+		containers: {
+			sm: rem(640),
+			md: rem(768),
+			lg: rem(1024),
+			xl: rem(1280),
+			'2xl': rem(1536),
+			DEFAULT: rem(1536),
+			padding: '1.5rem',
 		},
 		extend: {
 			spacing: {
@@ -155,13 +157,6 @@ module.exports = {
 					},
 				},
 			}),
-		},
-	},
-	variants: {
-		extend: {
-			gridColumn: ['first', 'last'],
-			maxHeight: ['focus'],
-			scale: ['focus-within'],
 		},
 	},
 	corePlugins: {
