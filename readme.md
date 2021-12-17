@@ -173,15 +173,19 @@ Button classes are baked into Lwind and can be invoked with the following option
 Tailwind's default containers are disabled in favor of a fluid container system. There are five container sizes that match the [default breakpoint sizes](https://tailwindcss.com/docs/screens).
 
 -   Containers are auto-centered with `margin-left` & `margin-right` set to `auto`.
--   They also have a default padding of `px-4`.
+-   They also have a default padding of `1.5rem`.
+-   Container widths & padding can be configured in the Tailwind config under the `containers` section
+-   If a class of `px-0` is added to a container, the padding will be disabled
+-   If a class of `mx-0` is added to a container, the auto-centering margin will be disabled.
 
-#### Classes
+#### Classes & Default Sizes
 
--   `container` - Max of the `2xl` screen size
--   `container-xl` - Max of the `xl` screen size
--   `container-lg` - Max of the `lg` screen size
--   `container-md` - Max of the `md` screen size
--   `container-sm` - Max of the `sm` screen size
+-   `container` - Max of `1536px`
+-   `container-2xl` - Max of `1536px`
+-   `container-xl` - Max of `1280px`
+-   `container-lg` - Max of `1024px`
+-   `container-md` - Max of `768px`
+-   `container-sm` - Max of `640px`
 
 ## TODOS
 
