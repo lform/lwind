@@ -24,7 +24,7 @@
 
 	.lvl-0 > .nav-disclosure > .nav-link,
 	.lvl-0 > .nav-link {
-		@apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-white xl:flex xl:items-center xl:flex-row;
+		@apply text-grey-900 block font-bold p-6 text-ms-1 hover:text-primary focus:bg-primary focus:text-primary-fg xl:flex xl:items-center xl:flex-row;
 		transition: background-color 0.4s ease, color 0.4s ease;
 	}
 
@@ -36,7 +36,7 @@
 
 	/* Mobile navigation side menu */
 	@media (max-width: theme('screens.xl')) {
-		@apply fixed bg-primary border-primary-dark text-white border-r-4 top-0 bottom-0 w-60 -left-60 opacity-0;
+		@apply fixed bg-primary border-primary-dark text-primary-fg border-r-4 top-0 bottom-0 w-60 -left-60 opacity-0;
 		transition: left 0.4s ease, opacity 0.4s ease;
 		&.active {
 			@apply left-0 opacity-100;
