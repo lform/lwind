@@ -45,19 +45,19 @@ module.exports = {
 				light: '#e52560',
 				DEFAULT: '#a01b44',
 				dark: '#710627',
-				foreground: '#fff',
+				fg: '#fff',
 			},
 			secondary: {
 				light: '#fdf0a9',
 				DEFAULT: '#dbc764',
 				dark: '#d0b635',
-				foreground: '#000',
+				fg: '#000',
 			},
 			tertiary: {
 				light: '#d3356c',
 				DEFAULT: '#a01b44',
 				dark: '#710627',
-				foreground: '#fff',
+				fg: '#fff',
 			},
 			// Accents should be added as numeric items
 			accent: {

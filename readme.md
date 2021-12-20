@@ -85,7 +85,7 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 -   **Main colors** are named following a `primary`, `secondary`, `tertiary` logic for the main brand colors.
 
     -   Each has a `light` and `dark` (up-shade / down-shade) version
-    -   Each has a `foreground` version for the color to use for foreground text on a background with this color, eg buttons
+    -   Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
 
 -   **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
     to be added as necessary to accommodate a design.
@@ -151,9 +151,9 @@ Button classes are baked into Lwind and can be invoked with the following option
 
 #### Colors
 
--   `button` - The default button, uses the `primary` color as its background and `primary-foreground` as the text color
--   `button-secondary` - The secondary color button, uses the `secondary` color as its background and `secondary-foreground` as the text color
--   `button-tertiary` - The tertiary color button, uses the `tertiary` color as its background and `tertiary-foreground` as the text color
+-   `button` - The default button, uses the `primary` color as its background and `primary-fg` as the text color
+-   `button-secondary` - The secondary color button, uses the `secondary` color as its background and `secondary-fg` as the text color
+-   `button-tertiary` - The tertiary color button, uses the `tertiary` color as its background and `tertiary-fg` as the text color
 
 #### Sizing
 

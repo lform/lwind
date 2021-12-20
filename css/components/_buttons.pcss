@@ -1,16 +1,16 @@
 @layer components {
 	.button {
 		/* Default button */
-		@apply inline-block py-3 px-6 bg-primary text-primary-foreground hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black tracking-widest leading-tight;
+		@apply inline-block py-3 px-6 bg-primary text-primary-fg hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black tracking-widest leading-tight;
 
 		/* Color Variants */
 
 		&.button-secondary {
-			@apply bg-secondary text-secondary-foreground hover:bg-secondary-dark;
+			@apply bg-secondary text-secondary-fg hover:bg-secondary-dark;
 		}
 
 		&.button-tertiary {
-			@apply bg-tertiary text-tertiary-foreground border-primary border-2;
+			@apply bg-tertiary text-tertiary-fg border-primary border-2;
 		}
 
 		/* Size Variants */
