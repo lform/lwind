@@ -27,6 +27,7 @@ class Privacy{
 			event.preventDefault();
 			const types = Object.values(this.types);
 
+			// @ts-ignore
 			switch(event.submitter.value){
 				case 'allow':
 					this.sendEvent();
