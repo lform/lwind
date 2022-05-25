@@ -113,6 +113,9 @@ module.exports = {
 			DEFAULT: rem(1536),
 			padding: '1.5rem',
 		},
+		richtext: {
+			headerFontWeight: 'bold',
+		},
 		extend: {
 			spacing: {
 				xs: '0.25rem',
