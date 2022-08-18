@@ -3,14 +3,14 @@
 The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing
 for the flexibility required to implement designs produced using the Lform design system.
 
--   Requires Tailwind 3.0+
+-   Requires Tailwind 3.1.0+
 -   Requires Gulp 4.0+ for build system
 
 ## Resources
 
 -   [Tailwind Documentation](https://tailwindcss.com/docs)
 
--   [PostCSS Plugins](https://github.com/postcss/postcss)
+-   [PostCSS Plugins](https://github.com/postcss/postcss) - No longer used directly, all plugins from this package have been included in this package as the PostCSS package is no longer updated, it was just a wrapper for those packages.
 
 -   [TailWind UI KIts](https://www.tailwindawesome.com/?type=kit) - For reference for building components
 
