@@ -84,11 +84,11 @@ class SubNavigation {
 	}
 
 	hide(element: HTMLElement): this {
-		element.parentElement.classList.remove(this.class.active)
+		element.closest('details').classList.remove(this.class.active)
 
-		if (element.parentElement.hasAttribute('open')) {
+		if (element.closest('details').hasAttribute('open')) {
 			setTimeout(function (): void {
-				element.parentElement.removeAttribute('open');
+				element.closest('details').removeAttribute('open');
 			}, NavToggle.isMobile() ? 0 : 400);
 		}
 
@@ -96,10 +96,10 @@ class SubNavigation {
 	}
 
 	show(element: HTMLElement): this {
-		element.parentElement.classList.add(this.class.active)
+		element.closest('details').classList.add(this.class.active)
 
-		if (!element.parentElement.hasAttribute('open')) {
-			element.parentElement.setAttribute('open', '');
+		if (!element.closest('details').hasAttribute('open')) {
+			element.closest('details').setAttribute('open', '');
 		}
 
 		return this;
