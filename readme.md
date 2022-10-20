@@ -130,9 +130,25 @@ The font-scaling system uses Modular Scale instead of Tailwind's default
     -   `text-ms-11` = 58px
     -   `text-ms-12` = 65px
 
-#### Header utility classes
+#### Header and subheader utility classes
 
-Modular scale header utility classes have been included that include the header font with a default line-height of `1.2`
+Modular scale header utility classes have been included that include the header font with a default line-height of `1.25` (`leading-tight` in tailwind)
+
+These are invoked in one of 4 ways:
+
+* `h-ms-1` - Bold Header, MS 1
+* `hl-ms-1` - Light Header, MS 1
+* `sh-ms-1` - Bold SubHeader, MS 1
+* `shl-ms-1` - Light SubHeader, MS 1
+
+For the default font size, remove the number at the end:
+
+* `h-ms` - Bold Header, MS 0
+* `hl-ms` - Light Header, MS 0
+* `sh-ms` - Bold SubHeader, MS 0
+* `shl-ms` - Light SubHeader, MS 0
+
+##### Deprecated Header Method
 
 These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on
 
