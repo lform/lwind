@@ -1,4 +1,10 @@
 .rich-text {
+	@apply leading-normal;
+
+	> *:not(:last-child) {
+		@apply mt-0 mb-4;
+	}
+
 	.button {
 		@apply no-underline;
 	}
@@ -9,46 +15,56 @@
 	h4,
 	h5,
 	h6 {
-		// Header styles
-		font-weight: theme('richtext.headerFontWeight');
+		// Prevents pasted styles from creating inconsistent headers
+		font-weight: theme("richtext.headerFontWeight") !important;
+		@apply font-header leading-tight !important;
+		* {
+			font-weight: theme("richtext.headerFontWeight") !important;
+			@apply font-header leading-tight !important;
+		}
 	}
 
 	h1 {
-		@apply text-hms-8;
+		@apply text-ms-7;
 	}
 
 	h2 {
-		@apply text-hms-7;
+		@apply text-ms-5;
 	}
 
 	h3 {
-		@apply text-hms-6;
+		@apply text-ms-4;
 	}
 
 	h4 {
-		@apply text-hms-5;
+		@apply text-ms-1;
 	}
 
 	h5 {
-		@apply text-hms-3;
+		@apply text-ms-0;
 	}
 
 	h6 {
-		@apply text-hms-1;
+		@apply -text-ms-1;
 	}
 
 	figure {
-		@apply flex flex-col justify-center text-center mb-4;
+		@apply text-center mb-4;
 	}
 
 	figcaption {
 	}
 
-	/* TODO custom bullets */
+	img {
+		max-width: 100% !important;
+	}
 
 	.pull-center,
 	.aligncenter {
 		@apply text-center mx-auto block;
+		img {
+			display: inline-block;
+		}
 	}
 
 	@media (min-width: 640px) {
@@ -70,4 +86,67 @@
 		margin: 0.5em 0 0.5em 1em;
 	}
 
+	ul, ol {
+		> li::marker {
+			color: theme("colors.primary.DEFAULT");
+			font-weight: bold !important;
+		}
+
+		li li::marker {
+			color: theme("colors.secondary.DEFAULT");
+		}
+
+		li li li::marker {
+			color: theme("colors.primary.DEFAULT");
+
+		}
+	}
+
+	ul li li {
+		list-style: square;
+
+		li {
+			list-style: circle;
+		}
+	}
+
+	ol li li {
+		list-style: upper-alpha;
+
+		li {
+			list-style: upper-roman;
+		}
+	}
+
+	table {
+		@apply w-full overflow-scroll border-collapse;
+
+		td, th {
+			@apply px-3 py-2 leading-tight text-left;
+			p {
+				// Prevents pasted P tags from adding extra margins
+				@apply my-0 !important;
+			}
+		}
+
+		th {
+			@apply border-b-2 border-b-primary font-bold font-header;
+		}
+
+		td {
+			@apply border-b border-b-grey-100;
+		}
+	}
+
+	/* For richtext areas on dark backgrounds */
+
+	&.inverted {
+		@apply text-white;
+
+		ul, ol {
+			::marker {
+				color: theme("colors.white.DEFAULT") !important;
+			}
+		}
+	}
 }
