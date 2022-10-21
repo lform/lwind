@@ -80,7 +80,7 @@ module.exports = {
 				transparent: 'rgba(255,255,255,0.7)',
 				DEFAULT: '#fefefe',
 			},
-			transparent: rgba(0,0,0,0),
+			transparent: 'rgba(0,0,0,0)',
 			feedback: {
 				success: '#6dcff6',
 				warning: '#fdf0a9',
