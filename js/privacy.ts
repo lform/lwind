@@ -40,7 +40,12 @@ class Privacy{
 					break;
 
 				case 'disable':
-					types.forEach((key: string): void => Cookies.delete(this.title(key)));
+					//types.forEach((key: string): void => Cookies.delete(this.title(key)));
+					types.forEach((key: string): void => Cookies.set(
+						this.title(key),
+						0,
+						Cookies.weekInSeconds
+					));
 
 					break;
 			}
