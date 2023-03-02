@@ -1,6 +1,6 @@
 {
 	"name": "@lform/lwind",
-	"version": "1.0.28",
+	"version": "1.0.29",
 	"description": "Customized tailwind framework & theme implementation",
 	"main": "package.json",
 	"private": false,
@@ -51,7 +51,8 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-terser": "^2.0.1",
 		"gulp-typescript": "^6.0.0-alpha.1",
-		"gulp-uglify": "^3.0.2"
+		"gulp-uglify": "^3.0.2",
+		"@types/node": "^17.0.41"
 	},
 	"browserslist": [
 		"last 2 versions",
