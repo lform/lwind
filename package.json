@@ -22,7 +22,10 @@
 	"keywords": [],
 	"author": "Lform Design",
 	"license": "ISC",
-	"devDependencies": {},
+	"devDependencies": {
+		"glob-parent": ">=5.1.2",
+		"node-notifier": ">=8.0.1"
+	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.0",
 		"@tailwindcss/typography": "^0.5.0",

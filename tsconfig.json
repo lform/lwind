@@ -16,6 +16,7 @@
 		"allowJs": false,
 		"sourceMap": true,
 		"outFile": "./dist/lwind.js",
-		"alwaysStrict": true
+		"alwaysStrict": true,
+		"skipLibCheck": true
 	}
 }
