@@ -37,6 +37,7 @@ module.exports = {
 			'ms-10': rem(52),
 			'ms-11': rem(58),
 			'ms-12': rem(65),
+			'ms-13': rem(72),
 		},
 		colors: {
 			// Primary, secondary, tertiary should have the main brand colors,
@@ -103,6 +104,8 @@ module.exports = {
 			},
 			color: {
 				link: '#a01b44',
+				'field': '#E4EEF7',
+				'field-required': '#F2EED6',
 			},
 		},
 		containers: {
@@ -111,6 +114,7 @@ module.exports = {
 			lg: rem(1024),
 			xl: rem(1280),
 			'2xl': rem(1536),
+			'3xl': rem(1800),
 			DEFAULT: rem(1536),
 			padding: '1.5rem',
 		},
@@ -134,6 +138,9 @@ module.exports = {
 						a: {
 							color: theme('colors.primary'),
 						},
+						table: {
+							fontSize: '1rem'
+						}
 					},
 				},
 				sm: {
