@@ -3,8 +3,8 @@
 The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing
 for the flexibility required to implement designs produced using the Lform design system.
 
--   Requires Tailwind 3.1.0+
--   Requires Gulp 4.0+ for build system
+-   Requires Tailwind 3.4.0+
+-   Requires Gulp 5.0+ for build system
 
 ## Resources
 
