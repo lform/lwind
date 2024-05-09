@@ -62,7 +62,6 @@ To override the `lwind` package styling, add a file with a matching path & filen
 
 ### Tailwind Plugins
 
--   [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) - Used to provide rich-text styling
 -   [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) - Used to provide default baseline form styling
 
 ### Breakpoints
