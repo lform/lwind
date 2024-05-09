@@ -3,8 +3,8 @@
 The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing
 for the flexibility required to implement designs produced using the Lform design system.
 
--   Requires Tailwind 3.1.0+
--   Requires Gulp 4.0+ for build system
+-   Requires Tailwind 3.4.0+
+-   Requires Gulp 5.0+ for build system
 
 ## Resources
 
@@ -62,7 +62,6 @@ To override the `lwind` package styling, add a file with a matching path & filen
 
 ### Tailwind Plugins
 
--   [@tailwindcss/typography](https://github.com/tailwindlabs/tailwindcss-typography) - Used to provide rich-text styling
 -   [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) - Used to provide default baseline form styling
 
 ### Breakpoints
@@ -73,12 +72,6 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 
 -   Designs are implemented using a base spacing sizing of 8 pixels.
 -   This is Tailwind's default spacing system, [refer to the documentation as necessary.](https://tailwindcss.com/docs/customizing-spacing)
--   Adds 5 spacing-helper class suffixes:
-    -   `xs` = extra small gap of `5.28px` or `0.33rem`
-    -   `s` = small gap of `8px` or `0.5rem`
-    -   `m` = medium gap of `16px` or `1rem`
-    -   `l` = medium gap of `32px` or `2rem`
-    -   `xl` = medium gap of `48px` or `3rem`
 
 ### Colors
 
@@ -154,10 +147,7 @@ These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on
 
 #### Richtext
 
-Tailwind's typography plugin is used for all rich-text areas. The main differences from the default setup are:
-
--   `rich-text` is configured as the typography class name instead of the default of `prose`
--   By default, the plugin sets a `max-width: 65ch` on all richtext areas, this has been replaced with `max-width: 100%`
+A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
 
 ## Tailwind Utilities & Components
 
@@ -202,10 +192,3 @@ Tailwind's default containers are disabled in favor of a fluid container system.
 -   `container-lg` - Max of `1024px`
 -   `container-md` - Max of `768px`
 -   `container-sm` - Max of `640px`
-
-## TODOS
-
--   Create component demo sheet to see Lpress styling at a glance
--   Implement drilldown kit - https://mmenujs.com/
--   Implement components
-    -   Gallery
