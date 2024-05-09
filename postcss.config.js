@@ -1,9 +1,7 @@
 module.exports = {
 	parser: 'postcss-scss',
 	plugins: [
-		require('postcss-import')({
-			path: ['./css', './node_modules/@lform/lwind/css'],
-		}),
+		require('postcss-import'),
 		require('postcss-advanced-variables'),
 		require('postcss-atroot'),
 		require('postcss-extend-rule'),
