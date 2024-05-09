@@ -3,40 +3,4 @@
 	body {
 		@apply bg-white p-0 antialiased;
 	}
-
-	/* Form Element Colors, Overrides Tailwind Form Colors */
-	input:not([type="checkbox"], [type="radio"], [type="button"], [type="submit"]),
-	textarea,
-	select {
-		@apply bg-white;
-	}
-
-	[type='text']:focus,
-	[type='email']:focus,
-	[type='url']:focus,
-	[type='password']:focus,
-	[type='number']:focus,
-	[type='date']:focus,
-	[type='datetime-local']:focus,
-	[type='month']:focus,
-	[type='search']:focus,
-	[type='tel']:focus,
-	[type='time']:focus,
-	[type='week']:focus,
-	[multiple]:focus,
-	textarea:focus,
-	select:focus {
-		--tw-ring-color: theme("colors.primary.light");
-		border-color: var(--tw-ring-color);
-	}
-
-	[type="checkbox"],
-	[type="radio"] {
-		color: theme("colors.primary.DEFAULT");
-	}
-
-	[type="checkbox"]:focus,
-	[type="radio"]:focus {
-		--tw-ring-color: theme("colors.primary.light");
-	}
 }
