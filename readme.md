@@ -4,7 +4,6 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 for the flexibility required to implement designs produced using the Lform design system.
 
 -   Requires Tailwind 3.4.0+
--   Requires Gulp 5.0+ for build system
 
 ## Resources
 
@@ -16,47 +15,30 @@ for the flexibility required to implement designs produced using the Lform desig
 
 ## Building
 
--   `npm run dev` - Builds development version of tailwind file and watches files
+-   `npm run dev` - Builds development version of tailwind file
+-   `npm run watch` - Builds development version of tailwind file and watches files
 -   `npm run prod` - Builds development version of tailwind file
-
-### Gulp
-
-Gulp builds tailwind via the gulp PostCss plugin. To manually invoke gulp, there are the following tasks available:
-
--   `npx gulp watch` - Watches files
--   `npx gulp styles` - Builds site & editor styles
--   `npx gulp styles:site` - Builds site styles
--   `npx gulp styles:editor` - Builds editor styles
--   `npx gulp build` - Builds everything
-
-### JIT Compiling
-
-By default, Tailwind 3.0 uses the JIT compiling method which means it scans your markup in Html, Twig, and Javascript files for the classes you're using and only builds the classes it finds. If classes do not seem to work, this is likely the culprit.
-
-Previously Tailwind built everything and then purge was run afterwards, but this is no longer the case. JIT results in far faster compile times.
-
-Refer to [the documentation for more information](https://tailwindcss.com/docs/content-configuration).
 
 ## PostCSS Plugins
 
-The following PostCSS plugins are used:
+The following PostCSS plugins are used by default:
 
 -   [postcss-import](https://github.com/postcss/postcss-import) - Used to import other PCSS files
 -   [autoprefixer](https://github.com/postcss/autoprefixer) - Autoprefixes CSS for browser compatibility
--   [precss](https://github.com/csstools/precss) - Used to allow nesting and other SCSS-like functionality
--   [postcss-rem](https://github.com/pierreburel/postcss-rem) - Used to convert pixel values to rem, adds `rem()` function that can be invoked in PCSS. `px` must be specified or it will not function, eg `width: rem(100px)`.
--
+-   [postcss-advanced-variables](https://github.com/csstools/postcss-advanced-variables) - Used to define SCSS-style variables in PCSS with more advanced functionality than CSS variables
+-   [postcss-atroot](https://github.com/OEvgeny/postcss-atroot) - Used to add `@at-root` functionality to PCSS, bubbling nested styling up to the root-level selectors.
+-   [postcss-extend-rule](https://github.com/csstools/postcss-extend-rule) - Used to add SCSS-style `@extend` functionality to PCSS, allowing for the extension of existing classes.
+-   [tailwindcss/nesting](https://www.npmjs.com/package/@tailwindcss/nesting) - Wraps `postcss-nested` and acts as a compatibility layer to make sure your nesting plugin of choice properly understands custom syntax like `@apply` and `@screen`.
+
+### Recommend Plugins
+
+The following PostCSS plugins are recommend depending on your needs:
+
+- [postcss-rem](https://github.com/pierreburel/postcss-rem) - Used to convert pixel values to rem, adds a `rem-convert()` function that can be invoked in PCSS. `px` must be specified, or it will not function, eg `width: rem-convert(100px)`. 
 
 ### PostCSS Imports & Overriding Lwind
 
-Imports are setup to read two paths:
-
--   `public/assets/css`
--   `node_modules/@lform/lwind/css`
-
-It first checks the project's `css` directory and uses the matching file if its found, otherwise it falls back to the `lwind` NPM package CSS
-
-To override the `lwind` package styling, add a file with a matching path & filename in the project `css` directory
+You can override the Lwind CSS by adding a file with the same path & filename in the project's PCSS directory and adjusting the `@import` statement in the `main.pcss` file. 
 
 ## Tailwind Config
 
@@ -139,13 +121,7 @@ For the default font size, remove the number at the end:
 * `h-ms` - Bold Header, MS 0
 * `hl-ms` - Light Header, MS 0
 * `sh-ms` - Bold SubHeader, MS 0
-* `shl-ms` - Light SubHeader, MS 0
-
-##### Deprecated Header Method
-
-These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on
-
-#### Richtext
+conver#### Richtext
 
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
 
