@@ -88,7 +88,7 @@ The font-scaling system uses Modular Scale instead of Tailwind's default
 -   The scale included with Lwind goes from `-3` to `12`
 -   Below are the scales, or you refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list:
 
-    -   `-text-ms-3` = 10px
+    -   `-text-ms-3` = 11px
     -   `-text-ms-2` = 12px
     -   `-text-ms-1` = 14px
     -   `text-ms-0` = 16px
@@ -101,9 +101,10 @@ The font-scaling system uses Modular Scale instead of Tailwind's default
     -   `text-ms-7` = 36px
     -   `text-ms-8` = 41px
     -   `text-ms-9` = 46px
-    -   `text-ms-10` = 52px
+    -   `text-ms-10` = 51px
     -   `text-ms-11` = 58px
     -   `text-ms-12` = 65px
+    -   `text-ms-13` = 73px
 
 #### Header and subheader utility classes
 
