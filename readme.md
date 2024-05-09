@@ -141,10 +141,6 @@ For the default font size, remove the number at the end:
 * `sh-ms` - Bold SubHeader, MS 0
 * `shl-ms` - Light SubHeader, MS 0
 
-##### Deprecated Header Method
-
-These are invoked with the pattern `text-hms-1`, `text-hms-2` and so on
-
 #### Richtext
 
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
