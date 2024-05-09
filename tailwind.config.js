@@ -1,6 +1,7 @@
+/* https://tailwindcss.com/docs/configuration */
+
 const em = (px) => `${px / 16}em`;
 const rem = (px) => `${px / 16}rem`;
-const px = (num) => `${num}px`;
 
 module.exports = {
 	content: ['./resources/views/**/*.{html,js,twig}'],
@@ -118,65 +119,66 @@ module.exports = {
 			DEFAULT: rem(1536),
 			padding: '1.5rem',
 		},
-		richtext: {
-			headerFontWeight: 'bold',
-		},
-		extend: {
+		extend: {},
+		richtext: ({ theme }) => ({
 			spacing: {
-				xs: '0.25rem',
-				s: '0.5rem',
-				m: '1rem',
-				l: '2rem',
-				xl: '4rem',
+				DEFAULT: '1rem',
+				hr: '2rem',
+				header: '2.5rem',
+				gallery: '3rem',
+				list: '1rem',
 			},
-			// Controls rich-text styling (tailwind typography plugin)
-			typography: (theme) => ({
-				DEFAULT: {
-					css: {
-						maxWidth: '100%',
-						lineHeight: 1.5,
-						a: {
-							color: theme('colors.primary'),
-						},
-						table: {
-							fontSize: '1rem'
-						}
-					},
-				},
-				sm: {
-					css: {
-						fontSize: rem(14),
-						lineHeight: 1.5,
-					},
-				},
-				lg: {
-					css: {
-						fontSize: rem(18),
-						lineHeight: 1.5,
-					},
-				},
-				xl: {
-					css: {
-						fontSize: rem(20),
-						lineHeight: 1.5,
-					},
-				},
-				'2xl': {
-					css: {
-						fontSize: rem(22),
-						lineHeight: 1.5,
-					},
-				},
-			}),
-		},
+			backgroundColors: {
+				'table-td': 'inherit',
+				'table-th': theme('colors.primary.DEFAULT'),
+			},
+			borderColors: {
+				'table-td': theme('colors.grey.300'),
+				'table-th': theme('colors.primary.light'),
+			},
+			colors: {
+				base: theme('colors.grey.900'),
+				bullet: theme('colors.primary.DEFAULT'),
+				blockquote: theme('colors.grey.900'),
+				link: theme('colors.primary.DEFAULT'),
+				'table-td': theme('colors.grey.900'),
+				'table-th': theme('colors.white.DEFAULT'),
+			},
+			fontFamily: {
+				'table-td': theme('fontFamily.body'),
+				'table-th': theme('fontFamily.subheader'),
+			},
+			fontSize: {
+				base: rem(16),
+				blockquote: rem(20),
+				'heading-1': rem(36),
+				'heading-2': rem(31),
+				'heading-3': rem(28),
+				'heading-4': rem(25),
+				'heading-5': rem(22),
+				'heading-6': rem(20),
+				'table-td': rem(20),
+				'table-th': rem(22),
+			},
+			fontWeight: {
+				base: 400,
+				blockquote: 700,
+				bullet: 700,
+				'heading-1': 700,
+				'heading-2': 700,
+				'heading-3': 700,
+				'heading-4': 700,
+				'heading-5': 700,
+				'heading-6': 700,
+				'table-td': 400,
+				'table-th': 700,
+			},
+		}),
 	},
 	corePlugins: {
 		container: false,
 	},
 	plugins: [
-		require('@tailwindcss/typography')({
-			className: 'rich-text',
-		}),
 		require('@tailwindcss/forms'),
 	],
 };

@@ -1,69 +1,244 @@
 .rich-text {
-	@apply leading-normal;
+	font-size: theme('richtext.fontSize.base');
+	font-weight: theme('richtext.fontWeight.base');
+	/*color: theme('richtext.colors.base');*/
 
-	> *:not(:last-child) {
-		@apply mt-0 mb-4;
+	/* For richtext areas on dark backgrounds */
+	&.inverted {
+		@apply text-white;
+
+		ul, ol {
+			::marker {
+				@apply text-white;
+			}
+		}
 	}
 
-	.button {
-		@apply no-underline;
+	/* Adds clearfix for all rich-text areas, in case user uses floats */
+	&:after {
+		clear: both;
+		content: "";
+		display: table;
 	}
 
+	/* Element Spacing */
+	blockquote,
+	code,
+	figure,
+	li,
+	ol,
+	pre,
+	ul,
+	table,
+	p,
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		// Prevents pasted styles from creating inconsistent headers
-		font-weight: theme("richtext.headerFontWeight") !important;
-		@apply font-header leading-tight !important;
-		* {
-			font-weight: theme("richtext.headerFontWeight") !important;
-			@apply font-header leading-tight !important;
+		&:not(:first-child) {
+			margin-top: theme('richtext.spacing.DEFAULT');
+		}
+
+		&:not(:last-child) {
+			margin-bottom: theme('richtext.spacing.DEFAULT');
+		}
+	}
+
+	/* Header Styling */
+	h1, h2, h3, h4, h5, h6 {
+		@apply font-header leading-tight;
+
+		&:not(:first-child) {
+			margin-top: theme('richtext.spacing.header');
 		}
 	}
 
 	h1 {
-		@apply text-ms-7;
+		font-size: theme('richtext.fontSize.heading-1');
+		font-weight: theme('richtext.fontWeight.heading-1');
 	}
 
 	h2 {
-		@apply text-ms-5;
+		font-size: theme('richtext.fontSize.heading-2');
+		font-weight: theme('richtext.fontWeight.heading-2');
 	}
 
 	h3 {
-		@apply text-ms-4;
+		font-size: theme('richtext.fontSize.heading-3');
+		font-weight: theme('richtext.fontWeight.heading-3');
 	}
 
 	h4 {
-		@apply text-ms-1;
+		font-size: theme('richtext.fontSize.heading-4');
+		font-weight: theme('richtext.fontWeight.heading-4');
 	}
 
 	h5 {
-		@apply text-ms-0;
+		font-size: theme('richtext.fontSize.heading-5');
+		font-weight: theme('richtext.fontWeight.heading-5');
 	}
 
 	h6 {
+		font-size: theme('richtext.fontSize.heading-6');
+		font-weight: theme('richtext.fontWeight.heading-6');
+	}
+
+	/* Paragraph Styling */
+	p {
+		@apply leading-normal;
+	}
+
+	sup,
+	sub {
 		@apply -text-ms-1;
 	}
 
+	/* Link Styling */
+	a {
+		@apply underline;
+		color: theme('richtext.colors.link');
+	}
+
+	/* Remove underline from buttons */
+	.button {
+		@apply no-underline;
+	}
+
+	/* Horizontal Rule */
+	hr {
+		margin: theme('richtext.spacing.hr') 0 !important;
+	}
+
+	/* Bullet Styling */
+	ul, ol {
+		@apply pl-10;
+
+		li {
+			> ol,
+			> ul {
+				margin-top: theme('richtext.spacing.list');
+			}
+
+			&::marker {
+				color: theme('richtext.colors.bullet');
+				font-weight: theme('richtext.fontWeight.bullet');
+			}
+		}
+	}
+
+	ul {
+		@apply list-disc;
+
+		li li {
+			list-style: square;
+
+			li {
+				list-style: circle;
+			}
+		}
+	}
+
+	ol {
+		@apply list-decimal;
+
+		li li {
+			list-style: upper-alpha;
+
+			li {
+				list-style: upper-roman;
+			}
+		}
+	}
+
+	/* Image & Caption Styling */
 	figure {
-		@apply text-center mb-4;
+		@apply flex flex-col items-center justify-center;
+
+		&:has(img) {
+			@apply w-fit;
+		}
 	}
 
 	figcaption {
+		@apply italic my-2 mx-4 text-grey-700 -text-ms-1 text-center;
 	}
 
 	img {
+		/* Prevents users from placing images larger than the rich-text area */
+		display: inline-block;
 		max-width: 100% !important;
 	}
 
+	/* Table Styling */
+	table {
+		@apply w-full;
+
+		tr {
+			th, td {
+				@apply align-top leading-tight py-3 px-6 text-left;
+			}
+
+			th {
+				@apply border-b font-subheader;
+				background-color: theme('richtext.backgroundColors.table-th');
+				border-color: theme('richtext.borderColors.table-th');
+				color: theme('richtext.colors.table-th');
+				font-family: theme('richtext.fontFamily.table-th');
+				font-size: theme('richtext.fontSize.table-th');
+				font-weight: theme('richtext.fontWeight.table-th');
+			}
+
+			td {
+				@apply border-b;
+				@apply last:border-r;
+				background-color: theme('richtext.backgroundColors.table-td');
+				border-color: theme('richtext.borderColors.table-td');
+				color: theme('richtext.colors.table-td');
+				font-family: theme('richtext.fontFamily.table-td');
+				font-size: theme('richtext.fontSize.table-td');
+				font-weight: theme('richtext.fontWeight.table-td');
+			}
+
+			>:first-child:is(td) {
+				@apply border-l;
+			}
+		}
+	}
+
+	/* Quote Styling */
+	blockquote {
+		@apply border border-grey-100 rounded-sm;
+		color: theme('richtext.colors.blockquote');
+		font-weight: theme('richtext.fontWeight.blockquote');
+
+		p {
+			@apply border-t-4 border-primary flex font-light font-subheader m-10 pt-4 text-ms-4;
+		}
+	}
+
+	/* Align Styling */
 	.pull-center,
 	.aligncenter {
-		@apply text-center mx-auto block;
-		img {
-			display: inline-block;
+		@apply block mx-auto text-center;
+	}
+
+	.alignleft,
+	.pull-left {
+		float: left;
+		margin: 0.75em 1.5em 0.75em 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.alignright,
+	.pull-right {
+		float: right;
+		margin: 0.75em 0 0.75em 1.5em;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 
@@ -76,82 +251,16 @@
 		}
 	}
 
-	.alignleft {
-		float: left;
-		margin: 0.5em 1em 0.5em 0;
-	}
-
-	.alignright {
-		float: right;
-		margin: 0.5em 0 0.5em 1em;
-	}
-
-	ul, ol {
-		> li::marker {
-			color: theme("colors.primary.DEFAULT");
-			font-weight: bold !important;
-		}
-
-		li li::marker {
-			color: theme("colors.secondary.DEFAULT");
-		}
-
-		li li li::marker {
-			color: theme("colors.primary.DEFAULT");
-
-		}
-	}
-
-	ul li li {
-		list-style: square;
-
-		li {
-			list-style: circle;
-		}
-	}
-
-	ol li li {
-		list-style: upper-alpha;
-
-		li {
-			list-style: upper-roman;
-		}
-	}
-
-	table {
-		@apply w-full overflow-scroll border-collapse;
-
-		td, th {
-			@apply px-3 py-2 leading-tight text-left;
-			p {
-				// Prevents pasted P tags from adding extra margins
-				@apply my-0 !important;
-			}
-		}
-
-		th {
-			@apply border-b-2 border-b-primary font-bold font-header;
-		}
-
-		td {
-			@apply border-b border-b-grey-100;
-		}
-	}
-
+	/* Iframe Styling */
 	iframe {
-		width: 100%;
 		max-width: 100%;
-	}
+		width: 100%;
 
-	/* For richtext areas on dark backgrounds */
-
-	&.inverted {
-		@apply text-white;
-
-		ul, ol {
-			::marker {
-				color: theme("colors.white.DEFAULT") !important;
-			}
+		&[src*="youtube"],
+		&[src*="vimeo"],
+		&[src*="video"] {
+			aspect-ratio: 16/9;
+			height: auto;
 		}
 	}
 }
