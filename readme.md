@@ -196,6 +196,7 @@ Flex Grid solves a common problem of creating a full width grid that has a set n
 -   To initiate a flex grid use the class `flex-grid`.
 -   Flex Grid defaults to 1 column, to change this use `flex-grid-cols-x`. replace `x` with the number of columns needed. *Min: 1, Max: 10*
 -   To change the horizontal spacing between Flex Grid items, use `flex-grid-gap-x`, you can replace `x` with any number on the Tailwind [default spacing scale](https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale). *Max: 12 (48px / 3 rem)*
+-   Flex Grid extends Tailwind utilities, to make the grid responsive use Tailwind media queries on like `sm:`, `md:` and `lg:` on `flex-grid-cols-` or `flex-grid-gap-`.
 -   Adjusting the vertical spacing can be done simply by using the Tailwind native `gap-y-` because Flex Grid is powered by Flexbox. 
 -   Putting a `margin-left` or `margin-right` on an element with `flex-grid` will result in the grid not displaying properly, to solve this use a container and apply the margin there.
 
@@ -204,3 +205,11 @@ Flex Grid solves a common problem of creating a full width grid that has a set n
 -   `flex-grid`
 -   `flex-grid-cols-x`
 -   `flex-grid-gap-x`
+
+#### Example Usage
+
+```html
+<div class="flex-grid flex-grid-cols-2 md:flex-grid-cols-3 flex-grid-gap-2">
+    <!-- A 3 column flex grid with an 8 pixel gap, 2 columns on tablet -->
+</div>
+```
