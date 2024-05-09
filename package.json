@@ -5,11 +5,9 @@
 	"main": "package.json",
 	"private": false,
 	"scripts": {
-		"dev": "npx gulp",
-		"prod": "npx gulp build --prod",
-		"tailwind-dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
-		"tailwind-watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
-		"tailwind-prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
+		"dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
+		"watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
+		"prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
 	},
 	"repository": {
 		"type": "git",
@@ -22,38 +20,14 @@
 	"keywords": [],
 	"author": "Lform Design",
 	"license": "ISC",
-	"devDependencies": {
-		"glob-parent": ">=5.1.2",
-		"node-notifier": ">=8.0.1"
-	},
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.7",
-		"@types/node": "^20.12.7",
-		"acorn": "^8.11.3",
 		"autoprefixer": "^10.4.19",
-		"babel-polyfill": "^6.26.0",
-		"browser-sync": "^3.0.2",
-		"gulp": "^5.0.0",
-		"gulp-autoprefixer": "^9.0.0",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-notify": "^4.0.0",
-		"gulp-plumber": "^1.2.1",
-		"gulp-postcss": "^10.0.0",
-		"gulp-rename": "^2.0.0",
-		"gulp-terser": "^2.0.1",
-		"gulp-typescript": "^6.0.0-alpha.1",
-		"gulp-uglify": "^3.0.2",
 		"postcss-advanced-variables": "^4.0.0",
 		"postcss-atroot": "^0.2.4",
 		"postcss-extend-rule": "^4.0.0",
 		"postcss-import": "^16.1.0",
 		"resolve-url-loader": "^5.0.0",
-		"tailwindcss": "^3.4.3",
-		"typescript": "^5.4.4"
-	},
-	"browserslist": [
-		"last 2 versions",
-		"> 1%"
-	]
+		"tailwindcss": "^3.4.3"
+	}
 }
