@@ -108,21 +108,38 @@ The font-scaling system uses Modular Scale instead of Tailwind's default
 
 #### Header and subheader utility classes
 
-Modular scale header utility classes have been included that include the header font with a default line-height of `1.25` (`leading-tight` in tailwind)
+Modular scale header utility classes have been included that include the header font with a default line-height of `1.2`. Headers with default line-heights will appear too spaced out between the lines, especially at larger font sizes. 
 
-These are invoked in one of 4 ways:
+##### Header Classes
 
-* `h-ms-1` - Bold Header, MS 1
-* `hl-ms-1` - Light Header, MS 1
-* `sh-ms-1` - Bold SubHeader, MS 1
-* `shl-ms-1` - Light SubHeader, MS 1
+    -   `-h-ms-3` = 11px
+    -   `-h-ms-2` = 12px
+    -   `-h-ms-1` = 14px
+    -   `h-ms` = 16px
+    -   `h-ms-1` = 18px
+    -   `h-ms-2` = 20px
+    -   `h-ms-3` = 22px
+    -   `h-ms-4` = 25px
+    -   `h-ms-5` = 28px
+    -   `h-ms-6` = 32px
+    -   `h-ms-7` = 36px
+    -   `h-ms-8` = 41px
+    -   `h-ms-9` = 46px
+    -   `h-ms-10` = 51px
+    -   `h-ms-11` = 58px
+    -   `h-ms-12` = 65px
+    -   `h-ms-13` = 73px
 
-For the default font size, remove the number at the end:
+##### Subheader Classes
 
-* `h-ms` - Bold Header, MS 0
-* `hl-ms` - Light Header, MS 0
-* `sh-ms` - Bold SubHeader, MS 0
-* `shl-ms` - Light SubHeader, MS 0
+Subheaders are generally smaller in size, their available classes are as follows:
+
+    -   `-sh-ms-3` = 11px
+    -   `-sh-ms-2` = 12px
+    -   `-sh-ms-1` = 14px
+    -   `sh-ms` = 16px
+    -   `sh-ms-1` = 18px
+    -   `sh-ms-2` = 20px
 
 #### Richtext
 
