@@ -22,7 +22,7 @@ module.exports = {
 			],
 		},
 		fontSize: {
-			'-ms-3': rem(10),
+			'-ms-3': rem(11),
 			'-ms-2': rem(12),
 			'-ms-1': rem(14),
 			'ms-0': rem(16),
@@ -35,10 +35,10 @@ module.exports = {
 			'ms-7': rem(36),
 			'ms-8': rem(41),
 			'ms-9': rem(46),
-			'ms-10': rem(52),
+			'ms-10': rem(51),
 			'ms-11': rem(58),
 			'ms-12': rem(65),
-			'ms-13': rem(72),
+			'ms-13': rem(73),
 		},
 		colors: {
 			// Primary, secondary, tertiary should have the main brand colors,
