@@ -50,4 +50,24 @@
 	.container-3xl {
 		max-width: theme("containers.3xl");
 	}
+
+	/* Fix any nested containers so their padding does not stack */
+	.container,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-2xl,
+	.container-3xl {
+		.container,
+		.container-sm,
+		.container-md,
+		.container-lg,
+		.container-xl,
+		.container-2xl,
+		.container-3xl {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
