@@ -122,7 +122,9 @@ For the default font size, remove the number at the end:
 * `h-ms` - Bold Header, MS 0
 * `hl-ms` - Light Header, MS 0
 * `sh-ms` - Bold SubHeader, MS 0
-conver#### Richtext
+* `shl-ms` - Light SubHeader, MS 0
+
+#### Richtext
 
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
 
