@@ -4,7 +4,6 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 for the flexibility required to implement designs produced using the Lform design system.
 
 -   Requires Tailwind 3.4.0+
--   Requires Gulp 5.0+ for build system
 
 ## Resources
 
@@ -16,26 +15,9 @@ for the flexibility required to implement designs produced using the Lform desig
 
 ## Building
 
--   `npm run dev` - Builds development version of tailwind file and watches files
+-   `npm run dev` - Builds development version of tailwind file
+-   `npm run watch` - Builds development version of tailwind file and watches files
 -   `npm run prod` - Builds development version of tailwind file
-
-### Gulp
-
-Gulp builds tailwind via the gulp PostCss plugin. To manually invoke gulp, there are the following tasks available:
-
--   `npx gulp watch` - Watches files
--   `npx gulp styles` - Builds site & editor styles
--   `npx gulp styles:site` - Builds site styles
--   `npx gulp styles:editor` - Builds editor styles
--   `npx gulp build` - Builds everything
-
-### JIT Compiling
-
-By default, Tailwind 3.0 uses the JIT compiling method which means it scans your markup in Html, Twig, and Javascript files for the classes you're using and only builds the classes it finds. If classes do not seem to work, this is likely the culprit.
-
-Previously Tailwind built everything and then purge was run afterwards, but this is no longer the case. JIT results in far faster compile times.
-
-Refer to [the documentation for more information](https://tailwindcss.com/docs/content-configuration).
 
 ## PostCSS Plugins
 
