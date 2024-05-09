@@ -48,7 +48,6 @@
 		"postcss-atroot": "^0.2.4",
 		"postcss-extend-rule": "^4.0.0",
 		"postcss-import": "^16.1.0",
-		"postcss-rem": "^3.0.0",
 		"resolve-url-loader": "^5.0.0",
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.4"
