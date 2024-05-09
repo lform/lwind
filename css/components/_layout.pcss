@@ -1,0 +1,15 @@
+@layer components {
+	/* Sticky Footer Setup */
+	body {
+		@apply flex flex-col h-full min-h-screen;
+	}
+
+	.site-header,
+	.site-footer {
+		@apply grow-0 shrink-0 basis-auto;
+	}
+
+	.site-main {
+		@apply grow shrink-0 basis-auto;
+	}
+}
