@@ -217,22 +217,22 @@ Flex Grid solves a common problem of creating a full width grid that has a set n
 -   `flex-grid-cols-10`
 
 
--   `flex-grid-gap-0.5`
--   `flex-grid-gap-1`
--   `flex-grid-gap-1.5`
--   `flex-grid-gap-2`
--   `flex-grid-gap-2.5`
--   `flex-grid-gap-3`
--   `flex-grid-gap-3.5`
--   `flex-grid-gap-4`
--   `flex-grid-gap-5`
--   `flex-grid-gap-6`
--   `flex-grid-gap-7`
--   `flex-grid-gap-8`
--   `flex-grid-gap-9`
--   `flex-grid-gap-10`
--   `flex-grid-gap-11`
--   `flex-grid-gap-12`
+-   `flex-grid-gap-0.5` = 2px
+-   `flex-grid-gap-1` = 4px
+-   `flex-grid-gap-1.5` = 6px
+-   `flex-grid-gap-2` = 8px
+-   `flex-grid-gap-2.5` = 10px
+-   `flex-grid-gap-3` = 12px
+-   `flex-grid-gap-3.5` = 14px
+-   `flex-grid-gap-4` = 16px
+-   `flex-grid-gap-5` = 20px
+-   `flex-grid-gap-6` = 24px
+-   `flex-grid-gap-7` = 28px
+-   `flex-grid-gap-8` = 32px
+-   `flex-grid-gap-9` = 36px
+-   `flex-grid-gap-10` = 40px
+-   `flex-grid-gap-11` = 44px
+-   `flex-grid-gap-12` = 48px
 
 #### Example Usage
 
