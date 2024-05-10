@@ -188,3 +188,60 @@ Tailwind's default containers are disabled in favor of a fluid container system.
 -   `container-lg` - Max of `1024px`
 -   `container-md` - Max of `768px`
 -   `container-sm` - Max of `640px`
+
+### Flex Grid
+
+CSS Grid has a limitation in that it does not support centering columns or aligning them outside of the grid structure. This issue is addressed by using a Flex-based grid, which creates a full-width grid with a specified number of columns. In a Flex Grid, any remaining columns at the bottom can be centered effectively.
+
+- Use the class `flex-grid` to implement a flex grid.
+- Flex Grid defaults to a single column. To change this, use `flex-grid-cols-{n}`, replacing `{n}` with the desired number of columns (1 to 10).
+- Adjust horizontal spacing between Flex Grid items with `flex-grid-gap-{n}`, using any number from the Tailwind [default spacing scale](https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale). The maximum gap is `12` (48px). For larger gaps, add custom classes.
+- Flex Grid is fully responsive. Use `sm:`, `md:`, and `lg:` prefixes with `flex-grid-cols-{n}` or `flex-grid-gap-{n}` for responsive layouts.
+- For vertical spacing, use Tailwind's native `gap-y-{n}` since Flex Grid, powered by Flexbox, does not add vertical spacing by default.
+- **IMPORTANT:** Avoid using `margin-left` or `margin-right` on elements with `flex-grid`, as it disrupts the grid layout. Instead, apply margins to a container element.
+
+#### Classes & Sizing
+
+##### Base Class
+
+-   `flex-grid`
+
+##### Column Classes
+
+-   `flex-grid-cols-1`
+-   `flex-grid-cols-2`
+-   `flex-grid-cols-3`
+-   `flex-grid-cols-4`
+-   `flex-grid-cols-5`
+-   `flex-grid-cols-6`
+-   `flex-grid-cols-7`
+-   `flex-grid-cols-8`
+-   `flex-grid-cols-9`
+-   `flex-grid-cols-10`
+
+##### Gap Classes
+
+-   `flex-grid-gap-0.5` = 2px
+-   `flex-grid-gap-1` = 4px
+-   `flex-grid-gap-1.5` = 6px
+-   `flex-grid-gap-2` = 8px
+-   `flex-grid-gap-2.5` = 10px
+-   `flex-grid-gap-3` = 12px
+-   `flex-grid-gap-3.5` = 14px
+-   `flex-grid-gap-4` = 16px
+-   `flex-grid-gap-5` = 20px
+-   `flex-grid-gap-6` = 24px
+-   `flex-grid-gap-7` = 28px
+-   `flex-grid-gap-8` = 32px
+-   `flex-grid-gap-9` = 36px
+-   `flex-grid-gap-10` = 40px
+-   `flex-grid-gap-11` = 44px
+-   `flex-grid-gap-12` = 48px
+
+#### Example Usage
+
+```html
+<div class="flex-grid flex-grid-cols-2 md:flex-grid-cols-3 flex-grid-gap-2">
+    <!-- A 3 column flex grid with an 8 pixel gap, 2 columns on tablet -->
+</div>
+```
