@@ -200,11 +200,39 @@ Flex Grid solves a common problem of creating a full width grid that has a set n
 -   Adjusting the vertical spacing can be done simply by using the Tailwind native `gap-y-` because Flex Grid is powered by Flexbox. 
 -   Putting a `margin-left` or `margin-right` on an element with `flex-grid` will result in the grid not displaying properly, to solve this use a container and apply the margin there.
 
-#### Classes
+#### Classes & Sizing
 
 -   `flex-grid`
--   `flex-grid-cols-x`
--   `flex-grid-gap-x`
+
+
+-   `flex-grid-cols-1`
+-   `flex-grid-cols-2`
+-   `flex-grid-cols-3`
+-   `flex-grid-cols-4`
+-   `flex-grid-cols-5`
+-   `flex-grid-cols-6`
+-   `flex-grid-cols-7`
+-   `flex-grid-cols-8`
+-   `flex-grid-cols-9`
+-   `flex-grid-cols-10`
+
+
+-   `flex-grid-gap-0.5`
+-   `flex-grid-gap-1`
+-   `flex-grid-gap-1.5`
+-   `flex-grid-gap-2`
+-   `flex-grid-gap-2.5`
+-   `flex-grid-gap-3`
+-   `flex-grid-gap-3.5`
+-   `flex-grid-gap-4`
+-   `flex-grid-gap-5`
+-   `flex-grid-gap-6`
+-   `flex-grid-gap-7`
+-   `flex-grid-gap-8`
+-   `flex-grid-gap-9`
+-   `flex-grid-gap-10`
+-   `flex-grid-gap-11`
+-   `flex-grid-gap-12`
 
 #### Example Usage
 
