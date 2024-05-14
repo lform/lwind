@@ -202,8 +202,11 @@ CSS Grid has a limitation in that it does not support centering columns or align
 
 #### Classes & Sizing
 
+##### Base Class
+
 -   `flex-grid`
 
+##### Column Classes
 
 -   `flex-grid-cols-1`
 -   `flex-grid-cols-2`
@@ -216,6 +219,7 @@ CSS Grid has a limitation in that it does not support centering columns or align
 -   `flex-grid-cols-9`
 -   `flex-grid-cols-10`
 
+##### Gap Classes
 
 -   `flex-grid-gap-0.5` = 2px
 -   `flex-grid-gap-1` = 4px
