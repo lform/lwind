@@ -141,6 +141,10 @@ Subheaders are generally smaller in size, their available classes are as follows
 -   `sh-ms-1` = 18px
 -   `sh-ms-2` = 20px
 
+##### Header Line Heights
+
+By default, headers are set to `1.25` line-height as larger fonts can appear overly spaced out vertically. To override this, extend `lineHeight` with a `header` value in the Tailwind config file.
+
 #### Richtext
 
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
