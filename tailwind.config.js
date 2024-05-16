@@ -121,13 +121,6 @@ module.exports = {
 		},
 		extend: {},
 		richtext: ({ theme }) => ({
-			spacing: {
-				DEFAULT: '1rem',
-				hr: '2rem',
-				header: '2.5rem',
-				gallery: '3rem',
-				list: '1rem',
-			},
 			backgroundColors: {
 				'table-td': 'inherit',
 				'table-th': theme('colors.primary.DEFAULT'),
@@ -137,7 +130,6 @@ module.exports = {
 				'table-th': theme('colors.primary.light'),
 			},
 			colors: {
-				base: theme('colors.grey.900'),
 				bullet: theme('colors.primary.DEFAULT'),
 				blockquote: theme('colors.grey.900'),
 				link: theme('colors.primary.DEFAULT'),
@@ -149,7 +141,6 @@ module.exports = {
 				'table-th': theme('fontFamily.subheader'),
 			},
 			fontSize: {
-				base: rem(16),
 				blockquote: rem(20),
 				'heading-1': rem(36),
 				'heading-2': rem(31),
@@ -172,6 +163,13 @@ module.exports = {
 				'heading-6': 700,
 				'table-td': 400,
 				'table-th': 700,
+			},
+			spacing: {
+				DEFAULT: '1rem',
+				hr: '2rem',
+				header: '2.5rem',
+				gallery: '3rem',
+				list: '1rem',
 			},
 		}),
 	},
