@@ -38,7 +38,9 @@ Adding the Lwind system to a project is relatively straight forward:
 
 ## Building
 
-The following scripts are available in the `package.json` file, if the project uses a build system, the commands may be different.- `npm run dev` - Builds development version of tailwind file
+The following scripts are available in the `package.json` file, if the project uses a build system, the commands may be different.
+
+- `npm run dev` - Builds development version of tailwind file
 - `npm run watch` - Builds development version of tailwind file and watches files
 - `npm run prod` - Builds development version of tailwind file
 
