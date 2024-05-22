@@ -30,11 +30,12 @@ Adding the Lwind system to a project is relatively straight forward:
 6. Run the build system to confirm that everything is working.
 7. The following `package.json` scripts can be added if there is no build system (adjust the paths accordingly):
 
-   "scripts": {
-       "dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
-       "watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
-       "prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
-   },
+       "scripts": {
+           "dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
+           "watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
+           "prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
+       }
+
 ## Building
 
 The following scripts are available in the `package.json` file, if the project uses a build system, the commands may be different.- `npm run dev` - Builds development version of tailwind file
