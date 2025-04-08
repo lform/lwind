@@ -1,20 +1,40 @@
 /* Tailwind */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss';
+
+/* Theme */
+@import "./_theme-default.css" layer(theme);
+@import "./_theme.css" layer(theme);
 
 /* Pre-flight Styles */
-@import "base/_global.pcss";
-@import "base/_site.pcss";
+@import './base/_global.css' layer(utilities);
+@import './base/_site.css' layer(utilities);
 
 /* UI Components */
-@import "components/_layout.pcss";
-@import "components/_container.pcss";
-@import "components/_forms.pcss";
-@import "components/_buttons.pcss";
-@import "components/_richtext.pcss";
-@import "components/_flex-grid.pcss";
+@import './components/_layout.css';
+@import './components/_container.css';
+@import './components/_forms.css' layer(utilities);
+@import './components/_buttons.css';
+@import './components/_richtext.css' layer(utilities);
+@import './components/_flex-grid.css';
 
 /* Utility Classes */
-@import "utilities/_elements.pcss";
-@import "utilities/_typography.pcss";
+@import './utilities/_elements.css';
+@import './utilities/_typography.css';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}

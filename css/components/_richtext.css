@@ -1,5 +1,5 @@
 .rich-text {
-	font-weight: theme('richtext.fontWeight.base');
+	font-weight: var(--richtext-font-weight-base);
 
 	/* For richtext areas on dark backgrounds */
 	&.inverted {
@@ -36,11 +36,11 @@
 	h5,
 	h6 {
 		&:not(:first-child) {
-			margin-top: theme('richtext.spacing.DEFAULT');
+			margin-top: var(--richtext-spacing);
 		}
 
 		&:not(:last-child) {
-			margin-bottom: theme('richtext.spacing.DEFAULT');
+			margin-bottom: var(--richtext-spacing);
 		}
 	}
 
@@ -49,38 +49,38 @@
 		@apply font-header leading-tight;
 
 		&:not(:first-child) {
-			margin-top: theme('richtext.spacing.header');
+			margin-top: var(--richtext-spacing-header);
 		}
 	}
 
 	h1 {
-		font-size: theme('richtext.fontSize.heading-1');
-		font-weight: theme('richtext.fontWeight.heading-1');
+		font-size: var(--richtext-font-size-heading-1);
+		font-weight: var(--richtext-font-weight-heading-1);
 	}
 
 	h2 {
-		font-size: theme('richtext.fontSize.heading-2');
-		font-weight: theme('richtext.fontWeight.heading-2');
+		font-size: var(--richtext-font-size-heading-2);
+		font-weight: var(--richtext-font-weight-heading-2);
 	}
 
 	h3 {
-		font-size: theme('richtext.fontSize.heading-3');
-		font-weight: theme('richtext.fontWeight.heading-3');
+		font-size: var(--richtext-font-size-heading-3);
+		font-weight: var(--richtext-font-weight-heading-3);
 	}
 
 	h4 {
-		font-size: theme('richtext.fontSize.heading-4');
-		font-weight: theme('richtext.fontWeight.heading-4');
+		font-size: var(--richtext-font-size-heading-4);
+		font-weight: var(--richtext-font-weight-heading-4);
 	}
 
 	h5 {
-		font-size: theme('richtext.fontSize.heading-5');
-		font-weight: theme('richtext.fontWeight.heading-5');
+		font-size: var(--richtext-font-size-heading-5);
+		font-weight: var(--richtext-font-weight-heading-5);
 	}
 
 	h6 {
-		font-size: theme('richtext.fontSize.heading-6');
-		font-weight: theme('richtext.fontWeight.heading-6');
+		font-size: var(--richtext-font-size-heading-6);
+		font-weight: var(--richtext-font-weight-heading-6);
 	}
 
 	/* Paragraph Styling */
@@ -96,7 +96,7 @@
 	/* Link Styling */
 	a {
 		@apply underline;
-		color: theme('richtext.colors.link');
+		color: var(--richtext-colors-link);
 	}
 
 	/* Remove underline from buttons */
@@ -106,7 +106,7 @@
 
 	/* Horizontal Rule */
 	hr {
-		margin: theme('richtext.spacing.hr') 0 !important;
+		margin: var(--richtext-spacing-hr) 0 !important;
 	}
 
 	/* Bullet Styling */
@@ -116,12 +116,12 @@
 		li {
 			> ol,
 			> ul {
-				margin-top: theme('richtext.spacing.list');
+				margin-top: var(--richtext-spacing-list);
 			}
 
 			&::marker {
-				color: theme('richtext.colors.bullet');
-				font-weight: theme('richtext.fontWeight.bullet');
+				color: var(--richtext-colors-bullet);
+				font-weight: var(--richtext-font-weight-bullet);
 			}
 		}
 	}
@@ -180,23 +180,23 @@
 
 			th {
 				@apply border-b font-subheader;
-				background-color: theme('richtext.backgroundColors.table-th');
-				border-color: theme('richtext.borderColors.table-th');
-				color: theme('richtext.colors.table-th');
-				font-family: theme('richtext.fontFamily.table-th');
-				font-size: theme('richtext.fontSize.table-th');
-				font-weight: theme('richtext.fontWeight.table-th');
+				background-color: var(--richtext-background-colors-table-th);
+				border-color: var(--richtext-border-colors-table-th);
+				color: var(--richtext-colors-table-th);
+				font-family: var(--richtext-font-family-table-th);
+				font-size: var(--richtext-font-size-table-th);
+				font-weight: var(--richtext-font-weight-table-th);
 			}
 
 			td {
 				@apply border-b;
 				@apply last:border-r;
-				background-color: theme('richtext.backgroundColors.table-td');
-				border-color: theme('richtext.borderColors.table-td');
-				color: theme('richtext.colors.table-td');
-				font-family: theme('richtext.fontFamily.table-td');
-				font-size: theme('richtext.fontSize.table-td');
-				font-weight: theme('richtext.fontWeight.table-td');
+				background-color: var(--richtext-background-colors-table-td);
+				border-color: var(--richtext-border-colors-table-td);
+				color: var(--richtext-colors-table-td);
+				font-family: var(--richtext-font-family-table-td);
+				font-size: var(--richtext-font-size-table-td);
+				font-weight: var(--richtext-font-weight-table-td);
 			}
 
 			>:first-child:is(td) {
@@ -207,9 +207,9 @@
 
 	/* Quote Styling */
 	blockquote {
-		@apply border border-grey-100 rounded-sm;
-		color: theme('richtext.colors.blockquote');
-		font-weight: theme('richtext.fontWeight.blockquote');
+		@apply border border-grey-100 rounded-xs;
+		color: var(--richtext-colors-blockquote);
+		font-weight: var(--richtext-font-weight-blockquote);
 
 		p {
 			@apply border-t-4 border-primary flex font-light font-subheader m-10 pt-4 text-ms-4;

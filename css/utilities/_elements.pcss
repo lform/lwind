@@ -1,37 +1,50 @@
-@layer utilities {
-	/*
-	 * Video iFrame Fix - Forces to 16:9, wide browser compatability
-	 */
-	.video-frame {
-		position: relative;
-		padding-bottom: 56.25%;
-		iframe{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
-	}
+/*
+ * Negative Font Size Utilities - Enables negative font size variables post Tailwind v4 upgrade
+ */
+@utility -text-ms-1 {
+	@apply text-(--text--ms-1);
+}
 
-	/*
-	 * Clear fix for clearing user-entered content that utilizes floats
-	 */
-	.clearfix {
-		&::after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-	}
+@utility -text-ms-2 {
+	@apply text-(--text--ms-2);
+}
 
-	/*
-	 * Absolute centering, for when flex is not appropriate or doable
-	 */
-	.absolute-center {
+@utility -text-ms-3 {
+	@apply text-(--text--ms-3);
+}
+
+/*
+ * Video iFrame Fix - Forces to 16:9, wide browser compatability
+ */
+@utility video-frame {
+	position: relative;
+	padding-bottom: 56.25%;
+	iframe {
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
+}
+
+/*
+ * Clear fix for clearing user-entered content that utilizes floats
+ */
+@utility clearfix {
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+	}
+}
+
+/*
+ * Absolute centering, for when flex is not appropriate or doable
+ */
+@utility absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

@@ -1,0 +1,42 @@
+/* Reference: https://tailwindcss.com/docs/theme */
+@theme {
+    /* Font Family */
+    --font-header: 'IBM Plex Sans', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
+    --font-subheader: 'Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
+    --font-body: 'Barlow', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif';
+
+    /* Primary Color Pallet */
+    --color-primary-light: #e52560;
+    --color-primary: #a01b44;
+    --color-primary-dark: #710627;
+    --color-primary-fg: #ffffff;
+
+    /* Secondary Color Pallet */
+    --color-secondary-light: #fdf0a9;
+    --color-secondary: #dbc764;
+    --color-secondary-dark: #d0b635;
+    --color-secondary-fg: #000000;
+
+    /* Tertiary Color Pallet */
+    --color-tertiary-light: #d3356c;
+    --color-tertiary: #a01b44;
+    --color-tertiary-dark: #710627;
+    --color-tertiary-fg: #ffffff;
+
+    /* Greyscale */
+    --color-grey-100: #f1f1f1;
+    --color-grey-300: #d2d2d2;
+    --color-grey-500: #9a9a9a;
+    --color-grey-700: #5a5a5a;
+    --color-grey-900: #1a1818;
+
+    /* Feedback Tones */
+    --color-feedback-success: #6dcff6;
+    --color-feedback-warning: #fdf0a9;
+    --color-feedback-error: #f69679;
+
+    /* Links & Forms */
+    --color-color-link: #a01b44;
+    --color-color-field: #E4EEF7;
+    --color-color-field-required: #F2EED6;
+}

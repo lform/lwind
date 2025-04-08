@@ -1,131 +1,117 @@
-@layer utilities {
-
+@utility h-ms {
 	/* Headers */
-	.h-ms {
-		@apply font-header;
-		line-height: theme('lineHeight.header', 1.25);
-	}
+	@apply font-header;
+	line-height: theme('lineHeight.header', 1.25);
+}
 
-	.-h-ms-3,
-	.-h-ms-2,
-	.-h-ms-1,
-	.h-ms-1,
-	.h-ms-2,
-	.h-ms-3,
-	.h-ms-4,
-	.h-ms-4,
-	.h-ms-5,
-	.h-ms-6,
-	.h-ms-7,
-	.h-ms-8,
-	.h-ms-9,
-	.h-ms-10,
-	.h-ms-11,
-	.h-ms-12,
-	.h-ms-13
-	{
-		@apply h-ms;
-	}
+@utility -h-ms-3 {
+	@apply h-ms;
+	@apply -text-ms-3;
+}
 
-	.-h-ms-3 {
-		@apply -text-ms-3;
-	}
+@utility -h-ms-2 {
+	@apply h-ms;
+	@apply -text-ms-2;
+}
 
-	.-h-ms-2 {
-		@apply -text-ms-2;
-	}
+@utility -h-ms-1 {
+	@apply h-ms;
+	@apply -text-ms-1;
+}
 
-	.-h-ms-1 {
-		@apply -text-ms-1;
-	}
+@utility h-ms-1 {
+	@apply h-ms;
+	@apply text-ms-1;
+}
 
-	.h-ms-1 {
-		@apply text-ms-1;
-	}
+@utility h-ms-2 {
+	@apply h-ms;
+	@apply text-ms-2;
+}
 
-	.h-ms-2 {
-		@apply text-ms-2;
-	}
+@utility h-ms-3 {
+	@apply h-ms;
+	@apply text-ms-3;
+}
 
-	.h-ms-3 {
-		@apply text-ms-3;
-	}
+@utility h-ms-4 {
+	@apply h-ms;
+	@apply h-ms;
+	@apply text-ms-4;
+	@apply text-ms-4;
+}
 
-	.h-ms-4 {
-		@apply text-ms-4;
-	}
+@utility h-ms-5 {
+	@apply h-ms;
+	@apply text-ms-5;
+}
 
-	.h-ms-4 {
-		@apply text-ms-4;
-	}
+@utility h-ms-6 {
+	@apply h-ms;
+	@apply text-ms-6;
+}
 
-	.h-ms-5 {
-		@apply text-ms-5;
-	}
+@utility h-ms-7 {
+	@apply h-ms;
+	@apply text-ms-7;
+}
 
-	.h-ms-6 {
-		@apply text-ms-6;
-	}
+@utility h-ms-8 {
+	@apply h-ms;
+	@apply text-ms-8;
+}
 
-	.h-ms-7 {
-		@apply text-ms-7;
-	}
+@utility h-ms-9 {
+	@apply h-ms;
+	@apply text-ms-9;
+}
 
-	.h-ms-8 {
-		@apply text-ms-8;
-	}
+@utility h-ms-10 {
+	@apply h-ms;
+	@apply text-ms-10;
+}
 
-	.h-ms-9 {
-		@apply text-ms-9;
-	}
+@utility h-ms-11 {
+	@apply h-ms;
+	@apply text-ms-11;
+}
 
-	.h-ms-10 {
-		@apply text-ms-10;
-	}
+@utility h-ms-12 {
+	@apply h-ms;
+	@apply text-ms-12;
+}
 
-	.h-ms-11 {
-		@apply text-ms-11;
-	}
+@utility h-ms-13 {
+	@apply h-ms;
+	@apply text-ms-13;
+}
 
-	.h-ms-12 {
-		@apply text-ms-12;
-	}
-
-	.h-ms-13 {
-		@apply text-ms-13;
-	}
-
+@utility sh-ms {
 	/* Subheaders */
+	@apply font-subheader leading-tight;
+}
 
-	.sh-ms {
-		@apply font-subheader leading-tight;
-	}
+@utility -sh-ms-3 {
+	@apply sh-ms;
+	@apply -text-ms-3;
+}
 
-	.-sh-ms-3,
-	.-sh-ms-2,
-	.-sh-ms-1,
-	.sh-ms-1,
-	.sh-ms-2 {
-		@apply sh-ms;
-	}
+@utility -sh-ms-2 {
+	@apply sh-ms;
+	@apply -text-ms-2;
+}
 
-	.-sh-ms-3 {
-		@apply -text-ms-3;
-	}
+@utility -sh-ms-1 {
+	@apply sh-ms;
+	@apply -text-ms-1;
+}
 
-	.-sh-ms-2 {
-		@apply -text-ms-2;
-	}
+@utility sh-ms-1 {
+	@apply sh-ms;
+	@apply text-ms-1;
+}
 
-	.-sh-ms-1 {
-		@apply -text-ms-1;
-	}
-
-	.sh-ms-1 {
-		@apply text-ms-1;
-	}
-
-	.sh-ms-2 {
-		@apply text-ms-2;
-	}
+@utility sh-ms-2 {
+	@apply sh-ms;
+	@apply text-ms-2;
 }
