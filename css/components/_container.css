@@ -29,7 +29,8 @@
 	}
 }
 
-@utility container-sm {
+@utility container-* {
+	/* Overrides the default container with a fluid container that matches the breakpoints */
 	@apply mx-auto;
 	padding-left: var(--container-padding);
 	padding-right: var(--container-padding);
@@ -44,147 +45,10 @@
 		margin-right: 0;
 		margin-left: 0;
 	}
-	max-width: var(--container-sm);
-	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
 
-@utility container-md {
-	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	width: 100%;
+	max-width: --value(--container-*);
 
-	&.px-0 {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	&.mx-0 {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	max-width: var(--container-md);
-	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@utility container-lg {
-	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	width: 100%;
-
-	&.px-0 {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	&.mx-0 {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	max-width: var(--container-lg);
-	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@utility container-xl {
-	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	width: 100%;
-
-	&.px-0 {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	&.mx-0 {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	max-width: var(--container-xl);
-	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@utility container-2xl {
-	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	width: 100%;
-
-	&.px-0 {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	&.mx-0 {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	max-width: var(--container-2xl);
-	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-@utility container-3xl {
-	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
-	width: 100%;
-
-	&.px-0 {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-	&.mx-0 {
-		margin-right: 0;
-		margin-left: 0;
-	}
-	max-width: var(--container-3xl);
+	/* Fix any nested containers so their padding does not stack */
 	.container,
 	.container-sm,
 	.container-md,
