@@ -1,0 +1,21 @@
+/* Tailwind */
+@import 'tailwindcss';
+
+/* Theme */
+@import "@lform/lwind/css/_theme.css" layer(theme);
+
+/* Pre-flight Styles */
+@import '@lform/lwind/css/base/_global.css' layer(utilities);
+@import '@lform/lwind/css/base/_site.css' layer(utilities);
+
+/* UI Components */
+@import '@lform/lwind/css/components/_layout.css';
+@import '@lform/lwind/css/components/_container.css';
+@import '@lform/lwind/css/components/_forms.css' layer(utilities);
+@import '@lform/lwind/css/components/_buttons.css';
+@import '@lform/lwind/css/components/_richtext.css' layer(utilities);
+@import '@lform/lwind/css/components/_flex-grid.css';
+
+/* Utility Classes */
+@import '@lform/lwind/css/utilities/_elements.css';
+@import '@lform/lwind/css/utilities/_typography.css';
