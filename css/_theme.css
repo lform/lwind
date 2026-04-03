@@ -1,0 +1,140 @@
+/* Reference: https://tailwindcss.com/docs/theme */
+@theme {
+    /* Font Family */
+    --font-*: initial; /* Removes Default Font Families */
+    --font-header: 'IBM Plex Sans', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
+    --font-subheader: 'Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
+    --font-body: 'Barlow', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif';
+
+    /* Font Size */
+    --text-*: initial; /* Removes Default Font Sizes */
+    --text--ms-3: 11px;
+    --text--ms-2: 12px;
+    --text--ms-1: 14px;
+    --text-ms-0: 16px;
+    --text-ms-1: 18px;
+    --text-ms-2: 20px;
+    --text-ms-3: 22px;
+    --text-ms-4: 25px;
+    --text-ms-5: 28px;
+    --text-ms-6: 32px;
+    --text-ms-7: 36px;
+    --text-ms-8: 41px;
+    --text-ms-9: 46px;
+    --text-ms-10: 51px;
+    --text-ms-11: 58px;
+    --text-ms-12: 65px;
+    --text-ms-13: 73px;
+
+    /* Colors */
+    --color-*: initial; /* Removes Default Colors */
+
+    /* Primary Color Pallet */
+    --color-primary-light: #e52560;
+    --color-primary: #a01b44;
+    --color-primary-dark: #710627;
+    --color-primary-fg: #ffffff;
+
+    /* Secondary Color Pallet */
+    --color-secondary-light: #fdf0a9;
+    --color-secondary: #dbc764;
+    --color-secondary-dark: #d0b635;
+    --color-secondary-fg: #000000;
+
+    /* Tertiary Color Pallet */
+    --color-tertiary-light: #d3356c;
+    --color-tertiary: #a01b44;
+    --color-tertiary-dark: #710627;
+    --color-tertiary-fg: #ffffff;
+
+    /* Greyscale */
+    --color-grey-100: #f1f1f1;
+    --color-grey-300: #d2d2d2;
+    --color-grey-500: #9a9a9a;
+    --color-grey-700: #5a5a5a;
+    --color-grey-900: #1a1818;
+
+    /* Constants */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-transparent: transparent;
+
+    /* Feedback Tones */
+    --color-feedback-success: #6dcff6;
+    --color-feedback-warning: #fdf0a9;
+    --color-feedback-error: #f69679;
+
+    /* Social Icons */
+    --color-social-facebook: #0866FF;
+    --color-social-flickr: #ff0084;
+    --color-social-houzz: #7ac142;
+    --color-social-instagram: #833ab4;
+    --color-social-linkedin: #0B66C3;
+    --color-social-medium: rgba(0, 0, 0, 0.84);
+    --color-social-pinterest: #cc2127;
+    --color-social-rss: #f26522;
+    --color-social-tumblr: #35465c;
+    --color-social-twitter: #000000;
+    --color-social-youtube: #EA3223;
+    --color-social-vimeo: #1ab7ea;
+    --color-social-yelp: #f43939;
+
+    /* Containers */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+    --container-3xl: 1800px;
+    --container-padding: 1.5rem;
+    --container: var(--container-2xl); /* Default Container Size */
+
+
+        /* Links & Forms */
+    --color-color-link: #a01b44;
+    --color-color-field: #E4EEF7;
+    --color-color-field-required: #F2EED6;
+
+    /* Rich Text */
+    --richtext-background-colors-table-td: inherit;
+    --richtext-background-colors-table-th: var(--color-primary);
+    --richtext-border-colors-table-th: var(--color-grey-300);
+    --richtext-border-colors-table-td: var(--color-primary-light);
+
+    --richtext-colors-bullet: var(--color-primary);
+    --richtext-colors-blockquote: var(--color-grey-900);
+    --richtext-colors-link: var(--color-primary);
+    --richtext-colors-table-td: var(--color-grey-900);
+    --richtext-colors-table-th: var(--color-primary);
+
+    --richtext-font-family-table-td: var(--font-body);
+    --richtext-font-family-table-th: var(--font-subheader);
+
+    --richtext-font-size-blockquote: 20px;
+    --richtext-font-size-heading-1: 36px;
+    --richtext-font-size-heading-2: 31px;
+    --richtext-font-size-heading-3: 28px;
+    --richtext-font-size-heading-4: 25px;
+    --richtext-font-size-heading-5: 22px;
+    --richtext-font-size-heading-6: 20px;
+    --richtext-font-size-table-td: 20px;
+    --richtext-font-size-table-th: 22px;
+
+    --richtext-font-weight-base: 400;
+    --richtext-font-weight-blockquote: 700;
+    --richtext-font-weight-bullet: 700;
+    --richtext-font-weight-heading-1: 700;
+    --richtext-font-weight-heading-2: 700;
+    --richtext-font-weight-heading-3: 700;
+    --richtext-font-weight-heading-4: 700;
+    --richtext-font-weight-heading-5: 700;
+    --richtext-font-weight-heading-6: 700;
+    --richtext-font-weight-table-td: 400;
+    --richtext-font-weight-table-th: 700;
+
+    --richtext-spacing: 1rem;
+    --richtext-spacing-hr: 2rem;
+    --richtext-spacing-header: 2.5rem;
+    --richtext-spacing-gallery: rem;
+    --richtext-spacing-list: 1rem;
+}

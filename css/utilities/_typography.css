@@ -1,0 +1,117 @@
+@utility h-ms {
+	/* Headers */
+	@apply font-header;
+	line-height: theme('lineHeight.header', 1.25);
+}
+
+@utility -h-ms-3 {
+	@apply h-ms;
+	@apply -text-ms-3;
+}
+
+@utility -h-ms-2 {
+	@apply h-ms;
+	@apply -text-ms-2;
+}
+
+@utility -h-ms-1 {
+	@apply h-ms;
+	@apply -text-ms-1;
+}
+
+@utility h-ms-1 {
+	@apply h-ms;
+	@apply text-ms-1;
+}
+
+@utility h-ms-2 {
+	@apply h-ms;
+	@apply text-ms-2;
+}
+
+@utility h-ms-3 {
+	@apply h-ms;
+	@apply text-ms-3;
+}
+
+@utility h-ms-4 {
+	@apply h-ms;
+	@apply h-ms;
+	@apply text-ms-4;
+	@apply text-ms-4;
+}
+
+@utility h-ms-5 {
+	@apply h-ms;
+	@apply text-ms-5;
+}
+
+@utility h-ms-6 {
+	@apply h-ms;
+	@apply text-ms-6;
+}
+
+@utility h-ms-7 {
+	@apply h-ms;
+	@apply text-ms-7;
+}
+
+@utility h-ms-8 {
+	@apply h-ms;
+	@apply text-ms-8;
+}
+
+@utility h-ms-9 {
+	@apply h-ms;
+	@apply text-ms-9;
+}
+
+@utility h-ms-10 {
+	@apply h-ms;
+	@apply text-ms-10;
+}
+
+@utility h-ms-11 {
+	@apply h-ms;
+	@apply text-ms-11;
+}
+
+@utility h-ms-12 {
+	@apply h-ms;
+	@apply text-ms-12;
+}
+
+@utility h-ms-13 {
+	@apply h-ms;
+	@apply text-ms-13;
+}
+
+@utility sh-ms {
+	/* Subheaders */
+	@apply font-subheader leading-tight;
+}
+
+@utility -sh-ms-3 {
+	@apply sh-ms;
+	@apply -text-ms-3;
+}
+
+@utility -sh-ms-2 {
+	@apply sh-ms;
+	@apply -text-ms-2;
+}
+
+@utility -sh-ms-1 {
+	@apply sh-ms;
+	@apply -text-ms-1;
+}
+
+@utility sh-ms-1 {
+	@apply sh-ms;
+	@apply text-ms-1;
+}
+
+@utility sh-ms-2 {
+	@apply sh-ms;
+	@apply text-ms-2;
+}

@@ -7,14 +7,14 @@
 	/* Form Input Styling */
 
 	.input {
-		@apply rounded-sm w-full bg-white leading-normal p-2 border border-grey-500 transition-colors;
+		@apply rounded-xs w-full bg-white leading-normal p-2 border border-grey-500 transition-colors;
 
 		&:required {
 			@apply border-primary border;
 		}
 
 		&:focus {
-			@apply border-secondary outline-none;
+			@apply border-secondary outline-hidden;
 		}
 
 		&:focus > label {
@@ -47,21 +47,21 @@
 
 /* Form Messages */
 .form-message {
-	@apply bg-grey-100 rounded mb-4 p-4;
+	@apply bg-grey-100 rounded-sm mb-4 p-4;
 
 	.form-message-header {
 		@apply font-bold mb-2;
 	}
 
 	&.success {
-		background: theme('colors.feedback.success');
+		background: var(--color-feedback-success);
 	}
 
 	&.warning {
-		background: theme('colors.feedback.warning');
+		background: var(--color-feedback-warning);
 	}
 
 	&.error {
-		background: theme('colors.feedback.error');
+		background: var(--color-feedback-error);
 	}
 }
