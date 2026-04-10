@@ -7,7 +7,6 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 ## Resources
 
 - [Tailwind Documentation](https://tailwindcss.com/docs)
-- [PostCSS Plugins](https://github.com/postcss/postcss) - No longer used directly, all plugins from this package have been included in this package as the PostCSS package is no longer updated, it was just a wrapper for those packages.
 - [TailWind UI KIts](https://www.tailwindawesome.com/?type=kit) - For reference for building components
 
 ## Installation
@@ -15,56 +14,33 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 Adding the Lwind system to a project is relatively straight forward:
 
 1. Run `npm i @lform/lwind`
-2. Included in the package is an example starting PCSS file `css/main.example.pcss`, copy this into your project's CSS root and name it accordingly:
+2. Included in the package are example entry files you can copy into your project and adapt as needed:
 
-   * [https://github.com/lform/lwind/blob/master/css/main.example.pcss](https://github.com/lform/lwind/blob/master/css/main.example.pcss)
-   * NOTE: To customize or override any of the Lwind pcss files, just copy the file in question from the package or create a new one in the appropriate directory, and adjust the path accordingly in your `main.pcss` (or however you named the file). You can also use the components that are needed, and disable the others.
-3. Create or update the `postcss.config.js` file based on the package version:
+   * [https://github.com/lform/lwind/blob/master/css/main.example.css](https://github.com/lform/lwind/blob/master/css/main.example.css)
+   * [https://github.com/lform/lwind/blob/master/css/editor.example.css](https://github.com/lform/lwind/blob/master/css/editor.example.css)
+   * NOTE: To customize or override any of the Lwind CSS files, copy the file in question from the package or create a new one in the appropriate directory and update your imports accordingly. You can also include only the components and vendor files your project needs.
+3. Create your main stylesheet entry, typically based on `css/main.example.css`, and adjust the imports for your project.
+4. Update the theme tokens in `css/_theme.css` or your local equivalent to match your project's design system.
+5. Run the build system to confirm that everything is working.
+6. The following `package.json` scripts can be added if there is no existing build system (adjust the paths accordingly):
 
-   * [https://github.com/lform/lwind/blob/master/postcss.config.js](https://github.com/lform/lwind/blob/master/postcss.config.js)
-   * NOTE: Some build systems will have an alternative method of loading PostCSS plugins, you will need to add the same entries as the `postcss.config.js` to that system, using its method / format.
-4. Copy the `tailwind.config.js` file from the package into your project:
-
-   * [https://github.com/lform/lwind/blob/master/tailwind.config.js](https://github.com/lform/lwind/blob/master/tailwind.config.js)
-5. Update the `tailwind.config.js` to match your project's design specifications.
-6. Run the build system to confirm that everything is working.
-7. The following `package.json` scripts can be added if there is no build system (adjust the paths accordingly):
-
-       "scripts": {
-           "dev": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css",
-           "watch": "npx tailwindcss -i ./css/main.pcss -o ./dist/app.css --watch",
-           "prod": "NODE_ENV=production npx tailwindcss -i ./css/main.pcss -o ./dist/app.min.css --minify"
-       }
+```json
+{
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css",
+    "watch": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css --watch",
+    "prod": "NODE_ENV=production npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.min.css --minify"
+  }
+}
+```
 
 ## Building
 
 The following scripts are available in the `package.json` file, if the project uses a build system, the commands may be different.
 
-- `npm run dev` - Builds development version of tailwind file
-- `npm run watch` - Builds development version of tailwind file and watches files
-- `npm run prod` - Builds development version of tailwind file
-
-
-## Included PostCSS Plugins
-
-The following PostCSS plugins are used by default:
-
-- [autoprefixer](https://github.com/postcss/autoprefixer) - Autoprefixes CSS for browser compatibility
-- [postcss-advanced-variables](https://github.com/csstools/postcss-advanced-variables) - Used to add SCSS-style variables in PCSS, has more advanced functionality than CSS variables.
-- [postcss-atroot](https://github.com/OEvgeny/postcss-atroot) - Used to add `@at-root` functionality to PCSS, bubbling nested styling up to the root-level selectors.
-- [postcss-extend-rule](https://github.com/csstools/postcss-extend-rule) - Used to add SCSS-style `@extend` functionality to PCSS, allowing for the extension of existing classes.
-- [postcss-import](https://github.com/postcss/postcss-import) - Used to import other PCSS / CSS files.
-- [tailwindcss/nesting](https://www.npmjs.com/package/@tailwindcss/nesting) - Wraps `postcss-nested` and acts as a compatibility layer to make sure your nesting plugin of choice properly understands custom syntax like `@apply` and `@screen`.
-
-### Recommend Plugins
-
-The following PostCSS plugins are recommend depending on your needs:
-
-- [postcss-rem](https://github.com/pierreburel/postcss-rem) - Used to convert pixel values to rem, adds a `rem-convert()` function that can be invoked in PCSS. `px` must be specified, or it will not function, eg `width: rem-convert(100px)`.
-
-### PostCSS Imports & Overriding Lwind
-
-You can override the Lwind CSS by adding a file with the same path & filename in the project's PCSS directory and adjusting the `@import` statement in the `main.pcss` file.
+- `npm run dev` - Builds the development stylesheet from `css/main.css` to `dist/app.css`
+- `npm run watch` - Builds the development stylesheet and watches for changes
+- `npm run prod` - Builds the minified production stylesheet at `dist/app.min.css`
 
 ## Tailwind Config
 
@@ -89,15 +65,15 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
   - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
 - **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
   to be added as necessary to accommodate a design.
-- **Grays** are labeled using Tailwind's numbering system, `100`, `300`, `500`, `700`, `900` are included by default.
+- **Grays** are labeled using Tailwind's numbering system. A full 10-step scale is included: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `950`.
 - **Black & whites** are defined in the `black` and `white` keys, as well as their transparent versions
   equivalents `white-transparent` and `black-transparent`
-- **Feedback colors** from forms / interactions are specified in the `success`, `warning`, and `error` colors
+- **Feedback colors** from forms / interactions are specified in the `info`, `success`, `warning`, and `error` colors
 - **Social media brand colors** are defined in the `social` keys
 
 ### Typography
 
-#### Fonts available
+#### Fonts Available
 
 There are 3 types of fonts in Lwind:
 
@@ -105,13 +81,17 @@ There are 3 types of fonts in Lwind:
 - `font-header` - The main header font
 - `font-accent` - Usually used for small text items in a utility context, eg blog post dates
 
-#### Font scaling
+#### Font Scaling
 
-The font-scaling system uses Modular Scale instead of Tailwind's default
+The typography system uses a modular scale for token definitions and fluid modular scale utilities for responsive type.
 
 - Base is `16px` with `1.125x` scaling
-- The scale included with Lwind goes from `-3` to `12`
-- Below are the scales, or you refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list:
+- The scale included with Lwind goes from `-3` to `13`
+- Fixed-size utilities (`text-ms-*`) map directly to pixel values from the scale
+- Fluid utilities (`text-fms-*`) use `clamp()` to scale smoothly between viewport sizes — these are used by header and accent classes at positive scale steps
+- Refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list.
+
+##### Font Size Utilities
 
   - `-text-ms-3` = 11px
   - `-text-ms-2` = 12px
@@ -131,92 +111,182 @@ The font-scaling system uses Modular Scale instead of Tailwind's default
   - `text-ms-12` = 65px
   - `text-ms-13` = 73px
 
-#### Header and subheader utility classes
+##### Fluid Size Utilities
+
+  - `text-fms-1` = ~18px fluid
+  - `text-fms-2` = ~20px fluid
+  - `text-fms-3` = ~22px fluid
+  - `text-fms-4` = ~25px fluid
+  - `text-fms-5` = ~28px fluid
+  - `text-fms-6` = ~32px fluid
+  - `text-fms-7` = ~36px fluid
+  - `text-fms-8` = ~41px fluid
+  - `text-fms-9` = ~46px fluid
+  - `text-fms-10` = ~51px fluid
+  - `text-fms-11` = ~58px fluid
+  - `text-fms-12` = ~65px fluid
+  - `text-fms-13` = ~73px fluid
+
+#### Header and accent utility classes
 
 Modular scale header utility classes have been included that include the header font with a default line-height of `1.2`. Headers with default line-heights will appear too spaced out between the lines, especially at larger font sizes.
 
-##### Header Classes
+##### Header Font Classes
 
-- `-h-ms-3` = 11px
-- `-h-ms-2` = 12px
-- `-h-ms-1` = 14px
-- `h-ms` = 16px
-- `h-ms-1` = 18px
-- `h-ms-2` = 20px
-- `h-ms-3` = 22px
-- `h-ms-4` = 25px
-- `h-ms-5` = 28px
-- `h-ms-6` = 32px
-- `h-ms-7` = 36px
-- `h-ms-8` = 41px
-- `h-ms-9` = 46px
-- `h-ms-10` = 51px
-- `h-ms-11` = 58px
-- `h-ms-12` = 65px
-- `h-ms-13` = 73px
+Negative steps use fixed pixel sizes; positive steps use fluid `clamp()` sizing that scales with the viewport.
 
-##### Subheader Classes
+- `-h-ms-3` = 11px (fixed)
+- `-h-ms-2` = 12px (fixed)
+- `-h-ms-1` = 14px (fixed)
+- `h-ms` = base header font + tight line-height (no size override)
+- `h-ms-1` = ~18px fluid
+- `h-ms-2` = ~20px fluid
+- `h-ms-3` = ~22px fluid
+- `h-ms-4` = ~25px fluid
+- `h-ms-5` = ~28px fluid
+- `h-ms-6` = ~32px fluid
+- `h-ms-7` = ~36px fluid
+- `h-ms-8` = ~41px fluid
+- `h-ms-9` = ~46px fluid
+- `h-ms-10` = ~51px fluid
+- `h-ms-11` = ~58px fluid
+- `h-ms-12` = ~65px fluid
+- `h-ms-13` = ~73px fluid
 
-Subheaders are generally smaller in size, their available classes are as follows:
+##### Accent Font Classes
 
-- `-sh-ms-3` = 11px
-- `-sh-ms-2` = 12px
-- `-sh-ms-1` = 14px
-- `sh-ms` = 16px
-- `sh-ms-1` = 18px
-- `sh-ms-2` = 20px
+Accent helpers are generally used for smaller text, labels, and emphasis styles. They apply `font-accent` and the matching scale size.
+
+- `-ac-ms-3` = 11px (fixed)
+- `-ac-ms-2` = 12px (fixed)
+- `-ac-ms-1` = 14px (fixed)
+- `ac-ms` = base accent font (no size override)
+- `ac-ms-1` = ~18px fluid
+- `ac-ms-2` = ~20px fluid
 
 ##### Header Line Heights
 
-By default, headers are set to `1.25` line-height as larger fonts can appear overly spaced out vertically. To override this, extend `lineHeight` with a `header` value in the Tailwind config file.
+By default, headers are set to a tighter line-height because larger fonts can appear overly spaced out vertically. Override `--leading-header` in your theme tokens if needed.
 
 #### Richtext
 
-A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text. The rich text settings can be found in the tailwind config file.
+A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text.
+
+- Add `rich-text inverted` to apply white text and adjusted link/list marker colors for rich text on dark backgrounds.
+
+- Rich text now includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and more robust media/table handling.
+- WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
+- `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
+- Relevant vendor files, enable and disable them as needed:
+  - `css/vendors/_wp-richtext.css`
+  - `css/vendors/_wp-forms.css`
+  - `css/vendors/_wp-pagination.css`
+  - `css/vendors/_statamic-forms.css`
+  - `css/vendors/_statamic-pagination.css`
 
 ## Tailwind Utilities & Components
 
 ### Buttons
 
-Button classes are baked into Lwind and can be invoked with the following options. Buttons use the baseclass and modifier syntax.
+Buttons are utility-first and are intended to be composed by stacking modifier classes on top of the base `button` utility.
 
 #### Colors
 
-- `button` - The default button, uses the `primary` color as its background and `primary-fg` as the text color
-- `button-secondary` - The secondary color button, uses the `secondary` color as its background and `secondary-fg` as the text color
-- `button-tertiary` - The tertiary color button, uses the `tertiary` color as its background and `tertiary-fg` as the text color
+- `button` - Base button and default `primary` solid button
+- `button-secondary` - Secondary color variant
 
 #### Sizing
 
-- `button-xs`
 - `button-sm`
-- `button` - Default size
+- `button-md` - Default size
 - `button-lg`
-- `button-xl`
+
+#### Format
+
+- Solid - Default format via `button`
+- `button-outline`
+
+#### Elements
+
+- `button-icon` - Button with an icon, adds padding and size adjustments for icons inside buttons
+- `button-full` - Full width button
+
+#### States
+
+- Default - Native button styling
+- `button-hover` - Forces hover state styling
+- `button-focus` - Forces focus-visible styling
+- `button-disabled` - Forces disabled styling
+
+Native states are also included for `:hover`, `:focus-visible`, `:disabled`, `[disabled]`, and `[aria-disabled="true"]`.
 
 #### Examples
 
-- Default button, small: `.button .button-sm`
-- Secondary color button, large: `.button .button-secondary .button-sm`
+- Primary solid medium: `class="button"`
+- Secondary outline large: `class="button button-secondary button-outline button-lg"`
+- Full width button with icon: `class="button button-full button-icon"`
 
 ### Containers
 
-Tailwind's default containers are disabled in favor of a fluid container system. There are five container sizes that match the [default breakpoint sizes](https://tailwindcss.com/docs/screens).
+Tailwind's default containers are disabled in favor of a fluid container system backed by theme tokens.
 
 - Containers are auto-centered with `margin-left` & `margin-right` set to `auto`.
 - They also have a default padding of `1.5rem`.
-- Container widths & padding can be configured in the Tailwind config under the `containers` section
+- Container widths & padding are configured through CSS theme variables
+- `container-*` utilities resolve against the matching `--container-*` theme tokens
 - If a class of `px-0` is added to a container, the padding will be disabled
 - If a class of `mx-0` is added to a container, the auto-centering margin will be disabled.
 
 #### Classes & Default Sizes
 
-- `container` - Max of `1536px`
-- `container-2xl` - Max of `1536px`
-- `container-xl` - Max of `1280px`
-- `container-lg` - Max of `1024px`
-- `container-md` - Max of `768px`
-- `container-sm` - Max of `640px`
+- `container` - Default max width of `1440px`
+- `container-xs` - `720px`
+- `container-sm` - `1024px`
+- `container-md` - `1280px`
+- `container-lg` - `1440px`
+- `container-xl` - `1600px`
+- `container-adaptive` - `1440px` - See below for details on this special adaptive container class
+
+#### Adaptive Container
+
+Rather than stretching fluidly to a single max-width, this container snaps through a series of fixed breakpoint widths (`720px` → `1024px` → `1280px` → `1440px`). This keeps the layout at a predictable, design-friendly width at each viewport range and avoids awkward, time-consuming in-between responsive fixes. Useful when a design is defined at specific widths and fluid scaling between them causes layout issues.
+
+#### Pagination
+
+- `pagination` - Base pagination component styling
+- `css/components/_pagination.css` contains the shared pagination component styles
+- `css/vendors/_wp-pagination.css` adds support for WordPress pagination markup such as `.navigation.pagination`, `.posts-navigation`, and `.post-navigation`
+- `css/vendors/_statamic-pagination.css` contains Statamic-specific pagination styles
+
+### Forms
+
+Form messaging uses a `form-message` component for displaying inline feedback. The base class provides padding, background, and border-radius; modifier classes apply feedback colors from the theme tokens.
+
+#### Classes
+
+- `form-message` - Base message wrapper
+- `form-message-header` - Bold header inside a message block
+
+#### Color Modifiers
+
+- `info` - Uses `--color-feedback-info`
+- `success` - Uses `--color-feedback-success`
+- `warning` - Uses `--color-feedback-warning`
+- `error` - Uses `--color-feedback-error`
+
+#### Vendor Form Support
+
+- `css/vendors/_wp-forms.css` - Gravity Forms baseline styling
+- `css/vendors/_statamic-forms.css` - Statamic form styling
+
+#### Example
+
+```html
+<div class="form-message success">
+	<p class="font-message-header">&#9679; Success</p>
+	<p>Your inquiry has been submitted.</p>
+</div>
+```
 
 ### Flex Grid
 
@@ -266,6 +336,11 @@ CSS Grid has a limitation in that it does not support centering columns or align
 - `flex-grid-gap-10` = 40px
 - `flex-grid-gap-11` = 44px
 - `flex-grid-gap-12` = 48px
+- `flex-grid-gap-14` = 56px
+- `flex-grid-gap-16` = 64px
+- `flex-grid-gap-20` = 80px
+- `flex-grid-gap-24` = 96px
+- `flex-grid-gap-28` = 112px
 
 #### Example Usage
 
@@ -275,27 +350,47 @@ CSS Grid has a limitation in that it does not support centering columns or align
 </div>
 ```
 
-# TODOs
+### General Utilities
 
-X- Fix richtext styles for consistency
-X- Add constrained containers
-X- Add WP Specific richtext styles to separate files (fathom)
-X- Add form styles - wordpress (fathom)
-X- Add form styles - statamic (409)
-X- Add fluid text styles (409)
-X- Modernize richtext styles
-X- Add button definitions
-X- Global element styles - Check 409, Matute + ones Ilich provided
-- Update readme
+Miscellaneous utility classes defined in `css/utilities/_elements.css`.
 
-## TODOS - DESIGN SYSTEM
+#### Layout
 
-x- Make task to change gray to gray in lwind + starter kit
-- Add task to create feedback design elements
-- Font name in figma, sometimes they will be prefixed with the project name
-X- LWIND - Adjust so its only the 3 radiuses, decide which approach
-X- LWIND - Add constrained containers to Lwind
-- Forms - Add the feedback elements to the document
-- Forms - Add statamic reference to the 'when developing'
-- Forms - Also include the form input states: read only, focused, required
-- Icons - Indicate that we use Iconify by default, Flaticons is a fallback, otherwise AI icons which need to be carefully considered - FIGMA PACKAGE: https://www.figma.com/community/plugin/735098390272716381/iconify
+- `absolute-center` - Absolutely positions an element at the center of its nearest positioned ancestor via `translate(-50%, -50%)`
+- `clearfix` - Clears floated children using a `::after` pseudo-element
+- `py-section` - Standard section vertical padding, fluid across breakpoints (`py-18` → `2xl:py-28`)
+
+#### Video
+
+- `video-frame` - Forces an `<iframe>` inside to 16:9 aspect ratio using padding-bottom technique; compatible across browsers
+
+#### Image Color Controls
+
+- `img-to-white` - Applies CSS filter to turn an image/icon fully white
+- `img-to-black` - Applies CSS filter to turn an image/icon fully black
+
+#### Accent Text Coloring
+
+Used to apply brand color to inline `<span>` elements inside a parent, typically for CMS-authored headings where editors wrap a word in a span.
+
+- `has-primary-text` - Colors child `<span>` elements with `text-primary`
+- `has-secondary-text` - Colors child `<span>` elements with `text-secondary`
+
+### Layout
+
+Sticky footer layout utilities defined in `css/components/_layout.css`. These work by setting `body` to `flex flex-col min-h-screen` and using flex grow/shrink on the child regions to push the footer to the bottom of the viewport.
+
+- `site-header` - Flex child that does not grow or shrink
+- `site-main` - Flex child that grows to fill available space, pushing the footer down
+- `site-footer` - Flex child that does not grow or shrink
+
+#### Example
+
+```html
+<body>
+  <header class="site-header">...</header>
+  <main class="site-main">...</main>
+  <footer class="site-footer">...</footer>
+</body>
+```
+
