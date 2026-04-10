@@ -26,9 +26,24 @@
     --text-ms-12: 65px;
     --text-ms-13: 73px;
 
+    /* Fluid Font Size */
+    --text-fms-factor: 1;
+    --text-fms-1: clamp(calc(var(--text-ms-1) * 0.7), calc(var(--text-ms-1) * 0.5 + 1.5vw), calc(var(--text-ms-1) * var(--text-fms-factor)));
+    --text-fms-2: clamp(calc(var(--text-ms-1) * 0.75), calc(var(--text-ms-2) * 0.5 + 1.5vw), calc(var(--text-ms-2) * var(--text-fms-factor)));
+    --text-fms-3: clamp(calc(var(--text-ms-2) * 0.75), calc(var(--text-ms-3) * 0.5 + 1.5vw), calc(var(--text-ms-3) * var(--text-fms-factor)));
+    --text-fms-4: clamp(calc(var(--text-ms-3) * 0.75), calc(var(--text-ms-4) * 0.5 + 1.5vw), calc(var(--text-ms-4) * var(--text-fms-factor)));
+    --text-fms-5: clamp(calc(var(--text-ms-4) * 0.75), calc(var(--text-ms-5) * 0.6 + 1.5vw), calc(var(--text-ms-5) * var(--text-fms-factor)));
+    --text-fms-6: clamp(calc(var(--text-ms-5) * 0.75), calc(var(--text-ms-6) * 0.6 + 1.5vw), calc(var(--text-ms-6) * var(--text-fms-factor)));
+    --text-fms-7: clamp(calc(var(--text-ms-6) * 0.75), calc(var(--text-ms-7) * 0.6 + 1.5vw), calc(var(--text-ms-7) * var(--text-fms-factor)));
+    --text-fms-8: clamp(calc(var(--text-ms-7) * 0.75), calc(var(--text-ms-8) * 0.6 + 1.5vw), calc(var(--text-ms-8) * var(--text-fms-factor)));
+    --text-fms-9: clamp(calc(var(--text-ms-8) * 0.75), calc(var(--text-ms-9) * 0.7 + 1.5vw), calc(var(--text-ms-9) * var(--text-fms-factor)));
+    --text-fms-10: clamp(calc(var(--text-ms-9) * 0.75), calc(var(--text-ms-10) * 0.7 + 1.5vw), calc(var(--text-ms-10) * var(--text-fms-factor)));
+    --text-fms-11: clamp(calc(var(--text-ms-10) * 0.75), calc(var(--text-ms-11) * 0.7 + 1.5vw), calc(var(--text-ms-11) * var(--text-fms-factor)));
+    --text-fms-12: clamp(calc(var(--text-ms-11) * 0.75), calc(var(--text-ms-12) * 0.7 + 1.5vw), calc(var(--text-ms-12) * var(--text-fms-factor)));
+    --text-fms-13: clamp(calc(var(--text-ms-12) * 0.75), calc(var(--text-ms-13) * 0.7 + 1.5vw), calc(var(--text-ms-13) * var(--text-fms-factor)));
+
     /* Colors */
     --color-*: initial; /* Removes Default Colors */
-
     /* Primary Color Pallet */
     --color-primary-light: #e52560;
     --color-primary: #a01b44;
@@ -47,12 +62,12 @@
     --color-tertiary-dark: #710627;
     --color-tertiary-fg: #ffffff;
 
-    /* Greyscale */
-    --color-grey-100: #f1f1f1;
-    --color-grey-300: #d2d2d2;
-    --color-grey-500: #9a9a9a;
-    --color-grey-700: #5a5a5a;
-    --color-grey-900: #1a1818;
+    /* grayscale */
+    --color-gray-100: #f1f1f1;
+    --color-gray-300: #d2d2d2;
+    --color-gray-500: #9a9a9a;
+    --color-gray-700: #5a5a5a;
+    --color-gray-900: #1a1818;
 
     /* Constants */
     --color-black: #000000;
@@ -87,13 +102,11 @@
     --container-xl: 1600px;
     --container-padding: 1.5rem;
     --container: var(--container-lg); /* Default Container Size */
-
     /* Constrained Containers - Set the snapping widths */
     --container-adaptive-xs: var(--container-xs);
     --container-adaptive-sm: var(--container-sm);
     --container-adaptive-md: var(--container-md);
     --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
-
     /* Links & Forms */
     --color-color-link: #a01b44;
     --color-color-field: #E4EEF7;
@@ -112,13 +125,13 @@
     /* Rich Text */
     --richtext-background-colors-table-td: inherit;
     --richtext-background-colors-table-th: var(--color-primary);
-    --richtext-border-colors-table-th: var(--color-grey-300);
+    --richtext-border-colors-table-th: var(--color-gray-300);
     --richtext-border-colors-table-td: var(--color-primary-light);
 
     --richtext-colors-bullet: var(--color-primary);
-    --richtext-colors-blockquote: var(--color-grey-900);
+    --richtext-colors-blockquote: var(--color-gray-900);
     --richtext-colors-link: var(--color-primary);
-    --richtext-colors-table-td: var(--color-grey-900);
+    --richtext-colors-table-td: var(--color-gray-900);
     --richtext-colors-table-th: var(--color-primary);
 
     --richtext-font-family-table-td: var(--font-body);
