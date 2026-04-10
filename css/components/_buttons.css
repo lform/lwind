@@ -1,69 +1,73 @@
 @utility button {
-	/* Default button */
-	@apply inline-block py-3 px-6 bg-primary text-primary-fg hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black leading-tight;
+	--button-bg: var(--color-primary);
+	--button-border: var(--color-primary);
+	--button-text: var(--color-primary-fg);
+	--button-bg-hover: var(--color-primary-dark);
+	--button-border-hover: var(--color-primary-dark);
+	--button-text-hover: var(--color-primary-fg);
+
+	@apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm px-3.5 py-4.5 font-body font-bold leading-none no-underline transition-colors duration-200;
+	background-color: var(--button-bg);
+	color: var(--button-text);
+
+	&:is(:hover, .button-hover) {
+		background-color: var(--button-bg-hover);
+		border-color: var(--button-border-hover);
+		color: var(--button-text-hover);
+	}
+
+	&:is(:focus-visible, .button-focus) {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+
+	&:is(:disabled, [disabled], [aria-disabled="true"], .button-disabled) {
+		@apply cursor-not-allowed no-underline opacity-70;
+		background-color: var(--color-gray-300);
+		border-color: var(--color-gray-300);
+		color: var(--color-gray-700);
+	}
 }
 
-/* Color Variants */
 @utility button-secondary {
-	@apply bg-secondary text-secondary-fg hover:bg-secondary-dark;
+	--button-bg: var(--color-secondary);
+	--button-border: var(--color-secondary);
+	--button-text: var(--color-secondary-fg);
+	--button-bg-hover: var(--color-secondary-dark);
+	--button-border-hover: var(--color-secondary-dark);
+	--button-text-hover: var(--color-secondary-fg);
 }
 
-@utility button-tertiary {
-	@apply bg-tertiary text-tertiary-fg border-primary border-2;
-}
-
-/* Size Variants */
-@utility button-xs {
-	@apply py-1 px-2 -text-ms-2;
+@utility button-outline {
+    @apply border;
+	--button-bg: transparent;
+	--button-text: var(--button-border);
+	--button-bg-hover: transparent;
+    --button-border-hover: var(--button-border-hover);
+    --button-text-hover: var(--button-border-hover);
 }
 
 @utility button-sm {
-	@apply py-1.5 px-3 -text-ms-1;
+	@apply px-2.5 py-3 -text-ms-1;
+}
+
+@utility button-md {
+	@apply px-3.5 py-4.5;
 }
 
 @utility button-lg {
-	@apply py-3 px-5 text-ms-1;
+	@apply px-4 py-6 text-ms-1;
 }
 
-@utility button-xl {
-	@apply py-3 px-6 text-ms-2;
+@utility button-icon {
+	@apply gap-x-3;
+
+	svg,
+	i {
+		@apply shrink-0;
+	}
 }
 
-.button {
-	@apply text-fluid-1 font-bold inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm py-4 px-6.5 no-underline leading-none transition-all;
-
-	/* Color Variations */
-	&.button-primary {
-		@apply bg-primary hover:bg-primary-dark text-gray-50 border border-primary hover:border-primary-dark;
-	}
-
-	&.button-secondary {
-		@apply bg-white hover:bg-gray-100 text-primary border border-primary hover:border-primary-dark;
-	}
-
-	&.button-secondary-gray{
-		@apply bg-white hover:bg-gray-100 text-gray-800;
-	}
-
-	&.button-outline {
-		@apply border border-primary bg-transparent text-primary hover:text-primary-dark hover:border-primary-dark;
-	}
-
-	&.button-header-nav {
-		@apply border border-none font-extrabold bg-transparent text-primary hover:text-primary-dark uppercase;
-	}
-
-	&.button-ghost {
-		@apply bg-transparent text-primary hover:bg-gray-100 hover:text-primary-dark;
-	}
-
-	/* Size Variations */
-	&.button-sm {
-		@apply px-3 py-3;
-		@apply text-[14px];
-	}
-
-	&.button-md {
-		@apply px-3.5 py-4.5;
-	}
+@utility button-full {
+	@apply flex w-full;
 }
