@@ -2,7 +2,7 @@
 
 The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing for the flexibility required to implement designs produced using the Lform design system. The package is lightweight, comprised of a starting Tailwind config and a handful of PostCSS plugins.
 
-- Requires Tailwind 3.4.0+
+- Requires Tailwind 4.0.0+
 
 ## Resources
 
@@ -89,7 +89,7 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
   - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
 - **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
   to be added as necessary to accommodate a design.
-- **Greys** are labeled using Tailwind's numbering system, `100`, `300`, `500`, `700`, `900` are included by default.
+- **Grays** are labeled using Tailwind's numbering system, `100`, `300`, `500`, `700`, `900` are included by default.
 - **Black & whites** are defined in the `black` and `white` keys, as well as their transparent versions
   equivalents `white-transparent` and `black-transparent`
 - **Feedback colors** from forms / interactions are specified in the `success`, `warning`, and `error` colors
@@ -103,7 +103,7 @@ There are 3 types of fonts in Lwind:
 
 - `font-body` - The body font used on the site by default
 - `font-header` - The main header font
-- `font-subheader` - Usually used for small text items in a utility context, eg blog post dates
+- `font-accent` - Usually used for small text items in a utility context, eg blog post dates
 
 #### Font scaling
 
@@ -274,3 +274,28 @@ CSS Grid has a limitation in that it does not support centering columns or align
     <!-- A 3 column flex grid with an 8 pixel gap, 2 columns on tablet -->
 </div>
 ```
+
+# TODOs
+
+X- Fix richtext styles for consistency
+X- Add constrained containers
+X- Add WP Specific richtext styles to separate files (fathom)
+X- Add form styles - wordpress (fathom)
+X- Add form styles - statamic (409)
+X- Add fluid text styles (409)
+X- Modernize richtext styles
+X- Add button definitions
+X- Global element styles - Check 409, Matute + ones Ilich provided
+- Update readme
+
+## TODOS - DESIGN SYSTEM
+
+x- Make task to change gray to gray in lwind + starter kit
+- Add task to create feedback design elements
+- Font name in figma, sometimes they will be prefixed with the project name
+X- LWIND - Adjust so its only the 3 radiuses, decide which approach
+X- LWIND - Add constrained containers to Lwind
+- Forms - Add the feedback elements to the document
+- Forms - Add statamic reference to the 'when developing'
+- Forms - Also include the form input states: read only, focused, required
+- Icons - Indicate that we use Iconify by default, Flaticons is a fallback, otherwise AI icons which need to be carefully considered - FIGMA PACKAGE: https://www.figma.com/community/plugin/735098390272716381/iconify
