@@ -1,0 +1,81 @@
+.form-dynamic {
+    /* Gap Y Handles the vertical space between form fields */
+    /* The negative horizontal margin accounts for the spacing added to the left and right of the input container. */
+    @apply -mx-1.5 flex flex-wrap gap-y-4 md:-mx-[7px] md:gap-y-6;
+
+    .input-container {
+        @apply px-1.5 md:px-[7px];
+
+        .input-label {
+            @apply text-ms-0 text-white mb-1.5 inline-block font-medium;
+        }
+
+        &.required {
+            .input-label > span {
+                @apply text-[#ED482B];
+            }
+        }
+
+        /* Baseline Form Fields Styling */
+        .field-text,
+        .field-textarea,
+        .field-select {
+            @apply border-gray-600 bg-gray-800 text-gray-400 text-[14px] text-ms-0 block w-full rounded-lg border px-3.5 py-2 md:px-3 md:py-2;
+        }
+
+        .field-text,
+        .field-select{
+            @apply h-12;
+        }
+
+        .field-select-container {
+            @apply relative;
+
+            .field-select {
+                @apply bg-gray-800;
+
+                /* Hide Default Dropdown Arrow */
+                -webkit-appearance: none; /* For Chrome, Safari, Edge, and Opera */
+                -moz-appearance: none; /* For Firefox */
+                appearance: none; /* Standard property */
+
+                &::-ms-expand {
+                    display: none; /* For Internet Explorer 10+ */
+                }
+            }
+
+            .field-select-icon {
+                @apply text-ms-3 text-gray-400 absolute right-5 top-1/2 -translate-y-1/2;
+            }
+        }
+
+        .field-checkbox-container {
+            .field-checkbox-input {
+                @apply hidden;
+            }
+
+            .field-checkbox-label {
+                @apply sm:text-ms-0 -text-ms-1 flex cursor-pointer select-none items-center gap-x-2.5;
+
+                .field-checkbox-icon-container {
+                    @apply border-gray-800 flex h-5 w-5 items-center justify-center rounded-[4px] border transition-all;
+
+                    .field-checkbox-icon {
+                        @apply text-gray-400 opacity-0 transition-all;
+                    }
+                }
+            }
+
+            /* Checked State */
+            .field-checkbox-input:checked ~ .field-checkbox-label {
+                .field-checkbox-icon-container {
+                    @apply border-primary bg-primary;
+
+                    .field-checkbox-icon {
+                        @apply opacity-100;
+                    }
+                }
+            }
+        }
+    }
+}

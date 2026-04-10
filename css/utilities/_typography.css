@@ -1,3 +1,11 @@
+/*
+ * Shim for negative font-size utilities
+ */
+@utility -text-ms-* {
+	font-size: --value(--text--ms-*);
+}
+
+/* Header Font Helpers */
 @utility h-ms {
 	/* Headers */
 	@apply font-header;
@@ -86,33 +94,33 @@
 	@apply text-fms-13;
 }
 
-@utility sh-ms {
-	/* Subheaders */
+/* Accent Font Helpers */
+@utility ac-ms {
 	@apply font-accent;
 	line-height: var(--leading-header, 1.2);
 }
 
-@utility -sh-ms-3 {
-	@apply sh-ms;
+@utility -ac-ms-3 {
+	@apply ac-ms;
 	@apply -text-ms-3;
 }
 
-@utility -sh-ms-2 {
-	@apply sh-ms;
+@utility -ac-ms-2 {
+	@apply ac-ms;
 	@apply -text-ms-2;
 }
 
-@utility -sh-ms-1 {
-	@apply sh-ms;
+@utility -ac-ms-1 {
+	@apply ac-ms;
 	@apply -text-ms-1;
 }
 
-@utility sh-ms-1 {
-	@apply sh-ms;
+@utility ac-ms-1 {
+	@apply ac-ms;
 	@apply text-fms-1;
 }
 
-@utility sh-ms-2 {
-	@apply sh-ms;
+@utility ac-ms-2 {
+	@apply ac-ms;
 	@apply text-fms-2;
 }
