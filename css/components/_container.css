@@ -73,16 +73,20 @@
 		margin-left: 0;
 	}
 
-	@media (min-width: var(--container-adaptive-sm, 1024px)) {
-		max-width: var(--container-adaptive-sm, 1024px);
+	@media (min-width: 720px) {
+		max-width: var(--container-adaptive-xs, 720px) !important;
 	}
 
-	@media (min-width: var(--container-adaptive-md, 1280px)) {
-		max-width: var(--container-adaptive-md, 1280px);
+	@media (min-width: 1024px) {
+		max-width: var(--container-adaptive-sm, 1024px) !important;
 	}
 
-	@media (min-width: var(--container-adaptive, 1440px)) {
-		max-width: var(--container-adaptive, 1440px);
+	@media (min-width: 1280px) {
+		max-width: var(--container-adaptive-md, 1280px) !important;
+	}
+
+	@media (min-width: 1440px) {
+		max-width: var(--container-adaptive, 1440px) !important;
 	}
 
 	/* Fix any nested containers so their padding does not stack */
