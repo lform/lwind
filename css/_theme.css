@@ -80,10 +80,10 @@
     --color-transparent: transparent;
 
     /* Feedback Tones */
-    --color-feedback-success: #D8FFA7;
-    --color-feedback-warning: #ffe699;
-    --color-feedback-error: #ffaf99;
-    --color-feedback-info: #8ce0ff;
+    --color-feedback-success: #008554;
+    --color-feedback-warning: #8F6200;
+    --color-feedback-error: #d90259;
+    --color-feedback-info: #007DA3;
 
     /* Social Media Brand Colors */
     --color-social-facebook: #0866FF;
