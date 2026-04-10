@@ -1,0 +1,46 @@
+.pagination {
+	@apply flex flex-wrap items-center justify-center gap-x-5 gap-y-6;
+
+	.prev-page,
+	.next-page {
+		@apply text-primary border-primary flex h-8 w-8 items-center justify-center rounded-full border;
+
+		a {
+			@apply text-primary flex items-center justify-center hover:underline;
+		}
+
+		&.disabled {
+			span {
+				@apply text-grey-500 flex items-center justify-center;
+			}
+		}
+	}
+
+	.pagination-link,
+	.pagination-text {
+		& * {
+			@apply flex h-8 w-8 items-center justify-center rounded-full border;
+			@apply font-semibold;
+		}
+	}
+
+	.pagination-link {
+		& > * {
+			@apply border-primary;
+		}
+
+		a {
+			@apply text-primary;
+		}
+	}
+
+	.pagination-text {
+		& > * {
+			@apply text-primary;
+		}
+
+		&.active > * {
+			@apply border-primary bg-primary text-white;
+		}
+	}
+}

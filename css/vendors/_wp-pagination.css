@@ -1,0 +1,48 @@
+/* WordPress pagination */
+.pagination,
+.posts-navigation,
+.post-navigation {
+	@apply my-10;
+
+	.nav-links {
+		@apply flex flex-wrap items-center justify-center gap-x-5 gap-y-6;
+	}
+
+	a {
+		@apply hover:underline;
+	}
+
+	.page-numbers {
+		@apply text-primary flex min-h-8 min-w-8 items-center justify-center rounded-full border border-primary px-3 py-1 font-semibold;
+
+		&.current {
+			@apply bg-primary text-white;
+		}
+
+		&.dots {
+			@apply border-transparent px-1 text-primary;
+		}
+
+		&.prev,
+		&.next {
+			@apply h-8 w-8 px-0;
+		}
+	}
+
+	.nav-previous,
+	.nav-next {
+		@apply flex;
+
+		a {
+			@apply text-primary flex min-h-8 min-w-8 items-center justify-center rounded-full border border-primary px-3 py-1 font-semibold;
+		}
+	}
+
+	.nav-previous a {
+		@apply mr-auto;
+	}
+
+	.nav-next a {
+		@apply ml-auto;
+	}
+}
