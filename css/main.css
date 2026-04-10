@@ -23,3 +23,6 @@
 /* Vendor Styling */
 @import './vendors/_wp-richtext.css';
 @import './vendors/_wp-forms.css';
+@import './vendors/_wp-pagination.css' layer(utilities);
+@import './vendors/_statamic-forms.css' layer(utilities);
+@import './vendors/_statamic-pagination.css' layer(utilities);
