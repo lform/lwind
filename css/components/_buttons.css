@@ -28,3 +28,42 @@
 @utility button-xl {
 	@apply py-3 px-6 text-ms-2;
 }
+
+.button {
+	@apply text-fluid-1 font-bold inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm py-4 px-6.5 no-underline leading-none transition-all;
+
+	/* Color Variations */
+	&.button-primary {
+		@apply bg-primary hover:bg-primary-dark text-gray-50 border border-primary hover:border-primary-dark;
+	}
+
+	&.button-secondary {
+		@apply bg-white hover:bg-gray-100 text-primary border border-primary hover:border-primary-dark;
+	}
+
+	&.button-secondary-gray{
+		@apply bg-white hover:bg-gray-100 text-gray-800;
+	}
+
+	&.button-outline {
+		@apply border border-primary bg-transparent text-primary hover:text-primary-dark hover:border-primary-dark;
+	}
+
+	&.button-header-nav {
+		@apply border border-none font-extrabold bg-transparent text-primary hover:text-primary-dark uppercase;
+	}
+
+	&.button-ghost {
+		@apply bg-transparent text-primary hover:bg-gray-100 hover:text-primary-dark;
+	}
+
+	/* Size Variations */
+	&.button-sm {
+		@apply px-3 py-3;
+		@apply text-[14px];
+	}
+
+	&.button-md {
+		@apply px-3.5 py-4.5;
+	}
+}
