@@ -65,7 +65,7 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
   - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
 - **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
   to be added as necessary to accommodate a design.
-- **Grays** are labeled using Tailwind's numbering system. A full 10-step scale is included: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `950`.
+- **Grays** are labeled using Tailwind's numbering system. A full 11-step scale is included: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`, `950`.
 - **Black & whites** are defined in the `black` and `white` keys, as well as their transparent versions
   equivalents `white-transparent` and `black-transparent`
 - **Feedback colors** from forms / interactions are specified in the `info`, `success`, `warning`, and `error` colors

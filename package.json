@@ -7,7 +7,8 @@
 	"scripts": {
 		"dev": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css",
 		"watch": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css --watch",
-		"prod": "NODE_ENV=production npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.min.css --minify"
+		"prod": "NODE_ENV=production npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.min.css --minify",
+		"demo": "mkdir -p ./dist && npm run dev && cp ./demo/kitchen-sink.html ./dist/kitchen-sink.html"
 	},
 	"repository": {
 		"type": "git",
