@@ -1,9 +1,10 @@
 @utility container {
 	/* Overrides the default container with a fluid container that matches the breakpoints */
 	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
+	padding-left: var(--container-padding, 1.5rem);
+	padding-right: var(--container-padding, 1.5rem);
 	width: 100%;
+	max-width: var(--container, 1440px);
 
 	&.px-0 {
 		padding-right: 0;
@@ -14,7 +15,6 @@
 		margin-right: 0;
 		margin-left: 0;
 	}
-	max-width: var(--container);
 
 	/* Fix any nested containers so their padding does not stack */
 	.container,
@@ -32,9 +32,10 @@
 @utility container-* {
 	/* Overrides the default container with a fluid container that matches the breakpoints */
 	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
+	padding-left: var(--container-padding, 1.5rem);
+	padding-right: var(--container-padding, 1.5rem);
 	width: 100%;
+	max-width: --value(--container-*);
 
 	&.px-0 {
 		padding-right: 0;
@@ -46,16 +47,47 @@
 		margin-left: 0;
 	}
 
-	max-width: --value(--container-*);
+	/* Fix any nested containers so their padding does not stack */
+	.container,
+	.container-* {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@utility container-adaptive {
+	/* Snaps to the small, medium, and large constrained container widths */
+	@apply mx-auto;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	width: 100%;
+	max-width: var(--container-adaptive-xs, 720px);
+
+	&.px-0 {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	&.mx-0 {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	@media (min-width: var(--container-adaptive-sm, 1024px)) {
+		max-width: var(--container-adaptive-sm, 1024px);
+	}
+
+	@media (min-width: var(--container-adaptive-md, 1280px)) {
+		max-width: var(--container-adaptive-md, 1280px);
+	}
+
+	@media (min-width: var(--container-adaptive, 1440px)) {
+		max-width: var(--container-adaptive, 1440px);
+	}
 
 	/* Fix any nested containers so their padding does not stack */
 	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
+	.container-* {
 		padding-left: 0;
 		padding-right: 0;
 	}
