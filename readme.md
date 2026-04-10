@@ -42,6 +42,14 @@ The following scripts are available in the `package.json` file, if the project u
 - `npm run watch` - Builds the development stylesheet and watches for changes
 - `npm run prod` - Builds the minified production stylesheet at `dist/app.min.css`
 
+## Kitchen Sink Demo
+
+A static kitchen sink demo is included for validating the current component and vendor styling in a browser.
+
+- `npm run demo` - Builds `dist/app.css` and copies the demo page to `dist/kitchen-sink.html`
+
+The demo exercises the current button, container, flex grid, rich text, WordPress pagination, and Statamic pagination styles.
+
 ## Tailwind Config
 
 ### Tailwind Plugins
@@ -393,4 +401,3 @@ Sticky footer layout utilities defined in `css/components/_layout.css`. These wo
   <footer class="site-footer">...</footer>
 </body>
 ```
-
