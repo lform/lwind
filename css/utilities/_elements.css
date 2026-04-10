@@ -48,3 +48,37 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/*
+ * Standard Section Vertical Padding
+ */
+@utility py-section {
+	@apply py-18 sm:py-20 md:py-22 2xl:py-28;
+}
+
+/*
+ * Image Color Controls for Icons and Elements
+ */
+@utility img-to-white {
+	@apply [filter:brightness(0)_saturate(100%)_invert(100%)];
+}
+
+@utility img-to-black {
+	@apply [filter:brightness(0)_saturate(100%)];
+}
+
+/*
+ * Controls Accent Coloring of Text via Admin
+ */
+@utility has-primary-text {
+	span {
+		@apply text-primary;
+	}
+}
+
+@utility has-secondary-text {
+	span {
+		@apply text-secondary;
+	}
+}
+
