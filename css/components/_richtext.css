@@ -1,70 +1,79 @@
 .rich-text {
+	@apply clearfix;
 	font-weight: var(--richtext-font-weight-base);
+	overflow-wrap: anywhere;
+
+	--richtext-flow-space: var(--richtext-spacing);
+	--richtext-flow-space-lg: var(--richtext-spacing-header);
+	--richtext-flow-space-sm: var(--richtext-spacing-list);
+	--richtext-measure: 75ch;
+
+	> :first-child {
+		margin-top: 0 !important;
+	}
+
+	> :last-child {
+		margin-bottom: 0 !important;
+	}
 
 	/* For richtext areas on dark backgrounds */
 	&.inverted {
 		@apply text-white;
 
-		ul, ol {
+		a {
+			color: currentColor;
+		}
+
+		ul,
+		ol {
 			::marker {
 				@apply text-white;
 			}
 		}
 	}
 
-	/* Adds clearfix for all rich-text areas, in case user uses floats */
-	&:after {
-		clear: both;
-		content: "";
-		display: table;
+	/* Element Spacing */
+	> * {
+		scroll-margin-top: 2rem;
+		margin-block: 0;
 	}
 
-	/* Element Spacing */
-	blockquote,
-	code,
-	figure,
-	li,
-	ol,
-	pre,
-	ul,
-	table,
-	p,
+	> * + * {
+		margin-block-start: var(--richtext-flow-space);
+	}
+
+	/* Header Styling */
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		&:not(:first-child) {
-			margin-top: var(--richtext-spacing);
-		}
-
-		&:not(:last-child) {
-			margin-bottom: var(--richtext-spacing);
-		}
+		@apply font-header leading-tight;
+		overflow-wrap: break-word;
+		text-wrap: balance;
 	}
 
-	/* Header Styling */
-	h1, h2, h3, h4, h5, h6 {
-		@apply font-header leading-tight;
+	> :is(h1, h2, h3, h4, h5, h6) {
+		margin-block-start: var(--richtext-flow-space-lg);
+	}
 
-		&:not(:first-child) {
-			margin-top: var(--richtext-spacing-header);
-		}
+	> :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+		margin-block-start: var(--richtext-flow-space);
 	}
 
 	h1 {
-		font-size: var(--richtext-font-size-heading-1);
+		font-size: clamp(var(--text-ms-7), 4vw, var(--richtext-font-size-heading-1));
 		font-weight: var(--richtext-font-weight-heading-1);
 	}
 
 	h2 {
-		font-size: var(--richtext-font-size-heading-2);
+		font-size: clamp(var(--text-ms-5), 3vw, var(--richtext-font-size-heading-2));
 		font-weight: var(--richtext-font-weight-heading-2);
 	}
 
 	h3 {
-		font-size: var(--richtext-font-size-heading-3);
+		font-size: clamp(var(--text-ms-3), 2.5vw, var(--richtext-font-size-heading-3));
 		font-weight: var(--richtext-font-weight-heading-3);
 	}
 
@@ -86,37 +95,84 @@
 	/* Paragraph Styling */
 	p {
 		@apply leading-normal;
+		max-width: var(--richtext-measure);
+		overflow-wrap: break-word;
+		text-wrap: pretty;
 	}
 
 	sup,
 	sub {
-		@apply -text-ms-1;
+		@apply -text-ms-2;
 	}
 
 	/* Link Styling */
 	a {
 		@apply underline;
 		color: var(--richtext-colors-link);
+		transition: color 150ms ease, text-decoration-color 150ms ease;
+		text-decoration-thickness: 0.08em;
+		text-decoration-color: currentColor;
+		text-underline-offset: 0.14em;
+
+		&:hover {
+			text-decoration-color: color-mix(in srgb, currentColor 75%, transparent);
+		}
+
+		&:focus-visible {
+			border-radius: var(--radius-sm);
+			outline: 1px dotted currentColor;
+			outline-offset: 2px;
+			text-decoration: none;
+		}
 	}
 
 	/* Remove underline from buttons */
 	.button {
-		@apply no-underline;
+		@apply !no-underline;
+	}
+
+	/* Inline Code */
+	:not(pre) > code {
+		@apply rounded-xs;
+		background-color: var(--color-grey-100);
+		background-color: color-mix(in srgb, var(--color-grey-100) 80%, transparent);
+		padding: 0.15em 0.4em;
+	}
+
+	pre {
+		@apply rounded-xs;
+		background-color: var(--color-grey-900);
+		color: var(--color-white);
+		margin-inline: 0;
+		overflow-x: auto;
+		padding: 1rem 1.25rem;
+
+		code {
+			background-color: transparent;
+			padding: 0;
+		}
 	}
 
 	/* Horizontal Rule */
 	hr {
+		border: 0;
+		border-top: 1px solid var(--color-grey-300);
 		margin: var(--richtext-spacing-hr) 0 !important;
 	}
 
 	/* Bullet Styling */
-	ul, ol {
-		@apply pl-10;
+	ul,
+	ol {
+		margin-block: 0;
+		padding-left: 1.5rem;
 
 		li {
+			margin-block: 0;
+			padding-left: 0.25rem;
+
 			> ol,
 			> ul {
-				margin-top: var(--richtext-spacing-list);
+				margin-block-start: var(--richtext-flow-space-sm);
 			}
 
 			&::marker {
@@ -128,53 +184,66 @@
 
 	ul {
 		@apply list-disc;
-
-		li li {
-			list-style: square;
-
-			li {
-				list-style: circle;
-			}
-		}
 	}
 
 	ol {
 		@apply list-decimal;
+	}
 
-		li li {
-			list-style: upper-alpha;
+	ul ul {
+		list-style-type: square;
+	}
 
-			li {
-				list-style: upper-roman;
-			}
-		}
+	ul ul ul {
+		list-style-type: circle;
+	}
+
+	ol ol {
+		list-style-type: upper-alpha;
+	}
+
+	ol ol ol {
+		list-style-type: upper-roman;
 	}
 
 	/* Image & Caption Styling */
 	figure {
 		@apply flex flex-col items-center justify-center;
+		gap: 0.75rem;
+		margin-inline: 0;
 
 		&:has(img) {
-			@apply w-fit;
+			@apply max-w-full w-fit;
 		}
 	}
 
 	figcaption {
-		@apply italic my-2 mx-4 text-grey-700 -text-ms-1 text-center;
+		@apply italic mx-4 text-grey-700 -text-ms-1 text-center;
+		max-width: 65ch;
+		text-wrap: pretty;
 	}
 
-	img {
+	img,
+	video {
 		/* Prevents users from placing images larger than the rich-text area */
+		border-radius: var(--radius-sm);
 		display: inline-block;
+		height: auto;
 		max-width: 100% !important;
 	}
 
 	/* Table Styling */
 	table {
 		@apply w-full;
+		border-collapse: collapse;
+		display: block;
+		margin-inline: 0;
+		overflow-x: auto;
+		white-space: nowrap;
 
 		tr {
-			th, td {
+			th,
+			td {
 				@apply align-top leading-tight py-3 px-6 text-left;
 			}
 
@@ -190,13 +259,13 @@
 
 			td {
 				@apply border-b;
-				@apply last:border-r;
 				background-color: var(--richtext-background-colors-table-td);
 				border-color: var(--richtext-border-colors-table-td);
 				color: var(--richtext-colors-table-td);
 				font-family: var(--richtext-font-family-table-td);
 				font-size: var(--richtext-font-size-table-td);
 				font-weight: var(--richtext-font-weight-table-td);
+				white-space: normal;
 			}
 
 			>:first-child:is(td) {
@@ -207,12 +276,18 @@
 
 	/* Quote Styling */
 	blockquote {
-		@apply border border-grey-100 rounded-xs;
+		@apply rounded-xs;
+		background-color: var(--color-grey-100);
+		background-color: color-mix(in srgb, var(--color-grey-100) 50%, transparent);
+		border-inline-start: 4px solid var(--color-primary);
 		color: var(--richtext-colors-blockquote);
 		font-weight: var(--richtext-font-weight-blockquote);
+		margin-inline: 0;
+		padding: 1.5rem;
 
 		p {
-			@apply border-t-4 border-primary flex font-light font-subheader m-10 pt-4 text-ms-4;
+			@apply font-light font-subheader m-0 text-ms-4;
+			max-width: none;
 		}
 	}
 
@@ -222,10 +297,15 @@
 		@apply block mx-auto text-center;
 	}
 
+	> :is(figure, pre, table, blockquote).aligncenter,
+	> :is(figure, pre, table, blockquote).pull-center {
+		width: min(100%, var(--richtext-measure));
+	}
+
 	.alignleft,
 	.pull-left {
 		float: left;
-		margin: 0.75em 1.5em 0.75em 0;
+		margin: 0.5rem 1.5rem 1rem 0;
 		&:first-child {
 			margin-top: 0;
 		}
@@ -234,7 +314,7 @@
 	.alignright,
 	.pull-right {
 		float: right;
-		margin: 0.75em 0 0.75em 1.5em;
+		margin: 0.5rem 0 1rem 1.5rem;
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -251,6 +331,8 @@
 
 	/* Iframe Styling */
 	iframe {
+		@apply rounded-xs;
+		border: 0;
 		max-width: 100%;
 		width: 100%;
 
