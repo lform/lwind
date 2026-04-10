@@ -6,7 +6,7 @@
 	--button-border-hover: var(--color-primary-dark);
 	--button-text-hover: var(--color-primary-fg);
 
-	@apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm px-3.5 py-4.5 font-body font-bold leading-none no-underline transition-colors duration-200;
+	@apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm px-4 py-3 font-body font-bold leading-none no-underline transition-colors duration-200;
 	background-color: var(--button-bg);
 	color: var(--button-text);
 
@@ -45,18 +45,26 @@
 	--button-bg-hover: transparent;
     --button-border-hover: var(--button-border-hover);
     --button-text-hover: var(--button-border-hover);
+
+	&.button-secondary {
+		--button-bg: transparent;
+		--button-text: var(--button-border);
+		--button-bg-hover: transparent;
+		--button-border-hover: var(--button-border-hover);
+		--button-text-hover: var(--button-border-hover);
+	}
 }
 
 @utility button-sm {
-	@apply px-2.5 py-3 -text-ms-1;
+	@apply !px-3 !py-2.5 !-text-ms-1;
 }
 
 @utility button-md {
-	@apply px-3.5 py-4.5;
+	@apply px-4 py-3;
 }
 
 @utility button-lg {
-	@apply px-4 py-6 text-ms-1;
+	@apply !px-6 !py-4 !text-ms-1;
 }
 
 @utility button-icon {
