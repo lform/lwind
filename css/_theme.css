@@ -3,8 +3,8 @@
     /* Font Family */
     --font-*: initial; /* Removes Default Font Families */
     --font-header: 'IBM Plex Sans', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
-    --font-subheader: 'Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
     --font-body: 'Barlow', 'Franklin Gothic Medium', 'Tahoma', 'sans-serif';
+    --font-accent: 'Oswald', 'Impact', 'Franklin Gothic Bold', 'sans-serif';
 
     /* Font Size */
     --text-*: initial; /* Removes Default Font Sizes */
@@ -64,7 +64,7 @@
     --color-feedback-warning: #fdf0a9;
     --color-feedback-error: #f69679;
 
-    /* Social Icons */
+    /* Social Media Brand Colors */
     --color-social-facebook: #0866FF;
     --color-social-flickr: #ff0084;
     --color-social-houzz: #7ac142;
@@ -80,20 +80,34 @@
     --color-social-yelp: #f43939;
 
     /* Containers */
-    --container-sm: 640px;
-    --container-md: 768px;
-    --container-lg: 1024px;
-    --container-xl: 1280px;
-    --container-2xl: 1536px;
-    --container-3xl: 1800px;
+    --container-xs: 720px;
+    --container-sm: 1024px;
+    --container-md: 1280px;
+    --container-lg: 1440px;
+    --container-xl: 1600px;
     --container-padding: 1.5rem;
-    --container: var(--container-2xl); /* Default Container Size */
+    --container: var(--container-lg); /* Default Container Size */
 
+    /* Constrained Containers - Set the snapping widths */
+    --container-adaptive-xs: var(--container-xs);
+    --container-adaptive-sm: var(--container-sm);
+    --container-adaptive-md: var(--container-md);
+    --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
 
-        /* Links & Forms */
+    /* Links & Forms */
     --color-color-link: #a01b44;
     --color-color-field: #E4EEF7;
     --color-color-field-required: #F2EED6;
+
+    /* Line-Heights */
+    --leading-tight: 1.2;
+    --leading-normal: 1.5;
+    --leading-loose: 1.75;
+
+    /* Rounded Corner Definitions */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
 
     /* Rich Text */
     --richtext-background-colors-table-td: inherit;
@@ -108,17 +122,17 @@
     --richtext-colors-table-th: var(--color-primary);
 
     --richtext-font-family-table-td: var(--font-body);
-    --richtext-font-family-table-th: var(--font-subheader);
+    --richtext-font-family-table-th: var(--font-accent);
 
     --richtext-font-size-blockquote: 20px;
-    --richtext-font-size-heading-1: 36px;
-    --richtext-font-size-heading-2: 31px;
-    --richtext-font-size-heading-3: 28px;
-    --richtext-font-size-heading-4: 25px;
-    --richtext-font-size-heading-5: 22px;
-    --richtext-font-size-heading-6: 20px;
-    --richtext-font-size-table-td: 20px;
-    --richtext-font-size-table-th: 22px;
+    --richtext-font-size-heading-1: 41px;
+    --richtext-font-size-heading-2: 28px;
+    --richtext-font-size-heading-3: 22px;
+    --richtext-font-size-heading-4: 20px;
+    --richtext-font-size-heading-5: 18px;
+    --richtext-font-size-heading-6: 16px;
+    --richtext-font-size-table-td: 18px;
+    --richtext-font-size-table-th: 20px;
 
     --richtext-font-weight-base: 400;
     --richtext-font-weight-blockquote: 700;
@@ -135,6 +149,6 @@
     --richtext-spacing: 1rem;
     --richtext-spacing-hr: 2rem;
     --richtext-spacing-header: 2.5rem;
-    --richtext-spacing-gallery: rem;
+    --richtext-spacing-gallery: 1rem;
     --richtext-spacing-list: 1rem;
 }
