@@ -9,6 +9,10 @@
 @import './base/_global.css' layer(utilities);
 @import './base/_site.css' layer(utilities);
 
+/* Utility Classes */
+@import './utilities/_elements.css';
+@import './utilities/_typography.css';
+
 /* UI Components */
 @import './components/_layout.css';
 @import './components/_container.css';
@@ -17,11 +21,8 @@
 @import './components/_richtext.css';
 @import './components/_flex-grid.css';
 
-/* Utility Classes */
-@import './utilities/_elements.css';
-@import './utilities/_typography.css';
-
 /* Vendor Styling */
+@import './vendors/_wp-gutenberg.css';
 @import './vendors/_wp-richtext.css';
 @import './vendors/_wp-forms.css';
 @import './vendors/_wp-pagination.css' layer(utilities);
