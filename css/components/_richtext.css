@@ -68,12 +68,12 @@
 	}
 
 	h2 {
-		font-size: clamp(var(--text-ms-5), 3vw, var(--richtext-font-size-heading-2));
+		font-size: clamp(var(--text-ms-3), 3vw, var(--richtext-font-size-heading-2));
 		font-weight: var(--richtext-font-weight-heading-2);
 	}
 
 	h3 {
-		font-size: clamp(var(--text-ms-3), 2.5vw, var(--richtext-font-size-heading-3));
+		font-size: clamp(var(--text-ms-1), 2.5vw, var(--richtext-font-size-heading-3));
 		font-weight: var(--richtext-font-weight-heading-3);
 	}
 
@@ -135,14 +135,14 @@
 
 	/* Inline Code */
 	:not(pre) > code {
-		@apply rounded-xs;
+		@apply rounded-sm;
 		background-color: var(--color-gray-100);
 		background-color: color-mix(in srgb, var(--color-gray-100) 80%, transparent);
 		padding: 0.15em 0.4em;
 	}
 
 	pre {
-		@apply rounded-xs;
+		@apply rounded-sm;
 		background-color: var(--color-gray-900);
 		color: var(--color-white);
 		margin-inline: 0;
@@ -165,7 +165,6 @@
 	/* Bullet Styling */
 	ul,
 	ol {
-		margin-block: 0;
 		padding-left: 1.5rem;
 
 		li {
@@ -174,7 +173,7 @@
 
 			> ol,
 			> ul {
-				margin-block-start: var(--richtext-flow-space-sm);
+				margin-block-start: 0.25rem;
 			}
 
 			&::marker {
@@ -228,7 +227,7 @@
 	img,
 	video {
 		/* Prevents users from placing images larger than the rich-text area */
-		border-radius: var(--radius-sm);
+		@apply rounded-sm;
 		display: inline-block;
 		height: auto;
 		max-width: 100% !important;
@@ -278,7 +277,7 @@
 
 	/* Quote Styling */
 	blockquote {
-		@apply rounded-xs;
+		@apply rounded-sm;
 		background-color: var(--color-gray-100);
 		background-color: color-mix(in srgb, var(--color-gray-100) 50%, transparent);
 		border-inline-start: 4px solid var(--color-primary);
@@ -290,6 +289,10 @@
 		p {
 			@apply font-light font-accent m-0 text-ms-4;
 			max-width: none;
+		}
+
+		cite {
+			@apply block mt-3 -text-ms-1 not-italic text-gray-500 font-semibold;
 		}
 	}
 
@@ -333,7 +336,7 @@
 
 	/* Iframe Styling */
 	iframe {
-		@apply rounded-xs;
+		@apply rounded-sm;
 		border: 0;
 		max-width: 100%;
 		width: 100%;
