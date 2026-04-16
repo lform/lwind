@@ -30,6 +30,8 @@
 				<li><a href="#rich-text" class="text-primary underline">Rich Text</a></li>
 				<li><a href="#rich-text-inverted" class="text-primary underline">Rich Text Inverted</a></li>
 				<li><a href="#utilities" class="text-primary underline">Utilities</a></li>
+				<li><a href="#gravity-forms" class="text-primary underline">Gravity Forms</a></li>
+				<li><a href="#statamic-forms" class="text-primary underline">Statamic Forms</a></li>
 				<li><a href="#wp-pagination" class="text-primary underline">WP Pagination</a></li>
 				<li><a href="#statamic-pagination" class="text-primary underline">Statamic Pagination</a></li>
 			</ul>
@@ -391,6 +393,249 @@
 				<div class="relative bg-gray-100 rounded-sm h-32">
 					<div class="absolute-center bg-primary text-primary-fg px-4 py-2 rounded-sm -text-ms-1">absolute-center</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Gravity Forms -->
+		<section id="gravity-forms" class="mb-16">
+			<h2 class="h-ms-6 mb-2 pb-2 border-b border-gray-200">Gravity Forms</h2>
+			<p class="-text-ms-1 text-gray-500 mb-8">WordPress / Gravity Forms output — styled via <code>.gravity-form-area</code></p>
+
+			<div class="gravity-form-area max-w-3xl">
+				<div class="gform_wrapper gform-theme">
+					<div class="gform_body">
+						<ul class="gform_fields">
+
+							<!-- Name (half + half) -->
+							<li class="gfield gfield--width-half">
+								<label class="gfield_label" for="gf-first-name">
+									First Name <span class="gfield_required" aria-hidden="true">*</span>
+								</label>
+								<div class="ginput_container">
+									<input id="gf-first-name" type="text" class="form-input" placeholder="First name" autocomplete="given-name">
+								</div>
+							</li>
+							<li class="gfield gfield--width-half">
+								<label class="gfield_label" for="gf-last-name">Last Name</label>
+								<div class="ginput_container">
+									<input id="gf-last-name" type="text" class="form-input" placeholder="Last name" autocomplete="family-name">
+								</div>
+							</li>
+
+							<!-- Email (half) -->
+							<li class="gfield gfield--width-half">
+								<label class="gfield_label" for="gf-email">
+									Email <span class="gfield_required" aria-hidden="true">*</span>
+								</label>
+								<div class="ginput_container">
+									<input id="gf-email" type="email" class="form-input" placeholder="you@example.com" autocomplete="email">
+								</div>
+							</li>
+
+							<!-- Phone (half) -->
+							<li class="gfield gfield--width-half">
+								<label class="gfield_label" for="gf-phone">Phone</label>
+								<div class="ginput_container">
+									<input id="gf-phone" type="tel" class="form-input" placeholder="(555) 000-0000" autocomplete="tel">
+								</div>
+							</li>
+
+							<!-- Dropdown (full) -->
+							<li class="gfield gfield--width-full">
+								<label class="gfield_label" for="gf-source">How did you hear about us?</label>
+								<div class="ginput_container">
+									<select id="gf-source" class="form-select">
+										<option value="">Select an option</option>
+										<option>Google Search</option>
+										<option>Referral</option>
+										<option>Social Media</option>
+										<option>Other</option>
+									</select>
+								</div>
+							</li>
+
+							<!-- Checkboxes (full) -->
+							<li class="gfield gfield--width-full">
+								<label class="gfield_label">Services of interest</label>
+								<div class="ginput_container">
+									<ul class="flex flex-col gap-2">
+										<li>
+											<input type="checkbox" id="gf-check-design" class="form-checkbox">
+											<label for="gf-check-design">Design</label>
+										</li>
+										<li>
+											<input type="checkbox" id="gf-check-dev" class="form-checkbox">
+											<label for="gf-check-dev">Development</label>
+										</li>
+										<li>
+											<input type="checkbox" id="gf-check-strategy" class="form-checkbox">
+											<label for="gf-check-strategy">Strategy</label>
+										</li>
+									</ul>
+								</div>
+							</li>
+
+							<!-- Radios (full) -->
+							<li class="gfield gfield--width-full">
+								<label class="gfield_label">Project timeline</label>
+								<div class="ginput_container">
+									<ul class="flex flex-col gap-2">
+										<li>
+											<input type="radio" name="gf-timeline" id="gf-radio-asap" class="form-radio">
+											<label for="gf-radio-asap">ASAP</label>
+										</li>
+										<li>
+											<input type="radio" name="gf-timeline" id="gf-radio-soon" class="form-radio">
+											<label for="gf-radio-soon">1–3 months</label>
+										</li>
+										<li>
+											<input type="radio" name="gf-timeline" id="gf-radio-later" class="form-radio">
+											<label for="gf-radio-later">3+ months</label>
+										</li>
+									</ul>
+								</div>
+							</li>
+
+							<!-- Message (full) -->
+							<li class="gfield gfield--width-full">
+								<label class="gfield_label" for="gf-message">Message</label>
+								<div class="ginput_container ginput_container_textarea">
+									<textarea id="gf-message" class="form-textarea large" placeholder="Tell us about your project…" rows="6"></textarea>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+
+					<div class="gform_footer">
+						<button type="submit" class="gform_button">Send Message</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Statamic Forms -->
+		<section id="statamic-forms" class="mb-16">
+			<h2 class="h-ms-6 mb-2 pb-2 border-b border-gray-200">Statamic Forms</h2>
+			<p class="-text-ms-1 text-gray-500 mb-8">Statamic form output — styled via <code>.form-dynamic</code> (dark-themed)</p>
+
+			<div class="max-w-3xl [&_.input-label]:!text-gray-700 [&_.field-text]:!bg-white [&_.field-text]:!border-gray-300 [&_.field-text]:!text-gray-800 [&_.field-textarea]:!bg-white [&_.field-textarea]:!border-gray-300 [&_.field-textarea]:!text-gray-800 [&_.field-select]:!bg-white [&_.field-select]:!border-gray-300 [&_.field-select]:!text-gray-800 [&_.field-checkbox-icon-container]:!border-gray-300 [&_.field-checkbox-label]:!text-gray-700">
+				<form class="form-dynamic" novalidate>
+
+					<!-- Name (half) -->
+					<div class="input-container required w-full md:w-1/2">
+						<label class="input-label" for="stat-name">
+							<span>Name</span> <span aria-hidden="true">*</span>
+						</label>
+						<input id="stat-name" type="text" class="field-text" placeholder="Your name" autocomplete="name">
+					</div>
+
+					<!-- Email (half) -->
+					<div class="input-container required w-full md:w-1/2">
+						<label class="input-label" for="stat-email">
+							<span>Email</span> <span aria-hidden="true">*</span>
+						</label>
+						<input id="stat-email" type="email" class="field-text" placeholder="you@example.com" autocomplete="email">
+					</div>
+
+					<!-- Phone (half) -->
+					<div class="input-container w-full md:w-1/2">
+						<label class="input-label" for="stat-phone">Phone</label>
+						<input id="stat-phone" type="tel" class="field-text" placeholder="(555) 000-0000" autocomplete="tel">
+					</div>
+
+					<!-- Dropdown (half) -->
+					<div class="input-container w-full md:w-1/2">
+						<label class="input-label" for="stat-source">How did you hear about us?</label>
+						<div class="field-select-container">
+							<select id="stat-source" class="field-select">
+								<option value="">Select an option</option>
+								<option>Google Search</option>
+								<option>Referral</option>
+								<option>Social Media</option>
+								<option>Other</option>
+							</select>
+							<span class="field-select-icon" aria-hidden="true">
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							</span>
+						</div>
+					</div>
+
+					<!-- Checkboxes (full) -->
+					<div class="input-container w-full">
+						<label class="input-label">Services of interest</label>
+						<div class="flex flex-col gap-3">
+
+							<div class="field-checkbox-container">
+								<input type="checkbox" id="stat-check-design" class="field-checkbox-input">
+								<label for="stat-check-design" class="field-checkbox-label">
+									<span class="field-checkbox-icon-container">
+										<svg class="field-checkbox-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+											<path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</span>
+									Design
+								</label>
+							</div>
+
+							<div class="field-checkbox-container">
+								<input type="checkbox" id="stat-check-dev" class="field-checkbox-input">
+								<label for="stat-check-dev" class="field-checkbox-label">
+									<span class="field-checkbox-icon-container">
+										<svg class="field-checkbox-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+											<path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</span>
+									Development
+								</label>
+							</div>
+
+							<div class="field-checkbox-container">
+								<input type="checkbox" id="stat-check-strategy" class="field-checkbox-input">
+								<label for="stat-check-strategy" class="field-checkbox-label">
+									<span class="field-checkbox-icon-container">
+										<svg class="field-checkbox-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+											<path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</span>
+									Strategy
+								</label>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Radios (full) -->
+					<div class="input-container w-full">
+						<label class="input-label">Project timeline</label>
+						<div class="flex flex-col gap-3">
+							<label class="field-checkbox-label gap-x-3">
+								<input type="radio" name="stat-timeline" class="accent-primary w-4 h-4 shrink-0">
+								ASAP
+							</label>
+							<label class="field-checkbox-label gap-x-3">
+								<input type="radio" name="stat-timeline" class="accent-primary w-4 h-4 shrink-0">
+								1–3 months
+							</label>
+							<label class="field-checkbox-label gap-x-3">
+								<input type="radio" name="stat-timeline" class="accent-primary w-4 h-4 shrink-0">
+								3+ months
+							</label>
+						</div>
+					</div>
+
+					<!-- Message (full) -->
+					<div class="input-container w-full">
+						<label class="input-label" for="stat-message">Message</label>
+						<textarea id="stat-message" class="field-textarea" placeholder="Tell us about your project…" rows="6"></textarea>
+					</div>
+
+					<!-- Submit -->
+					<div class="w-full pt-2">
+						<button type="submit" class="button">Send Message</button>
+					</div>
+
+				</form>
 			</div>
 		</section>
 

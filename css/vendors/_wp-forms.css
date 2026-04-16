@@ -56,7 +56,7 @@ body [id^="form-"] {
         input[type="text"],
         input[type="url"],
         select:not([multiple]) {
-            @apply border border-gray-200 rounded-lg h-12 bg-white focus:border-b-secondary shadow-none transition-all;
+            @apply border border-gray-200 rounded-lg h-12 bg-white focus:border-b-secondary shadow-none transition-all w-full;
             @apply text-black font-medium;
         }
 
@@ -82,7 +82,7 @@ body [id^="form-"] {
 
         .ginput_container_textarea {
             textarea, textarea .large {
-                @apply border border-gray-200 rounded-lg h-50 bg-white  focus:border-b-secondary shadow-none transition-all;
+                @apply border border-gray-200 rounded-lg h-50 bg-white  focus:border-b-secondary shadow-none transition-all w-full;
                 @apply text-black font-medium;
             }
         }
