@@ -76,8 +76,7 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 - **Main colors** are named following a `primary`, `secondary`, `tertiary` logic for the main brand colors.
   - Each has a `light` and `dark` (up-shade / down-shade) version
   - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
-- **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
-  to be added as necessary to accommodate a design.
+- **Accent colors** are added using descriptive names, eg `accent-sand`, `accent-cement`. Use numeric names (`accent-1`) only if no descriptive name fits. This allows for as many accents to be added as necessary to accommodate a design.
 - **Grays** are labeled using Tailwind's numbering system. A full 11-step scale is included: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`, `950`.
 - **Black & whites** are defined in the `black` and `white` keys, as well as their transparent versions
   equivalents `white-transparent` and `black-transparent`
@@ -179,13 +178,20 @@ Accent helpers are generally used for smaller text, labels, and emphasis styles.
 
 ##### Header Line Heights
 
-By default, headers are set to a tighter line-height because larger fonts can appear overly spaced out vertically. Override `--leading-header` in your theme tokens if needed.
+By default, headers are set to a tighter line-height because larger fonts can appear overly spaced out vertically. The `--leading-header` token controls this and defaults to `1.2`. The standard line-height scale is:
+
+- `--leading-header` = `1.2`
+- `--leading-tight` = `1.25`
+- `--leading-normal` = `1.5`
+- `--leading-loose` = `1.75`
 
 #### Richtext
 
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text.
 
 - Add `rich-text inverted` to apply white text and adjusted link/list marker colors for rich text on dark backgrounds.
+- Links inside rich text are always underlined — this is a WCAG requirement and should not be overridden.
+- YouTube and Vimeo iframes are automatically forced to `width: 100%` with a `16/9` aspect ratio.
 - Rich text now includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and more robust media/table handling.
 - WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
 - `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
@@ -202,6 +208,7 @@ Buttons are utility-first and are intended to be composed by stacking modifier c
 
 - `button` - Base button and default `primary` solid button
 - `button-secondary` - Secondary color variant
+- `button-tertiary` - Tertiary color variant (remove if not needed for the project)
 
 #### Sizing
 
@@ -239,8 +246,8 @@ Native states are also included for `:hover`, `:focus-visible`, `:disabled`, `[d
 Tailwind's default containers are disabled in favor of a fluid container system backed by theme tokens.
 
 - Containers are auto-centered with `margin-left` & `margin-right` set to `auto`.
-- They also have a default padding of `1.5rem`.
-- Container widths & padding are configured through CSS theme variables
+- Padding is responsive: `20px` on mobile, `24px` at `768px` and above.
+- Container widths & padding are configured through CSS theme variables: `--container-padding` (desktop) and `--container-padding-mobile`
 - `container-*` utilities resolve against the matching `--container-*` theme tokens
 - If a class of `px-0` is added to a container, the padding will be disabled
 - If a class of `mx-0` is added to a container, the auto-centering margin will be disabled.
@@ -248,16 +255,17 @@ Tailwind's default containers are disabled in favor of a fluid container system 
 #### Classes & Default Sizes
 
 - `container` - Default max width of `1440px`
-- `container-xs` - `720px`
-- `container-sm` - `1024px`
-- `container-md` - `1280px`
-- `container-lg` - `1440px`
-- `container-xl` - `1600px`
-- `container-adaptive` - `1440px` - See below for details on this special adaptive container class
+- `container-xs` - `640px`
+- `container-sm` - `768px`
+- `container-md` - `1024px`
+- `container-lg` - `1280px`
+- `container-xl` - `1440px` (default)
+- `container-2xl` - `1600px`
+- `container-adaptive` - See below for details on this special adaptive container class
 
 #### Adaptive Container
 
-Rather than stretching fluidly to a single max-width, this container snaps through a series of fixed breakpoint widths (`720px` → `1024px` → `1280px` → `1440px`). This keeps the layout at a predictable, design-friendly width at each viewport range and avoids awkward, time-consuming in-between responsive fixes. Useful when a design is defined at specific widths and fluid scaling between them causes layout issues.
+Rather than stretching fluidly to a single max-width, this container snaps through a series of fixed breakpoint widths (`768px` → `1024px` → `1280px` → `1440px`). This keeps the layout at a predictable, design-friendly width at each viewport range and avoids awkward, time-consuming in-between responsive fixes. Useful when a design is defined at specific widths and fluid scaling between them causes layout issues.
 
 #### Pagination
 
@@ -279,6 +287,13 @@ Form messaging uses a `form-message` component for displaying inline feedback. T
 - `success` - Uses `--color-feedback-success`
 - `warning` - Uses `--color-feedback-warning`
 - `error` - Uses `--color-feedback-error`
+
+#### WCAG Compliance Requirements
+
+- All fields must have visible labels placed above the input
+- Required fields must use an asterisk indicator — color alone is not sufficient
+- Placeholder text is not a substitute for labels
+- Form feedback must not rely on color alone — always include the state name (e.g. "Error: ...")
 
 #### Vendor Form Support
 
@@ -381,6 +396,16 @@ Used to apply brand color to inline `<span>` elements inside a parent, typically
 
 - `has-primary-text` - Colors child `<span>` elements with `text-primary`
 - `has-secondary-text` - Colors child `<span>` elements with `text-secondary`
+
+### Iconography
+
+Icons are not bundled with Lwind but the following sourcing hierarchy applies across all projects:
+
+1. **[Iconify](https://iconify.design/)** — default source for all icons. Use the [Iconify Figma plugin](https://www.figma.com/community/plugin/735098390272716381/iconify) to keep design and development in sync.
+2. **[Flaticon](https://www.flaticon.com/)** — fallback when Iconify doesn't have a suitable option.
+3. **AI-generated icons** — last resort only. Must be reviewed carefully for style consistency, clarity, licensing risk, and brand fit before use.
+
+Avoid designs that depend on a large number of unique icons unless the project scope explicitly accounts for that work. Use icons where content repeats or follows a clear pattern — header items, footer items, resource lists, and other recurring interface elements.
 
 ### Layout
 

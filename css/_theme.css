@@ -102,25 +102,30 @@
     --color-social-yelp: #f43939;
 
     /* Containers */
-    --container-xs: 720px;
-    --container-sm: 1024px;
-    --container-md: 1280px;
-    --container-lg: 1440px;
-    --container-xl: 1600px;
-    --container-padding: 1.5rem;
-    --container: var(--container-lg); /* Default Container Size */
+    --container-xs: 640px;
+    --container-sm: 768px;
+    --container-md: 1024px;
+    --container-lg: 1280px;
+    --container-xl: 1440px;
+    --container-2xl: 1600px;
+    --container-padding: 1.5rem; /* 24px - desktop */
+    --container-padding-mobile: 1.25rem; /* 20px - mobile */
+    --container: var(--container-xl); /* Default Container Size */
+
     /* Constrained Containers - Set the snapping widths */
-    --container-adaptive-xs: var(--container-xs);
     --container-adaptive-sm: var(--container-sm);
     --container-adaptive-md: var(--container-md);
-    --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
+    --container-adaptive-lg: var(--container-lg);
+    --container-adaptive-xl: var(--container-xl);
+    --container-adaptive: var(--container-xl); /* Default Constrained Container Size */
     /* Links & Forms */
     --color-color-link: #a01b44;
     --color-color-field: #E4EEF7;
     --color-color-field-required: #F2EED6;
 
     /* Line-Heights */
-    --leading-tight: 1.2;
+    --leading-header: 1.2;
+    --leading-tight: 1.25;
     --leading-normal: 1.5;
     --leading-loose: 1.75;
 

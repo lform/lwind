@@ -38,6 +38,15 @@
 	--button-text-hover: var(--color-secondary-fg);
 }
 
+@utility button-tertiary {
+	--button-bg: var(--color-tertiary);
+	--button-border: var(--color-tertiary);
+	--button-text: var(--color-tertiary-fg);
+	--button-bg-hover: var(--color-tertiary-dark);
+	--button-border-hover: var(--color-tertiary-dark);
+	--button-text-hover: var(--color-tertiary-fg);
+}
+
 @utility button-outline {
     @apply border;
 	--button-bg: transparent;

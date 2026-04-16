@@ -1,10 +1,15 @@
 @utility container {
 	/* Overrides the default container with a fluid container that matches the breakpoints */
 	@apply mx-auto;
-	padding-left: var(--container-padding, 1.5rem);
-	padding-right: var(--container-padding, 1.5rem);
+	padding-left: var(--container-padding-mobile, 1.25rem);
+	padding-right: var(--container-padding-mobile, 1.25rem);
 	width: 100%;
 	max-width: var(--container, 1440px);
+
+	@media (min-width: 768px) {
+		padding-left: var(--container-padding, 1.5rem);
+		padding-right: var(--container-padding, 1.5rem);
+	}
 
 	&.px-0 {
 		padding-right: 0;
@@ -32,10 +37,15 @@
 @utility container-* {
 	/* Overrides the default container with a fluid container that matches the breakpoints */
 	@apply mx-auto;
-	padding-left: var(--container-padding, 1.5rem);
-	padding-right: var(--container-padding, 1.5rem);
+	padding-left: var(--container-padding-mobile, 1.25rem);
+	padding-right: var(--container-padding-mobile, 1.25rem);
 	width: 100%;
 	max-width: --value(--container-*);
+
+	@media (min-width: 768px) {
+		padding-left: var(--container-padding, 1.5rem);
+		padding-right: var(--container-padding, 1.5rem);
+	}
 
 	&.px-0 {
 		padding-right: 0;
@@ -58,10 +68,16 @@
 @utility container-adaptive {
 	/* Snaps to the small, medium, and large constrained container widths */
 	@apply mx-auto;
-	padding-left: var(--container-padding);
-	padding-right: var(--container-padding);
+	padding-left: var(--container-padding-mobile, 1.25rem);
+	padding-right: var(--container-padding-mobile, 1.25rem);
 	width: 100%;
-	max-width: var(--container-adaptive-xs, 720px);
+
+	@media (min-width: 768px) {
+		padding-left: var(--container-padding, 1.5rem);
+		padding-right: var(--container-padding, 1.5rem);
+	}
+
+	max-width: var(--container-adaptive-sm, 768px);
 
 	&.px-0 {
 		padding-right: 0;
@@ -73,20 +89,20 @@
 		margin-left: 0;
 	}
 
-	@media (min-width: 720px) {
-		max-width: var(--container-adaptive-xs, 720px) !important;
+	@media (min-width: 768px) {
+		max-width: var(--container-adaptive-sm, 768px) !important;
 	}
 
 	@media (min-width: 1024px) {
-		max-width: var(--container-adaptive-sm, 1024px) !important;
+		max-width: var(--container-adaptive-md, 1024px) !important;
 	}
 
 	@media (min-width: 1280px) {
-		max-width: var(--container-adaptive-md, 1280px) !important;
+		max-width: var(--container-adaptive-lg, 1280px) !important;
 	}
 
 	@media (min-width: 1440px) {
-		max-width: var(--container-adaptive, 1440px) !important;
+		max-width: var(--container-adaptive-xl, 1440px) !important;
 	}
 
 	/* Fix any nested containers so their padding does not stack */
