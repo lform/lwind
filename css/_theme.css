@@ -136,14 +136,14 @@
     /* Rich Text */
     --richtext-background-colors-table-td: inherit;
     --richtext-background-colors-table-th: var(--color-primary);
-    --richtext-border-colors-table-th: var(--color-gray-300);
+    --richtext-border-colors-table-th: var(--color-gray-600);
     --richtext-border-colors-table-td: var(--color-primary-light);
 
     --richtext-colors-bullet: var(--color-primary);
     --richtext-colors-blockquote: var(--color-gray-900);
     --richtext-colors-link: var(--color-primary);
     --richtext-colors-table-td: var(--color-gray-900);
-    --richtext-colors-table-th: var(--color-primary-fg);
+    --richtext-colors-table-th: var(--color-gray-900);
 
     --richtext-font-family-table-td: var(--font-body);
     --richtext-font-family-table-th: var(--font-accent);
