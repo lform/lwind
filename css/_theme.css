@@ -118,10 +118,9 @@
     --container-adaptive-lg: var(--container-lg);
     --container-adaptive-xl: var(--container-xl);
     --container-adaptive: var(--container-xl); /* Default Constrained Container Size */
-    /* Links & Forms */
-    --color-color-link: #a01b44;
-    --color-color-field: #E4EEF7;
-    --color-color-field-required: #F2EED6;
+
+    /* Element Colors */
+    --color-elem-field-required: #a01b44;
 
     /* Line-Heights */
     --leading-header: 1.2;
@@ -144,7 +143,7 @@
     --richtext-colors-blockquote: var(--color-gray-900);
     --richtext-colors-link: var(--color-primary);
     --richtext-colors-table-td: var(--color-gray-900);
-    --richtext-colors-table-th: var(--color-primary);
+    --richtext-colors-table-th: var(--color-primary-fg);
 
     --richtext-font-family-table-td: var(--font-body);
     --richtext-font-family-table-th: var(--font-accent);

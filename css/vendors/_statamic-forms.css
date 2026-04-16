@@ -12,7 +12,7 @@
 
         &.required {
             .input-label > span {
-                @apply text-[#ED482B];
+                color: var(--color-elem-field-required);
             }
         }
 
