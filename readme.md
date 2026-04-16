@@ -73,15 +73,84 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 
 ### Colors
 
-- **Main colors** are named following a `primary`, `secondary`, `tertiary` logic for the main brand colors.
-  - Each has a `light` and `dark` (up-shade / down-shade) version
-  - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
-- **Accent colors** are added using descriptive names, eg `accent-sand`, `accent-cement`. Use numeric names (`accent-1`) only if no descriptive name fits. This allows for as many accents to be added as necessary to accommodate a design.
-- **Grays** are labeled using Tailwind's numbering system. A full 11-step scale is included: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900`, `950`.
-- **Black & whites** are defined in the `black` and `white` keys, as well as their transparent versions
-  equivalents `white-transparent` and `black-transparent`
-- **Feedback colors** from forms / interactions are specified in the `info`, `success`, `warning`, and `error` colors
-- **Social media brand colors** are defined in the `social` keys
+#### Branding Colors
+
+##### Palette
+
+- Primary
+  - Default: `primary`
+  - Light: `primary-light`
+  - Dark: `primary-dark`
+  - Foreground: `primary-fg` — text color for use on a `primary` background (e.g. button labels)
+- Secondary
+  - Default: `secondary`
+  - Light: `secondary-light`
+  - Dark: `secondary-dark`
+  - Foreground: `secondary-fg`
+- Tertiary
+  - Default: `tertiary`
+  - Light: `tertiary-light`
+  - Dark: `tertiary-dark`
+  - Foreground: `tertiary-fg`
+
+##### Guidelines
+
+- Avoid more than 3 core brand colors unless absolutely necessary.
+- Remove tertiary or secondary if not needed for the project.
+- All brand colors must have a `light`, `dark`, and `fg` variant defined in `_theme.css`.
+- Never use the `fg` color except in the context of text on the matching background color. For example, `primary-fg` should only be used for text on a `primary` background, never on its own or on a different background color.
+
+#### Accent Colors
+
+##### Palette
+
+- `accent-{name}` (example: `accent-cement`, `accent-sand`, `accent-olive`)
+
+##### Guidelines
+
+- Accents are brand-aligned colors that are not grays.
+- Naming should be descriptive of the color (e.g. `accent-cement` instead of `accent-1`).
+- Use numeric naming as a fallback if no descriptive name fits.
+- If the accents are similar, add a tailwind color scale (e.g. `accent-cement-100`, `accent-cement-200`, etc.) for more flexibility.
+
+#### Gray Scale
+
+##### Palette
+
+- `gray-50`
+- `gray-100`
+- `gray-200`
+- `gray-300`
+- `gray-400`
+- `gray-500`
+- `gray-600`
+- `gray-700`
+- `gray-800`
+- `gray-900`
+- `gray-950`
+
+##### Guidelines
+
+- Use "gray" (not "grey").
+- A full 11-step scale is included by default.
+- Add intermediate steps (e.g. `gray-150`) directly in `_theme.css` if a project needs more granularity.
+
+#### Feedback Colors
+
+- `feedback-info`
+- `feedback-success`
+- `feedback-warning`
+- `feedback-error`
+
+#### Constants
+
+- `black`, `white`
+- `black-transparent`, `white-transparent` — semi-transparent variants for overlays and tints
+- `transparent` — fully transparent
+
+#### Social Colors
+
+Common social media brand colors are pre-defined under the `social-{platform}` namespace (e.g. `social-facebook`, `social-instagram`, `social-youtube`). Include or remove entries in `_theme.css` as needed per project.
 
 ### Typography
 
