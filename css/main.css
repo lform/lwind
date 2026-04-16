@@ -1,5 +1,6 @@
 /* Tailwind */
 @import 'tailwindcss';
+@plugin "@tailwindcss/forms";
 
 /* Theme */
 @import "./_theme.css" layer(theme);
