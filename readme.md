@@ -1,11 +1,12 @@
 # Lwind - Lform Tailwind Setup
 
-The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing for the flexibility required to implement designs produced using the Lform design system. The package is lightweight, comprised of a starting Tailwind config and a handful of PostCSS plugins.
+The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing for the flexibility required to implement designs produced using the Lform design system. The package is lightweight, comprised of a starting Tailwind config and a handful of PostCSS plugins. Lwind is fully aligned to the Lform design system.
 
 - Requires Tailwind 4.0.0+
 
 ## Resources
 
+- [Lform Design System](https://github.com/lform/lform-codex/blob/main/design-system-guidelines.md)
 - [Tailwind Documentation](https://tailwindcss.com/docs)
 - [TailWind UI KIts](https://www.tailwindawesome.com/?type=kit) - For reference for building components
 
@@ -15,24 +16,12 @@ Adding the Lwind system to a project is relatively straight forward:
 
 1. Run `npm i @lform/lwind`
 2. Included in the package are example entry files you can copy into your project and adapt as needed:
-
    * [https://github.com/lform/lwind/blob/master/css/main.example.css](https://github.com/lform/lwind/blob/master/css/main.example.css)
    * [https://github.com/lform/lwind/blob/master/css/editor.example.css](https://github.com/lform/lwind/blob/master/css/editor.example.css)
    * NOTE: To customize or override any of the Lwind CSS files, copy the file in question from the package or create a new one in the appropriate directory and update your imports accordingly. You can also include only the components and vendor files your project needs.
 3. Create your main stylesheet entry, typically based on `css/main.example.css`, and adjust the imports for your project.
 4. Update the theme tokens in `css/_theme.css` or your local equivalent to match your project's design system.
 5. Run the build system to confirm that everything is working.
-6. The following `package.json` scripts can be added if there is no existing build system (adjust the paths accordingly):
-
-```json
-{
-  "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css",
-    "watch": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css --watch",
-    "prod": "NODE_ENV=production npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.min.css --minify"
-  }
-}
-```
 
 ## Building
 
@@ -41,6 +30,19 @@ The following scripts are available in the `package.json` file, if the project u
 - `npm run dev` - Builds the development stylesheet from `css/main.css` to `dist/app.css`
 - `npm run watch` - Builds the development stylesheet and watches for changes
 - `npm run prod` - Builds the minified production stylesheet at `dist/app.min.css`
+
+The following `package.json` scripts can be added if there is no existing build system (adjust the paths accordingly):
+
+```json
+{
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css",
+    "watch": "npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.css --watch",
+    "prod": "NODE_ENV=production npx @tailwindcss/cli -i ./css/main.css -o ./dist/app.min.css --minify",
+    "demo": "mkdir -p ./dist && npm run dev && cp ./demo/kitchen-sink.html ./dist/kitchen-sink.html"
+  }
+}
+```
 
 ## Kitchen Sink Demo
 
@@ -52,6 +54,10 @@ The demo exercises the current button, container, flex grid, rich text, WordPres
 
 ## Tailwind Config
 
+Tailwind is configured via `_theme.css` using CSS variables for theme tokens (the standard Tailwind 4 approach to theming). This allows for easy theming and overrides by simply changing the CSS variable values.
+
+> IMPORTANT: Always configure the `_theme.css` file with your project's design tokens BEFORE starting any frontend coding. The default values are there to be customized to align with the project's design system. Implementing them after the fact can lead to a lot of extra work and overrides.
+
 ### Tailwind Plugins
 
 - [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) - Used to provide default baseline form styling
@@ -62,13 +68,12 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 
 ### Spacing / Gaps
 
-- Designs are implemented using a base spacing sizing of 8 pixels.
+- Designs are implemented using a base spacing sizing of 4 pixels.
 - This is Tailwind's default spacing system, [refer to the documentation as necessary.](https://tailwindcss.com/docs/customizing-spacing)
 
 ### Colors
 
 - **Main colors** are named following a `primary`, `secondary`, `tertiary` logic for the main brand colors.
-
   - Each has a `light` and `dark` (up-shade / down-shade) version
   - Each has a `fg` version for the color to use for foreground text on a background with this color, eg buttons
 - **Secondary colors** are added as numeric values to the `accents` list, eg `accent-1`. This allows for as many accents
@@ -181,16 +186,11 @@ By default, headers are set to a tighter line-height because larger fonts can ap
 A custom rich-text implementation is used for all rich-text areas by adding a `rich-text` class to any area with rich text.
 
 - Add `rich-text inverted` to apply white text and adjusted link/list marker colors for rich text on dark backgrounds.
-
 - Rich text now includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and more robust media/table handling.
 - WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
 - `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
 - Relevant vendor files, enable and disable them as needed:
   - `css/vendors/_wp-richtext.css`
-  - `css/vendors/_wp-forms.css`
-  - `css/vendors/_wp-pagination.css`
-  - `css/vendors/_statamic-forms.css`
-  - `css/vendors/_statamic-pagination.css`
 
 ## Tailwind Utilities & Components
 
@@ -261,9 +261,7 @@ Rather than stretching fluidly to a single max-width, this container snaps throu
 
 #### Pagination
 
-- `pagination` - Base pagination component styling
-- `css/components/_pagination.css` contains the shared pagination component styles
-- `css/vendors/_wp-pagination.css` adds support for WordPress pagination markup such as `.navigation.pagination`, `.posts-navigation`, and `.post-navigation`
+- `css/vendors/_wp-pagination.css` adds support for WordPress pagination
 - `css/vendors/_statamic-pagination.css` contains Statamic-specific pagination styles
 
 ### Forms
