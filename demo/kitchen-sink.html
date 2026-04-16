@@ -19,37 +19,80 @@
 
 		<!-- Jump Nav -->
 		<nav class="mb-16 p-4 bg-gray-100 rounded-sm" aria-label="Page sections">
-			<p class="ac-ms-1 uppercase tracking-wide text-gray-600 mb-2">Sections</p>
-			<ul class="flex flex-wrap gap-x-6 gap-y-1 text-ms-0">
-				<li><a href="#typography" class="text-primary underline">Typography</a></li>
-				<li><a href="#colors" class="text-primary underline">Colors</a></li>
-				<li><a href="#containers" class="text-primary underline">Containers</a></li>
-				<li><a href="#buttons" class="text-primary underline">Buttons</a></li>
-				<li><a href="#form-messages" class="text-primary underline">Form Messages</a></li>
-				<li><a href="#flex-grid" class="text-primary underline">Flex Grid</a></li>
-				<li><a href="#rich-text" class="text-primary underline">Rich Text</a></li>
-				<li><a href="#rich-text-inverted" class="text-primary underline">Rich Text Inverted</a></li>
-				<li><a href="#utilities" class="text-primary underline">Utilities</a></li>
-				<li><a href="#gravity-forms" class="text-primary underline">Gravity Forms</a></li>
-				<li><a href="#statamic-forms" class="text-primary underline">Statamic Forms</a></li>
-				<li><a href="#wp-pagination" class="text-primary underline">WP Pagination</a></li>
-				<li><a href="#statamic-pagination" class="text-primary underline">Statamic Pagination</a></li>
-			</ul>
+
+			<!-- Full layout (default) -->
+			<div class="nav-full">
+				<p class="h-ms-4 font-bold uppercase tracking-wide text-gray-600 mb-3">Sections</p>
+				<div class="flex flex-col gap-y-2">
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">Foundation</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#typography" class="text-primary underline">Typography</a></li>
+							<li><a href="#colors" class="text-primary underline">Colors</a></li>
+						</ul>
+					</div>
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">Layout</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#containers" class="text-primary underline">Containers</a></li>
+							<li><a href="#flex-grid" class="text-primary underline">Flex Grid</a></li>
+						</ul>
+					</div>
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">Components</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#buttons" class="text-primary underline">Buttons</a></li>
+							<li><a href="#utilities" class="text-primary underline">Utilities</a></li>
+							<li><a href="#form-messages" class="text-primary underline">Form Messages</a></li>
+						</ul>
+					</div>
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">Rich Text</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#rich-text" class="text-primary underline">Rich Text</a></li>
+							<li><a href="#rich-text-inverted" class="text-primary underline">Rich Text Inverted</a></li>
+						</ul>
+					</div>
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">WordPress</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#gutenberg-blocks" class="text-primary underline">Gutenberg Blocks</a></li>
+							<li><a href="#gravity-forms" class="text-primary underline">Gravity Forms</a></li>
+							<li><a href="#wp-pagination" class="text-primary underline">WP Pagination</a></li>
+						</ul>
+					</div>
+
+					<div class="flex flex-wrap items-baseline gap-x-1">
+						<span class="-text-ms-2 uppercase tracking-wide text-gray-400 font-semibold w-24 shrink-0">Statamic</span>
+						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
+							<li><a href="#statamic-forms" class="text-primary underline">Statamic Forms</a></li>
+							<li><a href="#statamic-pagination" class="text-primary underline">Statamic Pagination</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
 		</nav>
 
 		<!-- Typography -->
-		<section id="typography" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Typography</h2>
+		<section id="typography" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Typography</h2>
 
 			<div class="mb-10">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Font Families</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Font Families</h3>
 				<p class="font-header text-ms-3 mb-2">font-header — The quick brown fox jumps over the lazy dog</p>
 				<p class="font-body text-ms-3 mb-2">font-body — The quick brown fox jumps over the lazy dog</p>
 				<p class="font-accent text-ms-3">font-accent — The quick brown fox jumps over the lazy dog</p>
 			</div>
 
 			<div class="mb-10">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Header Scale (h-ms-*)</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Header Scale (h-ms-*)</h3>
 				<div class="space-y-2">
 					<div class="h-ms-13">h-ms-13 — ~73px fluid</div>
 					<div class="h-ms-12">h-ms-12 — ~65px fluid</div>
@@ -72,7 +115,7 @@
 			</div>
 
 			<div class="mb-10">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Body Scale (text-ms-*)</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Body Scale (text-ms-*)</h3>
 				<div class="space-y-1 font-body">
 					<div class="text-ms-13">text-ms-13 — 73px</div>
 					<div class="text-ms-12">text-ms-12 — 65px</div>
@@ -95,7 +138,7 @@
 			</div>
 
 			<div>
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Accent Scale (ac-ms-*)</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Accent Scale (ac-ms-*)</h3>
 				<div class="space-y-1">
 					<div class="ac-ms-2">ac-ms-2 — ~20px fluid</div>
 					<div class="ac-ms-1">ac-ms-1 — ~18px fluid</div>
@@ -108,11 +151,11 @@
 		</section>
 
 		<!-- Colors -->
-		<section id="colors" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Colors</h2>
+		<section id="colors" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Colors</h2>
 
 			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Brand</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Brand</h3>
 				<div class="flex flex-wrap gap-3">
 					<div class="text-center">
 						<div class="w-20 h-12 rounded-sm bg-primary-light mb-1"></div>
@@ -143,7 +186,7 @@
 			</div>
 
 			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Grays</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Grays</h3>
 				<div class="flex flex-wrap gap-3">
 					<div class="text-center"><div class="w-16 h-10 rounded-sm bg-gray-50 border border-gray-200 mb-1"></div><span class="-text-ms-1">50</span></div>
 					<div class="text-center"><div class="w-16 h-10 rounded-sm bg-gray-100 mb-1"></div><span class="-text-ms-1">100</span></div>
@@ -159,7 +202,7 @@
 			</div>
 
 			<div>
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-4">Feedback</h3>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Feedback</h3>
 				<div class="flex flex-wrap gap-3">
 					<div class="text-center"><div class="w-20 h-10 rounded-sm bg-feedback-info mb-1"></div><span class="-text-ms-1">info</span></div>
 					<div class="text-center"><div class="w-20 h-10 rounded-sm bg-feedback-success mb-1"></div><span class="-text-ms-1">success</span></div>
@@ -170,8 +213,8 @@
 		</section>
 
 		<!-- Containers -->
-		<section id="containers" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Containers</h2>
+		<section id="containers" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Containers</h2>
 			<div class="space-y-4">
 				<div class="container-xs rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-xs` — 640px</div>
 				<div class="container-sm rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-sm` — 768px</div>
@@ -183,11 +226,24 @@
 			</div>
 		</section>
 
-		<!-- Buttons -->
-		<section id="buttons" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Buttons</h2>
+		<!-- Flex Grid -->
+		<section id="flex-grid" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Flex Grid</h2>
+			<div class="flex-grid flex-grid-cols-1 sm:flex-grid-cols-2 lg:flex-grid-cols-3 flex-grid-gap-6 gap-y-6">
+				<div class="rounded-sm bg-gray-100 p-6">Card One</div>
+				<div class="rounded-sm bg-gray-100 p-6">Card Two</div>
+				<div class="rounded-sm bg-gray-100 p-6">Card Three</div>
+				<div class="rounded-sm bg-gray-100 p-6">Card Four</div>
+				<div class="rounded-sm bg-gray-100 p-6">Card Five</div>
+			</div>
+			<p class="mt-4 -text-ms-1 text-gray-500">5 items in a 3-col grid — last row centers the orphan</p>
+		</section>
 
-			<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">Colors &amp; Formats</h3>
+		<!-- Buttons -->
+		<section id="buttons" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Buttons</h2>
+
+			<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">Colors &amp; Formats</h3>
 			<div class="flex flex-wrap gap-3 mb-6">
 				<a class="button" href="#">Primary</a>
 				<a class="button button-secondary" href="#">Secondary</a>
@@ -195,14 +251,14 @@
 				<a class="button button-secondary button-outline" href="#">Secondary Outline</a>
 			</div>
 
-			<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">Sizes</h3>
+			<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">Sizes</h3>
 			<div class="flex flex-wrap items-center gap-3 mb-6">
 				<a class="button button-sm" href="#">Small</a>
 				<a class="button" href="#">Medium (default)</a>
 				<a class="button button-lg" href="#">Large</a>
 			</div>
 
-			<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">With Icon</h3>
+			<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">With Icon</h3>
 			<div class="flex flex-wrap gap-3 mb-6">
 				<a class="button button-icon" href="#">
 					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -212,7 +268,7 @@
 				</a>
 			</div>
 
-			<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">States &amp; Full Width</h3>
+			<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">States &amp; Full Width</h3>
 			<div class="max-w-md space-y-3">
 				<a class="button button-full" href="#">Full Width</a>
 				<a class="button button-hover button-full" href="#">Forced Hover</a>
@@ -221,9 +277,55 @@
 			</div>
 		</section>
 
+		<!-- General Utilities -->
+		<section id="utilities" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">General Utilities</h2>
+
+			<div class="mb-8">
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">py-section</h3>
+				<div class="py-section bg-gray-100 rounded-sm text-center text-gray-600 -text-ms-1">
+					This block uses <code>py-section</code> — fluid vertical padding across breakpoints
+				</div>
+			</div>
+
+			<div class="mb-8">
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">video-frame</h3>
+				<div class="video-frame">
+					<iframe src="https://www.youtube.com/watch?v=NpEaa2P7qZI" title="Video frame demo" allowfullscreen></iframe>
+				</div>
+			</div>
+
+			<div class="mb-8">
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">img-to-white / img-to-black</h3>
+				<div class="flex items-center gap-6">
+					<div class="bg-gray-800 p-4 rounded-sm">
+						<img src="https://placehold.co/60x60/9a9a9a/9a9a9a" alt="" class="img-to-white w-12 h-12">
+						<p class="text-white -text-ms-1 mt-2 text-center">img-to-white</p>
+					</div>
+					<div class="bg-gray-100 p-4 rounded-sm">
+						<img src="https://placehold.co/60x60/9a9a9a/9a9a9a" alt="" class="img-to-black w-12 h-12">
+						<p class="text-gray-800 -text-ms-1 mt-2 text-center">img-to-black</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-8">
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">has-primary-text / has-secondary-text</h3>
+				<p class="h-ms-5 has-primary-text">Heading with a <span>highlighted</span> word</p>
+				<p class="h-ms-5 has-secondary-text">Heading with a <span>highlighted</span> word</p>
+			</div>
+
+			<div>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">absolute-center</h3>
+				<div class="relative bg-gray-100 rounded-sm h-32">
+					<div class="absolute-center bg-primary text-primary-fg px-4 py-2 rounded-sm -text-ms-1">absolute-center</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Form Messages -->
-		<section id="form-messages" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Form Messages</h2>
+		<section id="form-messages" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Form Messages</h2>
 			<div class="space-y-4 max-w-2xl">
 				<div class="form-message info">
 					<div class="form-message-header">&#9679; Info</div>
@@ -244,22 +346,9 @@
 			</div>
 		</section>
 
-		<!-- Flex Grid -->
-		<section id="flex-grid" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Flex Grid</h2>
-			<div class="flex-grid flex-grid-cols-1 sm:flex-grid-cols-2 lg:flex-grid-cols-3 flex-grid-gap-6 gap-y-6">
-				<div class="rounded-sm bg-gray-100 p-6">Card One</div>
-				<div class="rounded-sm bg-gray-100 p-6">Card Two</div>
-				<div class="rounded-sm bg-gray-100 p-6">Card Three</div>
-				<div class="rounded-sm bg-gray-100 p-6">Card Four</div>
-				<div class="rounded-sm bg-gray-100 p-6">Card Five</div>
-			</div>
-			<p class="mt-4 -text-ms-1 text-gray-500">5 items in a 3-col grid — last row centers the orphan</p>
-		</section>
-
 		<!-- Rich Text -->
-		<section id="rich-text" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Rich Text</h2>
+		<section id="rich-text" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Rich Text</h2>
 			<div class="rich-text max-w-4xl">
 				<h1>Heading 1</h1>
 				<h2>Heading 2 — Modern rich text heading</h2>
@@ -330,8 +419,8 @@
 		</section>
 
 		<!-- Rich Text Inverted -->
-		<section id="rich-text-inverted" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Rich Text — Inverted</h2>
+		<section id="rich-text-inverted" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Rich Text — Inverted</h2>
 			<div class="bg-gray-950 rounded-sm p-8">
 				<div class="rich-text inverted max-w-4xl">
 					<h2>Heading on a dark background</h2>
@@ -350,55 +439,223 @@
 			</div>
 		</section>
 
-		<!-- General Utilities -->
-		<section id="utilities" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">General Utilities</h2>
+		<!-- Gutenberg Blocks -->
+		<section id="gutenberg-blocks" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Gutenberg Blocks</h2>
 
-			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">py-section</h3>
-				<div class="py-section bg-gray-100 rounded-sm text-center text-gray-600 -text-ms-1">
-					This block uses <code>py-section</code> — fluid vertical padding across breakpoints
+			<div class="gutenberg-area max-w-4xl space-y-12">
+
+				<!-- Paragraph / Drop Cap -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Paragraph — Drop Cap</h3>
+					<p class="wp-block-paragraph has-drop-cap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</div>
-			</div>
 
-			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">video-frame</h3>
-				<div class="video-frame">
-					<iframe src="https://www.youtube.com/watch?v=NpEaa2P7qZI" title="Video frame demo" allowfullscreen></iframe>
+				<!-- Quote -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Quote</h3>
+					<blockquote class="wp-block-quote">
+						<p>Good design is as little design as possible.</p>
+						<cite>Dieter Rams</cite>
+					</blockquote>
+					<blockquote class="wp-block-quote is-style-plain mt-4">
+						<p>Plain style — no background or border, just the quote itself.</p>
+						<cite>Plain Style</cite>
+					</blockquote>
 				</div>
-			</div>
 
-			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">img-to-white / img-to-black</h3>
-				<div class="flex items-center gap-6">
-					<div class="bg-gray-800 p-4 rounded-sm">
-						<img src="https://placehold.co/60x60/9a9a9a/9a9a9a" alt="" class="img-to-white w-12 h-12">
-						<p class="text-white -text-ms-1 mt-2 text-center">img-to-white</p>
+				<!-- Pullquote -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Pullquote</h3>
+					<figure class="wp-block-pullquote">
+						<blockquote>
+							<p>Design is not just what it looks like and feels like. Design is how it works.</p>
+							<cite>Steve Jobs</cite>
+						</blockquote>
+					</figure>
+				</div>
+
+				<!-- Details / Accordion -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Details</h3>
+					<details class="wp-block-details">
+						<summary>What is the Gutenberg editor?</summary>
+						<p>Gutenberg is the block-based editor introduced in WordPress 5.0. Each piece of content is a discrete block that can be moved, configured, and styled independently.</p>
+					</details>
+					<details class="wp-block-details mt-2">
+						<summary>Can I customize block styles?</summary>
+						<p>Yes — all block styles in this file are baseline defaults meant to be overridden on a per-project basis downstream.</p>
+					</details>
+				</div>
+
+				<!-- Code -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Code</h3>
+					<pre class="wp-block-code"><code>const blocks = ['paragraph', 'heading', 'quote', 'image'];
+blocks.forEach(block => register(block));</code></pre>
+				</div>
+
+				<!-- Image -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Image</h3>
+					<figure class="wp-block-image">
+						<img src="https://placehold.co/960x540/e5e5e5/1a1818?text=Image+Block" alt="Image block example">
+						<figcaption>Image block with figcaption — centered and styled.</figcaption>
+					</figure>
+				</div>
+
+				<!-- Gallery -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Gallery — 3 columns</h3>
+					<figure class="wp-block-gallery columns-3">
+						<figure class="wp-block-image">
+							<img src="https://placehold.co/600x400/e5e5e5/1a1818?text=1" alt="Gallery image 1">
+						</figure>
+						<figure class="wp-block-image">
+							<img src="https://placehold.co/600x400/d2d2d2/1a1818?text=2" alt="Gallery image 2">
+						</figure>
+						<figure class="wp-block-image">
+							<img src="https://placehold.co/600x400/b2b2b2/1a1818?text=3" alt="Gallery image 3">
+						</figure>
+						<figcaption class="blocks-gallery-caption">Three-column gallery with a shared caption.</figcaption>
+					</figure>
+				</div>
+
+				<!-- Cover -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Cover</h3>
+					<div class="wp-block-cover" style="background-color: var(--color-gray-800);">
+						<div class="wp-block-cover__inner-container">
+							<h2 class="h-ms-6 text-white">Cover Block Heading</h2>
+							<p class="text-gray-300 mt-2">Inner container content sits on top of the background image or color.</p>
+						</div>
 					</div>
-					<div class="bg-gray-100 p-4 rounded-sm">
-						<img src="https://placehold.co/60x60/9a9a9a/9a9a9a" alt="" class="img-to-black w-12 h-12">
-						<p class="text-gray-800 -text-ms-1 mt-2 text-center">img-to-black</p>
+				</div>
+
+				<!-- Media & Text -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Media &amp; Text</h3>
+					<div class="wp-block-media-text">
+						<figure class="wp-block-media-text__media">
+							<img src="https://placehold.co/600x400/e5e5e5/1a1818?text=Media" alt="Media and text example">
+						</figure>
+						<div class="wp-block-media-text__content">
+							<h3 class="h-ms-3">Media &amp; Text</h3>
+							<p>Content sits alongside the media at wider viewports and stacks on mobile. The <code>has-media-on-the-right</code> modifier flips the order.</p>
+						</div>
+					</div>
+					<div class="wp-block-media-text has-media-on-the-right mt-8">
+						<figure class="wp-block-media-text__media">
+							<img src="https://placehold.co/600x400/d2d2d2/1a1818?text=Flipped" alt="Media on the right">
+						</figure>
+						<div class="wp-block-media-text__content">
+							<h3 class="h-ms-3">Media on the Right</h3>
+							<p>Same block with <code>has-media-on-the-right</code> — the media column moves to the right at desktop widths.</p>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="mb-8">
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">has-primary-text / has-secondary-text</h3>
-				<p class="h-ms-5 has-primary-text">Heading with a <span>highlighted</span> word</p>
-				<p class="h-ms-5 has-secondary-text">Heading with a <span>highlighted</span> word</p>
-			</div>
-
-			<div>
-				<h3 class="ac-ms-1 uppercase tracking-wide text-gray-500 mb-3">absolute-center</h3>
-				<div class="relative bg-gray-100 rounded-sm h-32">
-					<div class="absolute-center bg-primary text-primary-fg px-4 py-2 rounded-sm -text-ms-1">absolute-center</div>
+				<!-- File Download -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">File Download</h3>
+					<div class="wp-block-file">
+						<a href="#">Brand Guidelines.pdf</a>
+						<a href="#" class="wp-block-file__button">Download</a>
+					</div>
 				</div>
+
+				<!-- Buttons -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Buttons</h3>
+					<div class="wp-block-buttons">
+						<div class="wp-block-button"><a class="wp-block-button__link" href="#">Primary Button</a></div>
+						<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="#">Outline Button</a></div>
+					</div>
+					<div class="wp-block-buttons is-content-justification-center mt-4">
+						<div class="wp-block-button"><a class="wp-block-button__link" href="#">Centered</a></div>
+					</div>
+					<div class="wp-block-buttons is-vertical mt-4" style="max-width: 200px;">
+						<div class="wp-block-button"><a class="wp-block-button__link" href="#">Stacked One</a></div>
+						<div class="wp-block-button is-style-outline"><a class="wp-block-button__link" href="#">Stacked Two</a></div>
+					</div>
+				</div>
+
+				<!-- Columns -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Columns</h3>
+					<div class="wp-block-columns">
+						<div class="wp-block-column">
+							<div class="bg-gray-100 rounded-sm p-4">
+								<strong class="block mb-1">Column One</strong>
+								<p class="text-ms-0 text-gray-700">Each column stretches equally by default. Content inside can be any block.</p>
+							</div>
+						</div>
+						<div class="wp-block-column">
+							<div class="bg-gray-100 rounded-sm p-4">
+								<strong class="block mb-1">Column Two</strong>
+								<p class="text-ms-0 text-gray-700">Columns stack on mobile and go side by side at the md breakpoint.</p>
+							</div>
+						</div>
+						<div class="wp-block-column">
+							<div class="bg-gray-100 rounded-sm p-4">
+								<strong class="block mb-1">Column Three</strong>
+								<p class="text-ms-0 text-gray-700">The <code>are-vertically-aligned-center</code> modifier aligns all columns at mid-height.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Separator -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Separator</h3>
+					<hr class="wp-block-separator">
+					<hr class="wp-block-separator is-style-dots">
+				</div>
+
+				<!-- Embed -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Embed — 16:9</h3>
+					<figure class="wp-block-embed is-type-video wp-embed-aspect-16-9">
+						<div class="wp-block-embed__wrapper">
+							<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Embed example" allowfullscreen></iframe>
+						</div>
+						<figcaption>YouTube embed using the 16:9 aspect ratio wrapper.</figcaption>
+					</figure>
+				</div>
+
+				<!-- Tag Cloud -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Tag Cloud</h3>
+					<div class="wp-block-tag-cloud">
+						<a href="#">Design</a>
+						<a href="#">Development</a>
+						<a href="#">WordPress</a>
+						<a href="#">Tailwind</a>
+						<a href="#">CSS</a>
+						<a href="#">Typography</a>
+					</div>
+				</div>
+
+				<!-- Alignment Utilities -->
+				<div>
+					<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Alignment Utilities</h3>
+					<div class="bg-gray-50 border border-gray-200 rounded-sm p-4 mb-2">
+						<div class="alignwide bg-gray-200 rounded-sm p-3 text-center -text-ms-1 text-gray-700">alignwide — constrained to <code>--container-xl</code></div>
+					</div>
+					<div class="bg-gray-50 border border-gray-200 rounded-sm p-4 mb-2 overflow-hidden">
+						<div class="alignfull bg-gray-200 p-3 text-center -text-ms-1 text-gray-700">alignfull — full viewport width (negative margin trick)</div>
+					</div>
+					<div class="bg-gray-50 border border-gray-200 rounded-sm p-4">
+						<div class="aligncenter bg-gray-200 rounded-sm p-3 -text-ms-1 text-gray-700 w-fit">aligncenter</div>
+					</div>
+				</div>
+
 			</div>
 		</section>
 
 		<!-- Gravity Forms -->
-		<section id="gravity-forms" class="mb-16">
-			<h2 class="h-ms-6 mb-2 pb-2 border-b border-gray-200">Gravity Forms</h2>
+		<section id="gravity-forms" class="mb-24">
+			<h2 class="h-ms-7 mb-2 pb-3 border-b-2 border-gray-300">Gravity Forms</h2>
 			<p class="-text-ms-1 text-gray-500 mb-8">WordPress / Gravity Forms output — styled via <code>.gravity-form-area</code></p>
 
 			<div class="gravity-form-area max-w-3xl">
@@ -514,9 +771,32 @@
 			</div>
 		</section>
 
+		<!-- WP Pagination -->
+		<section id="wp-pagination" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">WordPress Pagination</h2>
+			<div class="space-y-6">
+				<nav class="navigation pagination" aria-label="Posts">
+					<div class="nav-links">
+						<a class="prev page-numbers" href="#" aria-label="Previous page">&larr;</a>
+						<a class="page-numbers" href="#">1</a>
+						<span class="page-numbers current">2</span>
+						<a class="page-numbers" href="#">3</a>
+						<span class="page-numbers dots">&hellip;</span>
+						<a class="next page-numbers" href="#" aria-label="Next page">&rarr;</a>
+					</div>
+				</nav>
+				<nav class="posts-navigation" aria-label="Archive navigation">
+					<div class="nav-links">
+						<div class="nav-previous"><a href="#">&larr; Newer Posts</a></div>
+						<div class="nav-next"><a href="#">Older Posts &rarr;</a></div>
+					</div>
+				</nav>
+			</div>
+		</section>
+
 		<!-- Statamic Forms -->
-		<section id="statamic-forms" class="mb-16">
-			<h2 class="h-ms-6 mb-2 pb-2 border-b border-gray-200">Statamic Forms</h2>
+		<section id="statamic-forms" class="mb-24">
+			<h2 class="h-ms-7 mb-2 pb-3 border-b-2 border-gray-300">Statamic Forms</h2>
 			<p class="-text-ms-1 text-gray-500 mb-8">Statamic form output — styled via <code>.form-dynamic</code> (dark-themed)</p>
 
 			<div class="max-w-3xl [&_.input-label]:!text-gray-700 [&_.field-text]:!bg-white [&_.field-text]:!border-gray-300 [&_.field-text]:!text-gray-800 [&_.field-textarea]:!bg-white [&_.field-textarea]:!border-gray-300 [&_.field-textarea]:!text-gray-800 [&_.field-select]:!bg-white [&_.field-select]:!border-gray-300 [&_.field-select]:!text-gray-800 [&_.field-checkbox-icon-container]:!border-gray-300 [&_.field-checkbox-label]:!text-gray-700">
@@ -639,32 +919,9 @@
 			</div>
 		</section>
 
-		<!-- WP Pagination -->
-		<section id="wp-pagination" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">WordPress Pagination</h2>
-			<div class="space-y-6">
-				<nav class="navigation pagination" aria-label="Posts">
-					<div class="nav-links">
-						<a class="prev page-numbers" href="#" aria-label="Previous page">&larr;</a>
-						<a class="page-numbers" href="#">1</a>
-						<span class="page-numbers current">2</span>
-						<a class="page-numbers" href="#">3</a>
-						<span class="page-numbers dots">&hellip;</span>
-						<a class="next page-numbers" href="#" aria-label="Next page">&rarr;</a>
-					</div>
-				</nav>
-				<nav class="posts-navigation" aria-label="Archive navigation">
-					<div class="nav-links">
-						<div class="nav-previous"><a href="#">&larr; Newer Posts</a></div>
-						<div class="nav-next"><a href="#">Older Posts &rarr;</a></div>
-					</div>
-				</nav>
-			</div>
-		</section>
-
 		<!-- Statamic Pagination -->
-		<section id="statamic-pagination" class="mb-16">
-			<h2 class="h-ms-6 mb-8 pb-2 border-b border-gray-200">Statamic Pagination</h2>
+		<section id="statamic-pagination" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Statamic Pagination</h2>
 			<nav class="pagination" aria-label="Statamic pagination">
 				<div class="prev-page"><a href="#">&larr;</a></div>
 				<div class="pagination-link"><a href="#">1</a></div>
@@ -675,5 +932,6 @@
 		</section>
 
 	</div>
+
 </body>
 </html>
