@@ -1,6 +1,6 @@
 # Lwind - Lform Tailwind Setup
 
-The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing for the flexibility required to implement designs produced using the Lform design system. The package is lightweight, comprised of a starting Tailwind config and a handful of PostCSS plugins. Lwind is fully aligned to the Lform design system.
+The Lwind frontend styling system is designed to use as many Tailwind default-approaches as possible while also allowing for the flexibility required to implement designs produced using the Lform design system. The package is a CSS-first Tailwind 4 setup — theme tokens, utilities, and components are all defined in CSS. Lwind is fully aligned to the Lform design system.
 
 - Requires Tailwind 4.0.0+
 
@@ -12,7 +12,7 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 
 ## Installation
 
-Adding the Lwind system to a project is relatively straight forward:
+Adding the Lwind system to a project is relatively straightforward:
 
 1. Run `npm i @lform/lwind`
 2. Included in the package are example entry files you can copy into your project and adapt as needed:
@@ -50,7 +50,7 @@ A static kitchen sink demo is included for validating the current component and 
 
 - `npm run demo` - Builds `dist/app.css` and copies the demo page to `dist/kitchen-sink.html`
 
-The demo exercises the current button, container, flex grid, rich text, WordPress pagination, and Statamic pagination styles.
+The demo exercises typography, colors, buttons, containers, form messages, flex grid, rich text (standard and inverted), general utilities, WordPress pagination, and Statamic pagination.
 
 ## Tailwind Config
 
@@ -219,7 +219,7 @@ Negative steps use fixed pixel sizes; positive steps use fluid `clamp()` sizing 
 - `-h-ms-3` = 11px (fixed)
 - `-h-ms-2` = 12px (fixed)
 - `-h-ms-1` = 14px (fixed)
-- `h-ms` = base header font + tight line-height (no size override)
+- `h-ms` = base header font + header line-height (no size override)
 - `h-ms-1` = ~18px fluid
 - `h-ms-2` = ~20px fluid
 - `h-ms-3` = ~22px fluid
@@ -245,14 +245,22 @@ Accent helpers are generally used for smaller text, labels, and emphasis styles.
 - `ac-ms-1` = ~18px fluid
 - `ac-ms-2` = ~20px fluid
 
-##### Header Line Heights
+#### Line Heights
 
-By default, headers are set to a tighter line-height because larger fonts can appear overly spaced out vertically. The `--leading-header` token controls this and defaults to `1.2`. The standard line-height scale is:
+All line-height tokens use unitless ratios, which scale cleanly with each element's font size and avoid the inheritance issues caused by percentage-based values.
 
-- `--leading-header` = `1.2`
-- `--leading-tight` = `1.25`
-- `--leading-normal` = `1.5`
-- `--leading-loose` = `1.75`
+- `--leading-header` = `1.2` — Headings and display text, tighter to avoid excessive spacing at large sizes
+- `--leading-tight` = `1.25` — Compact UI text
+- `--leading-normal` = `1.5` — Body copy and general content
+- `--leading-loose` = `1.75` — Spacious layouts or accessibility-sensitive contexts
+
+#### Border Radius
+
+Three radius sizes are defined in `_theme.css` and used throughout components. Override as needed per project.
+
+- `--radius-sm` = `4px` — `rounded-sm`
+- `--radius-md` = `8px` — `rounded-md`
+- `--radius-lg` = `12px` — `rounded-lg`
 
 #### Richtext
 
@@ -261,7 +269,7 @@ A custom rich-text implementation is used for all rich-text areas by adding a `r
 - Add `rich-text inverted` to apply white text and adjusted link/list marker colors for rich text on dark backgrounds.
 - Links inside rich text are always underlined — this is a WCAG requirement and should not be overridden.
 - YouTube and Vimeo iframes are automatically forced to `width: 100%` with a `16/9` aspect ratio.
-- Rich text now includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and more robust media/table handling.
+- Includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and robust media/table handling.
 - WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
 - `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
 - Relevant vendor files, enable and disable them as needed:
@@ -373,7 +381,7 @@ Form messaging uses a `form-message` component for displaying inline feedback. T
 
 ```html
 <div class="form-message success">
-	<p class="font-message-header">&#9679; Success</p>
+	<p class="form-message-header">&#9679; Success</p>
 	<p>Your inquiry has been submitted.</p>
 </div>
 ```
@@ -384,7 +392,7 @@ CSS Grid has a limitation in that it does not support centering columns or align
 
 - Use the class `flex-grid` to implement a flex grid.
 - Flex Grid defaults to a single column. To change this, use `flex-grid-cols-{n}`, replacing `{n}` with the desired number of columns (1 to 10).
-- Adjust horizontal spacing between Flex Grid items with `flex-grid-gap-{n}`, using any number from the Tailwind [default spacing scale](https://tailwindcss.com/docs/customizing-spacing#default-spacing-scale). The maximum gap is `12` (48px). For larger gaps, add custom classes.
+- Adjust horizontal spacing between Flex Grid items with `flex-grid-gap-{n}`. Gaps from `0.5` to `28` (2px–112px) are included — see the full list below.
 - Flex Grid is fully responsive. Use `sm:`, `md:`, and `lg:` prefixes with `flex-grid-cols-{n}` or `flex-grid-gap-{n}` for responsive layouts.
 - For vertical spacing, use Tailwind's native `gap-y-{n}` since Flex Grid, powered by Flexbox, does not add vertical spacing by default.
 - **IMPORTANT:** Avoid using `margin-left` or `margin-right` on elements with `flex-grid`, as it disrupts the grid layout. Instead, apply margins to a container element.
