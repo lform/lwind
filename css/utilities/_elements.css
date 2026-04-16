@@ -1,19 +1,4 @@
 /*
- * Negative Font Size Utilities - Enables negative font size variables post Tailwind v4 upgrade
- */
-@utility -text-ms-1 {
-	@apply text-(--text--ms-1);
-}
-
-@utility -text-ms-2 {
-	@apply text-(--text--ms-2);
-}
-
-@utility -text-ms-3 {
-	@apply text-(--text--ms-3);
-}
-
-/*
  * Video iFrame Fix - Forces to 16:9, wide browser compatability
  */
 @utility video-frame {
