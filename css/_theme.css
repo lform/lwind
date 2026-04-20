@@ -44,19 +44,19 @@
 
     /* Colors */
     --color-*: initial; /* Removes Default Colors */
-    /* Primary Color Pallet */
+    /* Primary Color Palette */
     --color-primary-light: #e52560;
     --color-primary: #a01b44;
     --color-primary-dark: #710627;
     --color-primary-fg: #ffffff;
 
-    /* Secondary Color Pallet */
+    /* Secondary Color Palette */
     --color-secondary-light: #fdf0a9;
     --color-secondary: #dbc764;
     --color-secondary-dark: #d0b635;
     --color-secondary-fg: #000000;
 
-    /* Tertiary Color Pallet */
+    /* Tertiary Color Palette */
     --color-tertiary-light: #d3356c;
     --color-tertiary: #a01b44;
     --color-tertiary-dark: #710627;
