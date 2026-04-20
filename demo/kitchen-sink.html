@@ -46,6 +46,8 @@
 						<ul class="flex flex-wrap gap-x-5 gap-y-1 text-ms-0">
 							<li><a href="#buttons" class="text-primary underline">Buttons</a></li>
 							<li><a href="#utilities" class="text-primary underline">Utilities</a></li>
+							<li><a href="#iconify" class="text-primary underline">Iconify</a></li>
+							<li><a href="#dark-mode" class="text-primary underline">Dark Mode</a></li>
 							<li><a href="#form-messages" class="text-primary underline">Form Messages</a></li>
 						</ul>
 					</div>
@@ -319,6 +321,89 @@
 				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">absolute-center</h3>
 				<div class="relative bg-gray-100 rounded-sm h-32">
 					<div class="absolute-center bg-primary text-primary-fg px-4 py-2 rounded-sm -text-ms-1">absolute-center</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Iconify -->
+		<section id="iconify" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Iconify</h2>
+
+			<div class="mb-10">
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">Common Usage</h3>
+				<div class="flex flex-wrap gap-4">
+					<div class="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3">
+						<span class="icon-[mdi-light--home] inline-block text-3xl text-primary" aria-hidden="true"></span>
+						<div>
+							<p class="font-semibold text-gray-900">mdi-light--home</p>
+							<p class="-text-ms-1 text-gray-600">Basic brand-colored icon</p>
+						</div>
+					</div>
+					<div class="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3">
+						<span class="icon-[tabler--arrow-right] inline-block text-3xl text-gray-700" aria-hidden="true"></span>
+						<div>
+							<p class="font-semibold text-gray-900">tabler--arrow-right</p>
+							<p class="-text-ms-1 text-gray-600">Neutral icon for links and actions</p>
+						</div>
+					</div>
+					<div class="flex items-center gap-3 rounded-sm border border-gray-200 bg-white px-4 py-3">
+						<span class="icon-[lucide--mail] inline-block text-3xl text-secondary-dark" aria-hidden="true"></span>
+						<div>
+							<p class="font-semibold text-gray-900">lucide--mail</p>
+							<p class="-text-ms-1 text-gray-600">Another set to confirm cross-library usage</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-3">Inside Buttons And Labels</h3>
+				<div class="flex flex-wrap items-center gap-3">
+					<a class="button inline-flex items-center gap-2" href="#">
+						<span class="icon-[mdi-light--download] inline-block text-lg" aria-hidden="true"></span>
+						<span>Download Guide</span>
+					</a>
+					<div class="inline-flex items-center gap-2 rounded-sm bg-gray-100 px-3 py-2 text-gray-700">
+						<span class="icon-[lucide--clock-3] inline-block text-lg" aria-hidden="true"></span>
+						<span class="-text-ms-1">Updated 2 hours ago</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Dark Mode -->
+		<section id="dark-mode" class="mb-24">
+			<h2 class="h-ms-7 mb-10 pb-3 border-b-2 border-gray-300">Dark Mode</h2>
+
+			<div class="grid gap-6 lg:grid-cols-2">
+				<div class="rounded-sm border border-gray-200 bg-white p-6 text-gray-900">
+					<p class="ac-ms-1 mb-3 uppercase tracking-wide text-primary">Default Light Block</p>
+					<h3 class="h-ms-4 mb-3">No wrapper class</h3>
+					<p class="mb-4 text-gray-700">
+						This block renders with the default light theme because no <code>.dark</code> class is present on the parent.
+					</p>
+					<div class="flex items-center gap-3 rounded-sm bg-gray-100 px-4 py-3">
+						<span class="icon-[mdi-light--home] inline-block text-2xl text-secondary-dark" aria-hidden="true"></span>
+						<div>
+							<p class="font-semibold text-gray-900">Light surface</p>
+							<p class="-text-ms-1 text-gray-600">Standard utilities only</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="dark rounded-sm border border-gray-800 bg-gray-950 p-6 text-white">
+					<p class="ac-ms-1 mb-3 uppercase tracking-wide text-primary dark:text-secondary">Scoped Dark Block</p>
+					<h3 class="h-ms-4 mb-3 dark:text-white">Wrapper has `.dark`</h3>
+					<p class="mb-4 text-gray-700 dark:text-gray-200">
+						The parent wrapper enables all nested <code>dark:*</code> utilities without affecting the rest of the page.
+					</p>
+					<div class="flex items-center gap-3 rounded-sm bg-white/5 px-4 py-3 ring-1 ring-white/10">
+						<span class="icon-[lucide--moon-star] inline-block text-2xl text-gray-400 dark:text-secondary-light" aria-hidden="true"></span>
+						<div>
+							<p class="font-semibold text-white dark:text-white">Dark surface</p>
+							<p class="-text-ms-1 text-gray-500 dark:text-gray-300">Scoped with a local theme boundary</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>

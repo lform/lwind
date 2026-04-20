@@ -61,6 +61,7 @@ Tailwind is configured via `_theme.css` using CSS variables for theme tokens (th
 ### Tailwind Plugins
 
 - [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms) - Used to provide default baseline form styling
+- [@iconify/tailwind4](https://iconify.design/docs/usage/css/tailwind/tailwind4/) - Included by default for icon utilities via Iconify
 
 ### Breakpoints
 
@@ -476,7 +477,36 @@ Used to apply brand color to inline `<span>` elements inside a parent, typically
 
 ### Iconography
 
-Icons are not bundled with Lwind but the following sourcing hierarchy applies across all projects:
+Iconify is baked into Lwind by default through the Tailwind CSS entrypoint:
+
+```css
+@plugin "@iconify/tailwind4";
+```
+
+The package also includes `@iconify/json`, so developers can use Iconify selectors immediately without extra setup in a standard Lwind install.
+
+#### How To Use It
+
+- Find an icon on [Iconify](https://iconify.design/).
+- Copy the Tailwind CSS selector for that icon.
+- Use the selector as a class on an inline element such as `span` or `i`.
+- Size and color the icon with normal Tailwind utilities.
+
+```html
+<span class="icon-[mdi-light--home] inline-block text-2xl text-primary"></span>
+<span class="icon-[tabler--arrow-right] inline-block text-gray-700 dark:text-white"></span>
+```
+
+#### Notes
+
+- The default selector prefix is `icon-`, so classes follow the `icon-[collection--name]` pattern.
+- Icon names use `--` between the icon set prefix and the icon name, for example `mdi-light--home`.
+- Icons inherit `currentColor`, so text color utilities also control icon color.
+- Use `inline-block`, width, height, or text-size utilities as needed depending on layout.
+
+#### Sourcing Guidance
+
+The sourcing hierarchy still applies across projects:
 
 1. **[Iconify](https://iconify.design/)** — default source for all icons. Use the [Iconify Figma plugin](https://www.figma.com/community/plugin/735098390272716381/iconify) to keep design and development in sync.
 2. **[Flaticon](https://www.flaticon.com/)** — fallback when Iconify doesn't have a suitable option.
@@ -484,9 +514,57 @@ Icons are not bundled with Lwind but the following sourcing hierarchy applies ac
 
 Avoid designs that depend on a large number of unique icons unless the project scope explicitly accounts for that work. Use icons where content repeats or follows a clear pattern — header items, footer items, resource lists, and other recurring interface elements.
 
-### Layout
+Relevant documentation:
 
-Sticky footer layout utilities defined in `css/components/_layout.css`. These work by setting `body` to `flex flex-col min-h-screen` and using flex grow/shrink on the child regions to push the footer to the bottom of the viewport.
+- [Iconify for Tailwind CSS 4](https://iconify.design/docs/usage/css/tailwind/tailwind4/)
+- [Browse Iconify icon sets](https://iconify.design/icon-sets/)
+- [Iconify Figma plugin](https://www.figma.com/community/plugin/735098390272716381/iconify)
+
+### Dark Mode
+
+Lwind overrides Tailwind's default dark mode behavior in the CSS entrypoint:
+
+```css
+@variant dark (&:where(.dark, .dark *));
+```
+
+This means `dark:*` utilities are class-driven and can be scoped to any wrapper, not just the root document. The main use case is block-level theming where one section of a page needs to render in dark mode and another in light mode.
+
+#### How To Use It
+
+- Add `dark:*` utilities exactly as you normally would in Tailwind.
+- Add a `.dark` class to the wrapper that should render in dark mode.
+- Leave wrappers without `.dark` as the default light version.
+- Because the selector is scoped, you can mix light and dark sections on the same page.
+
+```html
+<section class="bg-white text-gray-900">
+  <h2 class="h-ms-4">Light block</h2>
+</section>
+
+<section class="dark bg-gray-900 text-white">
+  <h2 class="h-ms-4 dark:text-white">Dark block</h2>
+  <p class="text-gray-700 dark:text-gray-200">
+    This block opts into the dark variant without changing the rest of the page.
+  </p>
+</section>
+```
+
+#### Practical Guidance
+
+- Treat `.dark` as a theme boundary for a component, section, or CMS block.
+- Put the `.dark` class on the highest wrapper that should inherit dark styling.
+- If a component must always stay light inside a dark page area, render that component outside the `.dark` wrapper or avoid using `dark:*` utilities inside it.
+- Use Tailwind's `scheme-light`, `scheme-dark`, or related `color-scheme` utilities when native form controls need to match the block theme.
+
+Relevant documentation:
+
+- [Tailwind dark mode](https://tailwindcss.com/docs/dark-mode)
+- [Tailwind color-scheme utilities](https://tailwindcss.com/docs/color-scheme)
+
+### Sticky Footer Layout
+
+Sticky footer layout utilities defined in `css/components/_layout.css`. These work by setting `body` to `flex flex-col min-h-screen` and using flex grow/shrink on the child regions to push the footer to the bottom of the viewport. All projects should use sticky footers to avoid footer-related issues on short pages.
 
 - `site-header` - Flex child that does not grow or shrink
 - `site-main` - Flex child that grows to fill available space, pushing the footer down
