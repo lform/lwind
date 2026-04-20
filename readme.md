@@ -8,7 +8,7 @@ The Lwind frontend styling system is designed to use as many Tailwind default-ap
 
 - [Lform Design System](https://github.com/lform/lform-codex/blob/main/design-system-guidelines.md)
 - [Tailwind Documentation](https://tailwindcss.com/docs)
-- [TailWind UI KIts](https://www.tailwindawesome.com/?type=kit) - For reference for building components
+- [Tailwind UI Kits](https://www.tailwindawesome.com/?type=kit) - For reference for building components
 
 ## Installation
 
