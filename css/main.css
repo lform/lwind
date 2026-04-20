@@ -1,6 +1,12 @@
 /* Tailwind */
 @import 'tailwindcss';
+
+/* Libraries & Vendor Files */
 @plugin "@tailwindcss/forms";
+@plugin "@iconify/tailwind4";
+
+/* Dark Mode Variants */
+@variant dark (&:where(.dark, .dark *));
 
 /* Theme */
 @import "./_theme.css" layer(theme);
