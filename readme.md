@@ -464,8 +464,8 @@ Miscellaneous utility classes defined in `css/utilities/_elements.css`.
 
 #### Image Color Controls
 
-- `img-to-white` - Applies CSS filter to turn an image/icon fully white
-- `img-to-black` - Applies CSS filter to turn an image/icon fully black
+- `svg-to-white` - Applies CSS filter to turn an image/icon fully white
+- `svg-to-black` - Applies CSS filter to turn an image/icon fully black
 
 #### Accent Text Coloring
 

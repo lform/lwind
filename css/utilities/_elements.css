@@ -44,11 +44,11 @@
 /*
  * Image Color Controls for Icons and Elements
  */
-@utility img-to-white {
+@utility svg-to-white {
 	@apply [filter:brightness(0)_saturate(100%)_invert(100%)];
 }
 
-@utility img-to-black {
+@utility svg-to-black {
 	@apply [filter:brightness(0)_saturate(100%)];
 }
 
