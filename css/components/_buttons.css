@@ -1,13 +1,21 @@
 @utility button {
-	--button-bg: var(--color-primary);
-	--button-border: var(--color-primary);
-	--button-text: var(--color-primary-fg);
-	--button-bg-hover: var(--color-primary-dark);
-	--button-border-hover: var(--color-primary-dark);
-	--button-text-hover: var(--color-primary-fg);
+	--button-variant-bg: var(--color-primary);
+	--button-variant-border: var(--color-primary);
+	--button-variant-text: var(--color-primary-fg);
+	--button-variant-bg-hover: var(--color-primary-dark);
+	--button-variant-border-hover: var(--color-primary-dark);
+	--button-variant-text-hover: var(--color-primary-fg);
+
+	--button-bg: var(--button-variant-bg);
+	--button-border: var(--button-variant-border);
+	--button-text: var(--button-variant-text);
+	--button-bg-hover: var(--button-variant-bg-hover);
+	--button-border-hover: var(--button-variant-border-hover);
+	--button-text-hover: var(--button-variant-text-hover);
 
 	@apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm px-4 py-3 font-body font-bold leading-none no-underline transition-colors duration-200;
 	background-color: var(--button-bg);
+	border-color: var(--button-border);
 	color: var(--button-text);
 
 	&:is(:hover, .button-hover) {
@@ -30,38 +38,31 @@
 }
 
 @utility button-secondary {
-	--button-bg: var(--color-secondary);
-	--button-border: var(--color-secondary);
-	--button-text: var(--color-secondary-fg);
-	--button-bg-hover: var(--color-secondary-dark);
-	--button-border-hover: var(--color-secondary-dark);
-	--button-text-hover: var(--color-secondary-fg);
+	--button-variant-bg: var(--color-secondary);
+	--button-variant-border: var(--color-secondary);
+	--button-variant-text: var(--color-secondary-fg);
+	--button-variant-bg-hover: var(--color-secondary-dark);
+	--button-variant-border-hover: var(--color-secondary-dark);
+	--button-variant-text-hover: var(--color-secondary-fg);
 }
 
 @utility button-tertiary {
-	--button-bg: var(--color-tertiary);
-	--button-border: var(--color-tertiary);
-	--button-text: var(--color-tertiary-fg);
-	--button-bg-hover: var(--color-tertiary-dark);
-	--button-border-hover: var(--color-tertiary-dark);
-	--button-text-hover: var(--color-tertiary-fg);
+	--button-variant-bg: var(--color-tertiary);
+	--button-variant-border: var(--color-tertiary);
+	--button-variant-text: var(--color-tertiary-fg);
+	--button-variant-bg-hover: var(--color-tertiary-dark);
+	--button-variant-border-hover: var(--color-tertiary-dark);
+	--button-variant-text-hover: var(--color-tertiary-fg);
 }
 
 @utility button-outline {
-    @apply border;
+	@apply border;
 	--button-bg: transparent;
-	--button-text: var(--button-border);
+	--button-border: var(--button-variant-border);
+	--button-text: var(--button-variant-border);
 	--button-bg-hover: transparent;
-    --button-border-hover: var(--button-border-hover);
-    --button-text-hover: var(--button-border-hover);
-
-	&.button-secondary {
-		--button-bg: transparent;
-		--button-text: var(--button-border);
-		--button-bg-hover: transparent;
-		--button-border-hover: var(--button-border-hover);
-		--button-text-hover: var(--button-border-hover);
-	}
+	--button-border-hover: var(--button-variant-border-hover);
+	--button-text-hover: var(--button-variant-border-hover);
 }
 
 @utility button-sm {
