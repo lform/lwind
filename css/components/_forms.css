@@ -1,67 +1,36 @@
-.form {
-
-	.form-section {
-		@apply mb-4;
-	}
-
-	/* Form Input Styling */
-
-	.input {
-		@apply rounded-xs w-full bg-white leading-normal p-2 border border-grey-500 transition-colors;
-
-		&:required {
-			@apply border-primary border;
-		}
-
-		&:focus {
-			@apply border-secondary outline-hidden;
-		}
-
-		&:focus > label {
-			@apply text-secondary;
-		}
-	}
-
-	.checkbox-area,
-	.radio-area {
-		@apply grid grid-cols-2 gap-6 mb-6;
-	}
-
-	/* Form Label Styling */
-
-	.label {
-		@apply uppercase -text-ms-1 font-header font-bold text-grey-500;
-
-		&.required {
-			@apply text-primary;
-		}
-	}
-
-	/* Input grid for form areas with multiple inputs */
-
-	.form-control-list-grid {
-		@apply grid grid-cols-2 gap-6;
-	}
-}
-
-
 /* Form Messages */
 .form-message {
-	@apply bg-grey-100 rounded-sm mb-4 p-4;
+	@apply px-4 py-3 rounded-sm border-l-4 border-gray-700 bg-gray-100 leading-normal;
 
 	.form-message-header {
-		@apply font-bold mb-2;
+		@apply -text-ms-1 font-bold text-gray-700 mb-1;
+	}
+
+	&.info {
+		border-color: var(--color-feedback-info);
+		.form-message-header {
+			color: var(--color-feedback-info);
+		}
 	}
 
 	&.success {
-		background: var(--color-feedback-success);
+		border-color: var(--color-feedback-success);
+		.form-message-header {
+			color: var(--color-feedback-success);
+		}
 	}
 
 	&.warning {
-		background: var(--color-feedback-warning);
+		border-color: var(--color-feedback-warning);
+		.form-message-header {
+			color: var(--color-feedback-warning);
+		}
 	}
 
 	&.error {
-		background: var(--color-feedback-error);
+		border-color: var(--color-feedback-error);
+		.form-message-header {
+			color: var(--color-feedback-error);
+		}
 	}
 }

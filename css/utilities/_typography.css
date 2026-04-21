@@ -1,7 +1,15 @@
+/*
+ * Shim for negative font-size utilities
+ */
+@utility -text-ms-* {
+	font-size: --value(--text--ms-*);
+}
+
+/* Header Font Helpers */
 @utility h-ms {
 	/* Headers */
 	@apply font-header;
-	line-height: theme('lineHeight.header', 1.25);
+	line-height: var(--leading-header, 1.2);
 }
 
 @utility -h-ms-3 {
@@ -21,97 +29,96 @@
 
 @utility h-ms-1 {
 	@apply h-ms;
-	@apply text-ms-1;
+	@apply text-fms-1;
 }
 
 @utility h-ms-2 {
 	@apply h-ms;
-	@apply text-ms-2;
+	@apply text-fms-2;
 }
 
 @utility h-ms-3 {
 	@apply h-ms;
-	@apply text-ms-3;
+	@apply text-fms-3;
 }
 
 @utility h-ms-4 {
 	@apply h-ms;
-	@apply h-ms;
-	@apply text-ms-4;
-	@apply text-ms-4;
+	@apply text-fms-4;
 }
 
 @utility h-ms-5 {
 	@apply h-ms;
-	@apply text-ms-5;
+	@apply text-fms-5;
 }
 
 @utility h-ms-6 {
 	@apply h-ms;
-	@apply text-ms-6;
+	@apply text-fms-6;
 }
 
 @utility h-ms-7 {
 	@apply h-ms;
-	@apply text-ms-7;
+	@apply text-fms-7;
 }
 
 @utility h-ms-8 {
 	@apply h-ms;
-	@apply text-ms-8;
+	@apply text-fms-8;
 }
 
 @utility h-ms-9 {
 	@apply h-ms;
-	@apply text-ms-9;
+	@apply text-fms-9;
 }
 
 @utility h-ms-10 {
 	@apply h-ms;
-	@apply text-ms-10;
+	@apply text-fms-10;
 }
 
 @utility h-ms-11 {
 	@apply h-ms;
-	@apply text-ms-11;
+	@apply text-fms-11;
 }
 
 @utility h-ms-12 {
 	@apply h-ms;
-	@apply text-ms-12;
+	@apply text-fms-12;
 }
 
 @utility h-ms-13 {
 	@apply h-ms;
-	@apply text-ms-13;
+	@apply text-fms-13;
 }
 
-@utility sh-ms {
-	/* Subheaders */
-	@apply font-subheader leading-tight;
+/* Accent Font Helpers */
+@utility ac-ms {
+	@apply font-accent;
+	line-height: var(--leading-header, 1.2);
 }
 
-@utility -sh-ms-3 {
-	@apply sh-ms;
+@utility -ac-ms-3 {
+	@apply ac-ms;
 	@apply -text-ms-3;
 }
 
-@utility -sh-ms-2 {
-	@apply sh-ms;
+@utility -ac-ms-2 {
+	@apply ac-ms;
 	@apply -text-ms-2;
 }
 
-@utility -sh-ms-1 {
-	@apply sh-ms;
+@utility -ac-ms-1 {
+	@apply ac-ms;
 	@apply -text-ms-1;
 }
 
-@utility sh-ms-1 {
-	@apply sh-ms;
-	@apply text-ms-1;
+@utility ac-ms-1 {
+	@apply ac-ms;
+	@apply text-fms-1;
 }
 
-@utility sh-ms-2 {
-	@apply sh-ms;
-	@apply text-ms-2;
+@utility ac-ms-2 {
+	@apply ac-ms;
+	@apply text-fms-2;
 }
