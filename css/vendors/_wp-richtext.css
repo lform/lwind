@@ -1,0 +1,131 @@
+/* Apply custom styles for WordPress editor (TinyMCE) */
+body.mce-content-body {
+	@apply rich-text;
+
+	background-color: var(--color-white);
+	margin: 0 auto;
+	max-width: 1250px;
+	padding: 1rem 1.5rem !important;
+}
+
+body.mce-content-body,
+.rich-text {
+	/* Legacy WordPress captions */
+	.wp-caption {
+		@apply max-w-full;
+		margin-inline: 0;
+	}
+
+	.wp-caption img {
+		@apply m-0;
+	}
+
+	.wp-caption-text,
+	.gallery-caption {
+		@apply italic mx-4 text-gray-700 -text-ms-1 text-center;
+		margin-top: 0.75rem;
+		max-width: 65ch;
+		text-wrap: pretty;
+	}
+
+	/* Common editor media wrappers */
+	.wpview,
+	.wpview-wrap,
+	.wp-block-embed,
+	.wp-block-image,
+	.wp-block-video {
+		max-width: 100%;
+	}
+
+	.wpview iframe,
+	.wpview-wrap iframe,
+	.wp-block-embed iframe {
+		width: 100%;
+	}
+
+	/* Older WP galleries and list blocks benefit from explicit spacing */
+	.gallery,
+	.wp-block-gallery,
+	.wp-block-list {
+		margin-block: 0;
+	}
+
+	.wp-block-list {
+		@apply mb-8;
+	}
+
+	.wp-block-gallery {
+		@apply mb-12;
+
+		.wp-block-image {
+			@apply !w-full;
+		}
+
+		&:where(.is-layout-flex) {
+			@apply !grid grid-cols-1 !gap-6;
+
+			&.columns-2 {
+				@apply sm:grid-cols-2;
+			}
+
+			&.columns-3 {
+				@apply sm:grid-cols-2 md:grid-cols-3;
+			}
+		}
+
+		figure img {
+			@apply !m-0;
+		}
+	}
+
+	/* Legacy gallery markup */
+	.gallery {
+		@apply grid grid-cols-1 gap-6;
+	}
+
+	.gallery .gallery-item {
+		margin: 0;
+		max-width: 100%;
+	}
+
+	.gallery .gallery-icon img {
+		display: block;
+		margin-inline: auto;
+	}
+
+	/* WordPress table wrappers */
+	.wp-block-table {
+		overflow-x: auto;
+	}
+
+	.wp-block-table table {
+		@apply w-full inline-table;
+
+		tbody {
+			@apply w-full;
+		}
+
+		th {
+			@apply bg-transparent;
+		}
+	}
+
+	/* TinyMCE and shortcode tables often need width reset */
+	table.mce-item-table {
+		width: 100% !important;
+	}
+
+	/* Quote block wrappers should not fight rich-text blockquote styles */
+	.wp-block-quote p {
+		@apply block;
+	}
+
+	/* WordPress inserts spacer blocks and separators in editor content */
+	.wp-block-spacer {
+		width: 100%;
+	}
+
+	.wp-block-separator {
+		max-width: none;
+	}
+}

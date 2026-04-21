@@ -1,6 +1,13 @@
 /* Tailwind */
 @import 'tailwindcss';
 
+/* Libraries & Vendor Files */
+@plugin "@tailwindcss/forms";
+@plugin "@iconify/tailwind4";
+
+/* Dark Mode Variants */
+@variant dark (&:where(.dark, .dark *));
+
 /* Theme */
 @import "@lform/lwind/css/_theme.css" layer(theme);
 
@@ -8,14 +15,21 @@
 @import '@lform/lwind/css/base/_global.css' layer(utilities);
 @import '@lform/lwind/css/base/_site.css' layer(utilities);
 
+/* Utility Classes */
+@import '@lform/lwind/css/utilities/_elements.css';
+@import '@lform/lwind/css/utilities/_typography.css';
+
 /* UI Components */
 @import '@lform/lwind/css/components/_layout.css';
 @import '@lform/lwind/css/components/_container.css';
 @import '@lform/lwind/css/components/_forms.css' layer(utilities);
 @import '@lform/lwind/css/components/_buttons.css';
-@import '@lform/lwind/css/components/_richtext.css' layer(utilities);
+@import '@lform/lwind/css/components/_richtext.css';
 @import '@lform/lwind/css/components/_flex-grid.css';
 
-/* Utility Classes */
-@import '@lform/lwind/css/utilities/_elements.css';
-@import '@lform/lwind/css/utilities/_typography.css';
+/* Vendor Styling */
+@import '@lform/lwind/css/vendors/_wp-richtext.css';
+@import '@lform/lwind/css/vendors/_wp-forms.css';
+@import '@lform/lwind/css/vendors/_wp-pagination.css' layer(utilities);
+@import '@lform/lwind/css/vendors/_statamic-forms.css' layer(utilities);
+@import '@lform/lwind/css/vendors/_statamic-pagination.css' layer(utilities);

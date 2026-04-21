@@ -1,30 +1,91 @@
 @utility button {
-	/* Default button */
-	@apply inline-block py-3 px-6 bg-primary text-primary-fg hover:bg-primary-dark transition-colors -text-ms-1 rounded-full text-center no-underline uppercase font-body font-black leading-tight;
+	--button-variant-bg: var(--color-primary);
+	--button-variant-border: var(--color-primary);
+	--button-variant-text: var(--color-primary-fg);
+	--button-variant-bg-hover: var(--color-primary-dark);
+	--button-variant-border-hover: var(--color-primary-dark);
+	--button-variant-text-hover: var(--color-primary-fg);
+
+	--button-bg: var(--button-variant-bg);
+	--button-border: var(--button-variant-border);
+	--button-text: var(--button-variant-text);
+	--button-bg-hover: var(--button-variant-bg-hover);
+	--button-border-hover: var(--button-variant-border-hover);
+	--button-text-hover: var(--button-variant-text-hover);
+
+	@apply inline-flex cursor-pointer items-center justify-center gap-x-2 rounded-sm px-4 py-3 font-body font-bold leading-none no-underline transition-colors duration-200;
+	background-color: var(--button-bg);
+	border-color: var(--button-border);
+	color: var(--button-text);
+
+	&:is(:hover, .button-hover) {
+		background-color: var(--button-bg-hover);
+		border-color: var(--button-border-hover);
+		color: var(--button-text-hover);
+	}
+
+	&:is(:focus-visible, .button-focus) {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+	}
+
+	&:is(:disabled, [disabled], [aria-disabled="true"], .button-disabled) {
+		@apply cursor-not-allowed no-underline opacity-70;
+		background-color: var(--color-gray-300);
+		border-color: var(--color-gray-300);
+		color: var(--color-gray-700);
+	}
 }
 
-/* Color Variants */
 @utility button-secondary {
-	@apply bg-secondary text-secondary-fg hover:bg-secondary-dark;
+	--button-variant-bg: var(--color-secondary);
+	--button-variant-border: var(--color-secondary);
+	--button-variant-text: var(--color-secondary-fg);
+	--button-variant-bg-hover: var(--color-secondary-dark);
+	--button-variant-border-hover: var(--color-secondary-dark);
+	--button-variant-text-hover: var(--color-secondary-fg);
 }
 
 @utility button-tertiary {
-	@apply bg-tertiary text-tertiary-fg border-primary border-2;
+	--button-variant-bg: var(--color-tertiary);
+	--button-variant-border: var(--color-tertiary);
+	--button-variant-text: var(--color-tertiary-fg);
+	--button-variant-bg-hover: var(--color-tertiary-dark);
+	--button-variant-border-hover: var(--color-tertiary-dark);
+	--button-variant-text-hover: var(--color-tertiary-fg);
 }
 
-/* Size Variants */
-@utility button-xs {
-	@apply py-1 px-2 -text-ms-2;
+@utility button-outline {
+	@apply border;
+	--button-bg: transparent;
+	--button-border: var(--button-variant-border);
+	--button-text: var(--button-variant-border);
+	--button-bg-hover: transparent;
+	--button-border-hover: var(--button-variant-border-hover);
+	--button-text-hover: var(--button-variant-border-hover);
 }
 
 @utility button-sm {
-	@apply py-1.5 px-3 -text-ms-1;
+	@apply !px-3 !py-2.5 !-text-ms-1;
+}
+
+@utility button-md {
+	@apply px-4 py-3;
 }
 
 @utility button-lg {
-	@apply py-3 px-5 text-ms-1;
+	@apply !px-6 !py-4 !text-ms-1;
 }
 
-@utility button-xl {
-	@apply py-3 px-6 text-ms-2;
+@utility button-icon {
+	@apply gap-x-3;
+
+	svg,
+	i {
+		@apply shrink-0;
+	}
+}
+
+@utility button-full {
+	@apply flex w-full;
 }

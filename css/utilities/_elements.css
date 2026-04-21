@@ -1,20 +1,5 @@
 /*
- * Negative Font Size Utilities - Enables negative font size variables post Tailwind v4 upgrade
- */
-@utility -text-ms-1 {
-	@apply text-(--text--ms-1);
-}
-
-@utility -text-ms-2 {
-	@apply text-(--text--ms-2);
-}
-
-@utility -text-ms-3 {
-	@apply text-(--text--ms-3);
-}
-
-/*
- * Video iFrame Fix - Forces to 16:9, wide browser compatability
+ * Video iFrame Fix - Forces to 16:9, wide browser compatibility
  */
 @utility video-frame {
 	position: relative;
@@ -48,3 +33,37 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/*
+ * Standard Section Vertical Padding
+ */
+@utility py-section {
+	@apply py-18 sm:py-20 md:py-22 2xl:py-28;
+}
+
+/*
+ * Image Color Controls for Icons and Elements
+ */
+@utility svg-to-white {
+	@apply [filter:brightness(0)_saturate(100%)_invert(100%)];
+}
+
+@utility svg-to-black {
+	@apply [filter:brightness(0)_saturate(100%)];
+}
+
+/*
+ * Controls Accent Coloring of Text via Admin
+ */
+@utility has-primary-text {
+	span {
+		@apply text-primary;
+	}
+}
+
+@utility has-secondary-text {
+	span {
+		@apply text-secondary;
+	}
+}
+
