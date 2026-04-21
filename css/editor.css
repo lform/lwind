@@ -8,9 +8,12 @@
 /* Dark Mode Variants */
 @variant dark (&:where(.dark, .dark *));
 
+/* Theme */
+@import "./_theme.css" layer(theme);
+
 /* Pre-flight Styles */
-@import "base/_global.css";
-@import "base/_editor.css";
+@import './base/_global.css' layer(utilities);
+@import './base/_site.css' layer(utilities);
 
 /* Utility Classes */
 @import './utilities/_elements.css';
