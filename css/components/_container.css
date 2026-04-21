@@ -23,12 +23,7 @@
 
 	/* Fix any nested containers so their padding does not stack */
 	.container,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-2xl,
-	.container-3xl {
+	[class*="container-"] {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -59,7 +54,7 @@
 
 	/* Fix any nested containers so their padding does not stack */
 	.container,
-	.container-* {
+	[class*="container-"] {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -107,7 +102,7 @@
 
 	/* Fix any nested containers so their padding does not stack */
 	.container,
-	.container-* {
+	[class*="container-"] {
 		padding-left: 0;
 		padding-right: 0;
 	}
