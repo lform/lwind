@@ -110,14 +110,14 @@
     --container-2xl: 1600px;
     --container-padding: 1.5rem; /* 24px - desktop */
     --container-padding-mobile: 1.25rem; /* 20px - mobile */
-    --container: var(--container-xl); /* Default Container Size */
+    --container: var(--container-lg); /* Default Container Size */
 
     /* Constrained Containers - Set the snapping widths */
     --container-adaptive-sm: var(--container-sm);
     --container-adaptive-md: var(--container-md);
     --container-adaptive-lg: var(--container-lg);
     --container-adaptive-xl: var(--container-xl);
-    --container-adaptive: var(--container-xl); /* Default Constrained Container Size */
+    --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
 
     /* Element Colors */
     --color-elem-field-required: #a01b44;
