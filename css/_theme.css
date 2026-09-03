@@ -50,10 +50,10 @@
     --color-primary-fg: #ffffff;
 
     /* Secondary Color Palette */
-    --color-secondary-light: #fde68a;
-    --color-secondary: #facc15;
-    --color-secondary-dark: #ca8a04;
-    --color-secondary-fg: #111827;
+    --color-secondary-light: #bf84ff;
+    --color-secondary: #810eec;
+    --color-secondary-dark: #51128f;
+    --color-secondary-fg: #ffffff;
 
     /* Tertiary Color Palette */
     --color-tertiary-light: #f472b6;
