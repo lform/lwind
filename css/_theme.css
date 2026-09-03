@@ -80,10 +80,10 @@
     --color-transparent: transparent;
 
     /* Feedback Tones */
-    --color-feedback-success: #008554;
+    --color-feedback-success: #006f47;
     --color-feedback-warning: #8F6200;
     --color-feedback-error: #d90259;
-    --color-feedback-info: #007DA3;
+    --color-feedback-info: #00708f;
 
     /* Social Media Brand Colors */
     --color-social-facebook: #0866FF;
@@ -142,7 +142,7 @@
     --richtext-colors-blockquote: var(--color-gray-900);
     --richtext-colors-link: var(--color-primary);
     --richtext-colors-table-td: var(--color-gray-900);
-    --richtext-colors-table-th: var(--color-gray-900);
+    --richtext-colors-table-th: var(--color-primary-fg);
 
     --richtext-font-family-table-td: var(--font-body);
     --richtext-font-family-table-th: var(--font-accent);
