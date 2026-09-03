@@ -13,19 +13,41 @@ body.mce-content-body,
 	/* Legacy WordPress captions */
 	.wp-caption {
 		@apply max-w-full;
-		margin-inline: 0;
 	}
 
-	.wp-caption img {
+	.wp-caption img,
+	.wp-caption-dt,
+	.wp-caption-dd {
 		@apply m-0;
 	}
 
 	.wp-caption-text,
+	.wp-caption-dd,
 	.gallery-caption {
 		@apply italic mx-4 text-gray-700 -text-ms-1 text-center;
 		margin-top: 0.75rem;
 		max-width: 65ch;
 		text-wrap: pretty;
+	}
+
+	.mceTemp,
+	.wp-caption-dt {
+		max-width: 100%;
+	}
+
+	/* Emoji and smileys must remain inline with surrounding copy. */
+	img.wp-smiley,
+	img.emoji {
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		display: inline;
+		height: 1em;
+		margin: 0 0.07em;
+		max-width: none !important;
+		padding: 0;
+		vertical-align: -0.1em;
+		width: 1em;
 	}
 
 	/* Common editor media wrappers */
@@ -80,7 +102,9 @@ body.mce-content-body,
 
 	/* Legacy gallery markup */
 	.gallery {
-		@apply grid grid-cols-1 gap-6;
+		@apply grid grid-cols-1;
+		--wp-gallery-columns: 1;
+		gap: var(--richtext-spacing-gallery);
 	}
 
 	.gallery .gallery-item {
@@ -91,6 +115,37 @@ body.mce-content-body,
 	.gallery .gallery-icon img {
 		display: block;
 		margin-inline: auto;
+	}
+
+	@media (min-width: 768px) {
+		.gallery {
+			grid-template-columns: repeat(var(--wp-gallery-columns), minmax(0, 1fr));
+		}
+
+		.gallery-columns-2 { --wp-gallery-columns: 2; }
+		.gallery-columns-3 { --wp-gallery-columns: 3; }
+		.gallery-columns-4 { --wp-gallery-columns: 4; }
+		.gallery-columns-5 { --wp-gallery-columns: 5; }
+		.gallery-columns-6 { --wp-gallery-columns: 6; }
+		.gallery-columns-7 { --wp-gallery-columns: 7; }
+		.gallery-columns-8 { --wp-gallery-columns: 8; }
+		.gallery-columns-9 { --wp-gallery-columns: 9; }
+	}
+
+	/* Media inserted by the Add Media dialog and media shortcodes. */
+	.wp-audio-shortcode,
+	.wp-video-shortcode,
+	.mejs-container,
+	.wp-playlist {
+		max-width: 100%;
+	}
+
+	.wp-audio-shortcode {
+		width: 100% !important;
+	}
+
+	.wp-playlist {
+		border-color: var(--color-gray-300);
 	}
 
 	/* WordPress table wrappers */
@@ -115,6 +170,15 @@ body.mce-content-body,
 		width: 100% !important;
 	}
 
+	/* Visible placeholders for Classic Editor-only pagination controls. */
+	.wp-more-tag,
+	.mce-pagebreak {
+		border: 1px dashed var(--color-gray-500);
+		height: 1.5rem;
+		margin-block: var(--richtext-flow-space);
+		width: 100%;
+	}
+
 	/* Quote block wrappers should not fight rich-text blockquote styles */
 	.wp-block-quote p {
 		@apply block;
@@ -127,5 +191,13 @@ body.mce-content-body,
 
 	.wp-block-separator {
 		max-width: none;
+	}
+}
+
+.rich-text.inverted {
+	.wp-caption-text,
+	.wp-caption-dd,
+	.gallery-caption {
+		color: color-mix(in srgb, currentColor 75%, transparent);
 	}
 }
