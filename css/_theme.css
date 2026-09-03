@@ -44,21 +44,21 @@
     /* Colors */
     --color-*: initial; /* Removes Default Colors */
     /* Primary Color Palette */
-    --color-primary-light: #e52560;
-    --color-primary: #a01b44;
-    --color-primary-dark: #710627;
+    --color-primary-light: #60a5fa;
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
     --color-primary-fg: #ffffff;
 
     /* Secondary Color Palette */
-    --color-secondary-light: #fdf0a9;
-    --color-secondary: #dbc764;
-    --color-secondary-dark: #d0b635;
-    --color-secondary-fg: #000000;
+    --color-secondary-light: #fde68a;
+    --color-secondary: #facc15;
+    --color-secondary-dark: #ca8a04;
+    --color-secondary-fg: #111827;
 
     /* Tertiary Color Palette */
-    --color-tertiary-light: #d3356c;
-    --color-tertiary: #a01b44;
-    --color-tertiary-dark: #710627;
+    --color-tertiary-light: #f472b6;
+    --color-tertiary: #be185d;
+    --color-tertiary-dark: #831843;
     --color-tertiary-fg: #ffffff;
 
     /* grayscale */
@@ -119,7 +119,7 @@
     --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
 
     /* Element Colors */
-    --color-elem-field-required: #a01b44;
+    --color-elem-field-required: var(--color-feedback-error);
 
     /* Line-Heights */
     --leading-header: 1.2;
