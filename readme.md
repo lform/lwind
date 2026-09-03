@@ -170,7 +170,7 @@ The typography system uses a modular scale for token definitions and fluid modul
 - Base is `16px` with `1.125x` scaling
 - The scale included with Lwind goes from `-3` to `13`
 - Fixed-size utilities (`text-ms-*`) map directly to pixel values from the scale
-- Fluid utilities (`text-fms-*`) use `clamp()` to scale smoothly between viewport sizes — these are used by header and accent classes at positive scale steps
+- Fluid utilities (`text-fms-*`) use `clamp()` to scale smoothly from their minimum size at `640px` to the full modular-scale size at `1280px`, matching the default container — these are used by header and accent classes at positive scale steps
 - Refer to the [font scale reference](https://www.modularscale.com/?16&px&1.125) for the full list.
 
 ##### Font Size Utilities
@@ -271,6 +271,8 @@ A custom rich-text implementation is used for all rich-text areas by adding a `r
 - Links inside rich text are always underlined — this is a WCAG requirement and should not be overridden.
 - YouTube and Vimeo iframes are automatically forced to `width: 100%` with a `16/9` aspect ratio.
 - Includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and robust media/table handling.
+- Covers the semantic formats available from TinyMCE / WP Classic Editor (headings, paragraph/preformatted/address text, inline emphasis, lists, quotes, alignment, links, and horizontal rules) plus WordPress captions, galleries, emoji, media shortcodes, and editor pagination placeholders.
+- Left- and right-aligned media stack at narrow widths, then float from the `sm` breakpoint so surrounding text remains readable on small screens.
 - WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
 - `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
 - Relevant vendor files, enable and disable them as needed:
@@ -332,12 +334,12 @@ Tailwind's default containers are disabled in favor of a fluid container system 
 
 #### Classes & Default Sizes
 
-- `container` - Default max width of `1440px`
+- `container` - Default max width of `1280px`
 - `container-xs` - `640px`
 - `container-sm` - `768px`
 - `container-md` - `1024px`
 - `container-lg` - `1280px`
-- `container-xl` - `1440px` (default)
+- `container-xl` - `1440px`
 - `container-2xl` - `1600px`
 - `container-adaptive` - See below for details on this special adaptive container class
 
