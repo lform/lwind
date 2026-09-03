@@ -273,6 +273,7 @@ A custom rich-text implementation is used for all rich-text areas by adding a `r
 - Includes a modernized flow-spacing model, better heading rhythm, improved list styling, cleaner blockquotes, and robust media/table handling.
 - Covers the semantic formats available from TinyMCE / WP Classic Editor (headings, paragraph/preformatted/address text, inline emphasis, lists, quotes, alignment, links, and horizontal rules) plus WordPress captions, galleries, emoji, media shortcodes, and editor pagination placeholders.
 - Left- and right-aligned media stack at narrow widths, then float from the `sm` breakpoint so surrounding text remains readable on small screens.
+- Body copy uses a `68ch` readable measure, while responsive embeds are limited to known video providers so maps and other iframe widgets retain their intended dimensions.
 - WordPress-specific rich text handling is separated into vendor files so editor and frontend content can share the base `rich-text` styles while still supporting WordPress-specific markup.
 - `css/editor.css` is available for editor-specific builds and includes the editor base styles plus the shared component stack needed for rich text authoring.
 - Relevant vendor files, enable and disable them as needed:
