@@ -95,6 +95,7 @@
 
 			<div class="mb-10">
 				<h3 class="h-ms-4 font-bold uppercase tracking-wide text-gray-800 mb-4">Header Scale (h-ms-*)</h3>
+				<p class="mb-4 text-ms-0 leading-normal text-gray-700">Fluid sizes hold their minimum through 640px and scale to their full modular size at the 1280px default-container width.</p>
 				<div class="space-y-2">
 					<div class="h-ms-13">h-ms-13 — ~73px fluid</div>
 					<div class="h-ms-12">h-ms-12 — ~65px fluid</div>
@@ -184,6 +185,19 @@
 						<div class="w-20 h-12 rounded-sm bg-secondary-dark mb-1"></div>
 						<span class="-text-ms-1">secondary-dark</span>
 					</div>
+					<div class="w-px bg-gray-200 mx-1"></div>
+					<div class="text-center">
+						<div class="w-20 h-12 rounded-sm bg-tertiary-light mb-1"></div>
+						<span class="-text-ms-1">tertiary-light</span>
+					</div>
+					<div class="text-center">
+						<div class="w-20 h-12 rounded-sm bg-tertiary mb-1 flex items-center justify-center text-tertiary-fg -text-ms-1">Aa</div>
+						<span class="-text-ms-1">tertiary</span>
+					</div>
+					<div class="text-center">
+						<div class="w-20 h-12 rounded-sm bg-tertiary-dark mb-1"></div>
+						<span class="-text-ms-1">tertiary-dark</span>
+					</div>
 				</div>
 			</div>
 
@@ -222,7 +236,7 @@
 				<div class="container-sm rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-sm` — 768px</div>
 				<div class="container-md rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-md` — 1024px</div>
 				<div class="container-lg rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-lg` — 1280px</div>
-				<div class="container-xl rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-xl` — 1440px (default)</div>
+				<div class="container-xl rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-xl` — 1440px</div>
 				<div class="container-2xl rounded-sm bg-gray-100 py-4 text-center -text-ms-1">`container-2xl` — 1600px</div>
 				<div class="container-adaptive rounded-sm bg-secondary/20 py-4 text-center -text-ms-1">`container-adaptive` — snaps: 768 → 1024 → 1280 → 1440px</div>
 			</div>
@@ -439,8 +453,11 @@
 				<h2>Heading 2 — Modern rich text heading</h2>
 				<p>
 					This paragraph checks spacing, line length, and inline formatting including
-					<a href="#">links</a>, <strong>bold</strong>, <em>italic</em>, and <code>inline code</code>.
+					<a href="#">links</a>, <strong>bold</strong>, <em>italic</em>, <u>underline</u>,
+					<s>strikethrough</s>, <mark>highlighting</mark>, <abbr title="Cascading Style Sheets">CSS</abbr>,
+					and <code>inline code</code>. Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to edit a link.
 				</p>
+				<address>Lform Design, 42 Broadway, New York, NY</address>
 				<h3>Heading 3 — Lists and blockquotes</h3>
 				<ul>
 					<li>First level item</li>
@@ -461,8 +478,16 @@
 					</li>
 					<li>Third ordered item</li>
 				</ol>
+				<dl>
+					<dt>Classic Editor</dt>
+					<dd>The original WordPress rich-text editing experience.</dd>
+					<dt>Rich text</dt>
+					<dd>Formatted content with semantic structure and media.</dd>
+				</dl>
 				<blockquote>
 					<p>Good defaults for rich text are mostly about rhythm, not decoration.</p>
+					<p>Supporting context remains body-sized instead of inheriting the display treatment.</p>
+					<cite>Lwind rich-text guidance</cite>
 				</blockquote>
 				<hr>
 				<h4>Heading 4 — Code block</h4>
@@ -475,6 +500,20 @@
 				<div class="wp-caption">
 					<img src="https://placehold.co/800x400/f1f1f1/1a1818?text=WordPress+Caption" alt="WordPress caption example" width="800" height="400">
 					<p class="wp-caption-text">Legacy WordPress captions should inherit the same rhythm.</p>
+				</div>
+				<div class="gallery gallery-columns-3">
+					<figure class="gallery-item">
+						<div class="gallery-icon"><img src="https://placehold.co/320x240/e5e5e5/1a1818?text=1" alt="Gallery example one"></div>
+						<figcaption class="gallery-caption">First legacy gallery image.</figcaption>
+					</figure>
+					<figure class="gallery-item">
+						<div class="gallery-icon"><img src="https://placehold.co/320x240/d2d2d2/1a1818?text=2" alt="Gallery example two"></div>
+						<figcaption class="gallery-caption">Second legacy gallery image.</figcaption>
+					</figure>
+					<figure class="gallery-item">
+						<div class="gallery-icon"><img src="https://placehold.co/320x240/b2b2b2/1a1818?text=3" alt="Gallery example three"></div>
+						<figcaption class="gallery-caption">Third legacy gallery image.</figcaption>
+					</figure>
 				</div>
 				<h6>Heading 6 — Table</h6>
 				<div class="wp-block-table">

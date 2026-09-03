@@ -26,40 +26,39 @@
     --text-ms-12: 65px;
     --text-ms-13: 73px;
 
-    /* Fluid Font Size */
-    --text-fms-factor: 1;
-    --text-fms-1: clamp(calc(var(--text-ms-1) * 0.7), calc(var(--text-ms-1) * 0.5 + 1.5vw), calc(var(--text-ms-1) * var(--text-fms-factor)));
-    --text-fms-2: clamp(calc(var(--text-ms-1) * 0.75), calc(var(--text-ms-2) * 0.5 + 1.5vw), calc(var(--text-ms-2) * var(--text-fms-factor)));
-    --text-fms-3: clamp(calc(var(--text-ms-2) * 0.75), calc(var(--text-ms-3) * 0.5 + 1.5vw), calc(var(--text-ms-3) * var(--text-fms-factor)));
-    --text-fms-4: clamp(calc(var(--text-ms-3) * 0.75), calc(var(--text-ms-4) * 0.5 + 1.5vw), calc(var(--text-ms-4) * var(--text-fms-factor)));
-    --text-fms-5: clamp(calc(var(--text-ms-4) * 0.75), calc(var(--text-ms-5) * 0.6 + 1.5vw), calc(var(--text-ms-5) * var(--text-fms-factor)));
-    --text-fms-6: clamp(calc(var(--text-ms-5) * 0.75), calc(var(--text-ms-6) * 0.6 + 1.5vw), calc(var(--text-ms-6) * var(--text-fms-factor)));
-    --text-fms-7: clamp(calc(var(--text-ms-6) * 0.75), calc(var(--text-ms-7) * 0.6 + 1.5vw), calc(var(--text-ms-7) * var(--text-fms-factor)));
-    --text-fms-8: clamp(calc(var(--text-ms-7) * 0.75), calc(var(--text-ms-8) * 0.6 + 1.5vw), calc(var(--text-ms-8) * var(--text-fms-factor)));
-    --text-fms-9: clamp(calc(var(--text-ms-8) * 0.75), calc(var(--text-ms-9) * 0.7 + 1.5vw), calc(var(--text-ms-9) * var(--text-fms-factor)));
-    --text-fms-10: clamp(calc(var(--text-ms-9) * 0.75), calc(var(--text-ms-10) * 0.7 + 1.5vw), calc(var(--text-ms-10) * var(--text-fms-factor)));
-    --text-fms-11: clamp(calc(var(--text-ms-10) * 0.75), calc(var(--text-ms-11) * 0.7 + 1.5vw), calc(var(--text-ms-11) * var(--text-fms-factor)));
-    --text-fms-12: clamp(calc(var(--text-ms-11) * 0.75), calc(var(--text-ms-12) * 0.7 + 1.5vw), calc(var(--text-ms-12) * var(--text-fms-factor)));
-    --text-fms-13: clamp(calc(var(--text-ms-12) * 0.75), calc(var(--text-ms-13) * 0.7 + 1.5vw), calc(var(--text-ms-13) * var(--text-fms-factor)));
+    /* Fluid Font Size - scales from its minimum at 640px to full size at 1280px */
+    --text-fms-1: clamp(calc(var(--text-ms-1) * 0.7), calc(7.2px + 0.84vw), var(--text-ms-1));
+    --text-fms-2: clamp(calc(var(--text-ms-1) * 0.75), calc(7px + 1.02vw), var(--text-ms-2));
+    --text-fms-3: clamp(calc(var(--text-ms-2) * 0.75), calc(8px + 1.09vw), var(--text-ms-3));
+    --text-fms-4: clamp(calc(var(--text-ms-3) * 0.75), calc(8px + 1.33vw), var(--text-ms-4));
+    --text-fms-5: clamp(calc(var(--text-ms-4) * 0.75), calc(9.5px + 1.45vw), var(--text-ms-5));
+    --text-fms-6: clamp(calc(var(--text-ms-5) * 0.75), calc(10px + 1.72vw), var(--text-ms-6));
+    --text-fms-7: clamp(calc(var(--text-ms-6) * 0.75), calc(12px + 1.88vw), var(--text-ms-7));
+    --text-fms-8: clamp(calc(var(--text-ms-7) * 0.75), calc(13px + 2.19vw), var(--text-ms-8));
+    --text-fms-9: clamp(calc(var(--text-ms-8) * 0.75), calc(15.5px + 2.38vw), var(--text-ms-9));
+    --text-fms-10: clamp(calc(var(--text-ms-9) * 0.75), calc(18px + 2.58vw), var(--text-ms-10));
+    --text-fms-11: clamp(calc(var(--text-ms-10) * 0.75), calc(18.5px + 3.09vw), var(--text-ms-11));
+    --text-fms-12: clamp(calc(var(--text-ms-11) * 0.75), calc(22px + 3.36vw), var(--text-ms-12));
+    --text-fms-13: clamp(calc(var(--text-ms-12) * 0.75), calc(24.5px + 3.79vw), var(--text-ms-13));
 
     /* Colors */
     --color-*: initial; /* Removes Default Colors */
     /* Primary Color Palette */
-    --color-primary-light: #e52560;
-    --color-primary: #a01b44;
-    --color-primary-dark: #710627;
+    --color-primary-light: #60a5fa;
+    --color-primary: #2563eb;
+    --color-primary-dark: #1e40af;
     --color-primary-fg: #ffffff;
 
     /* Secondary Color Palette */
-    --color-secondary-light: #fdf0a9;
-    --color-secondary: #dbc764;
-    --color-secondary-dark: #d0b635;
-    --color-secondary-fg: #000000;
+    --color-secondary-light: #bf84ff;
+    --color-secondary: #810eec;
+    --color-secondary-dark: #51128f;
+    --color-secondary-fg: #ffffff;
 
     /* Tertiary Color Palette */
-    --color-tertiary-light: #d3356c;
-    --color-tertiary: #a01b44;
-    --color-tertiary-dark: #710627;
+    --color-tertiary-light: #f472b6;
+    --color-tertiary: #be185d;
+    --color-tertiary-dark: #831843;
     --color-tertiary-fg: #ffffff;
 
     /* grayscale */
@@ -81,10 +80,10 @@
     --color-transparent: transparent;
 
     /* Feedback Tones */
-    --color-feedback-success: #008554;
+    --color-feedback-success: #006f47;
     --color-feedback-warning: #8F6200;
     --color-feedback-error: #d90259;
-    --color-feedback-info: #007DA3;
+    --color-feedback-info: #00708f;
 
     /* Social Media Brand Colors */
     --color-social-facebook: #0866FF;
@@ -110,17 +109,17 @@
     --container-2xl: 1600px;
     --container-padding: 1.5rem; /* 24px - desktop */
     --container-padding-mobile: 1.25rem; /* 20px - mobile */
-    --container: var(--container-xl); /* Default Container Size */
+    --container: var(--container-lg); /* Default Container Size */
 
     /* Constrained Containers - Set the snapping widths */
     --container-adaptive-sm: var(--container-sm);
     --container-adaptive-md: var(--container-md);
     --container-adaptive-lg: var(--container-lg);
     --container-adaptive-xl: var(--container-xl);
-    --container-adaptive: var(--container-xl); /* Default Constrained Container Size */
+    --container-adaptive: var(--container-lg); /* Default Constrained Container Size */
 
     /* Element Colors */
-    --color-elem-field-required: #a01b44;
+    --color-elem-field-required: var(--color-feedback-error);
 
     /* Line-Heights */
     --leading-header: 1.2;
@@ -143,7 +142,7 @@
     --richtext-colors-blockquote: var(--color-gray-900);
     --richtext-colors-link: var(--color-primary);
     --richtext-colors-table-td: var(--color-gray-900);
-    --richtext-colors-table-th: var(--color-gray-900);
+    --richtext-colors-table-th: var(--color-primary-fg);
 
     --richtext-font-family-table-td: var(--font-body);
     --richtext-font-family-table-th: var(--font-accent);

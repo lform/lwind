@@ -106,7 +106,7 @@ body [id^="form-"] {
             @apply flex justify-center;
 
             .gform_button {
-                @apply !bg-secondary text-white -text-ms-1 md:!text-ms-0 !font-bold !rounded-lg !py-4 !px-3 hover:!bg-secondary-dark transition-all;
+                @apply !bg-secondary text-secondary-fg -text-ms-1 md:!text-ms-0 !font-bold !rounded-lg !py-4 !px-3 hover:!bg-secondary-dark transition-all;
             }
         }
     }

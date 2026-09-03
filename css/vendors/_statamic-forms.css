@@ -51,7 +51,7 @@
 
         .field-checkbox-container {
             .field-checkbox-input {
-                @apply hidden;
+                @apply sr-only;
             }
 
             .field-checkbox-label {
@@ -74,6 +74,13 @@
                     .field-checkbox-icon {
                         @apply opacity-100;
                     }
+                }
+            }
+
+            .field-checkbox-input:focus-visible ~ .field-checkbox-label {
+                .field-checkbox-icon-container {
+                    outline: 2px solid currentColor;
+                    outline-offset: 2px;
                 }
             }
         }

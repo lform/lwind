@@ -1,0 +1,8 @@
+.cache/
+.claude/
+.idea/
+.DS_Store
+AGENTS.md
+dist/
+mix-manifest.json
+node_modules/
