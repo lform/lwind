@@ -146,7 +146,7 @@ The [default breakpoints included in Tailwind are used](https://tailwindcss.com/
 #### Constants
 
 - `black`, `white`
-- `black-transparent`, `white-transparent` — semi-transparent variants for overlays and tints
+- Use Tailwind opacity modifiers such as `bg-black/50` and `text-white/75` for semi-transparent colors
 - `transparent` — fully transparent
 
 #### Social Colors
