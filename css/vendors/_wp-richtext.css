@@ -25,7 +25,7 @@ body.mce-content-body,
 	.wp-caption-dd,
 	.gallery-caption {
 		@apply italic mx-4 text-gray-700 -text-ms-1 text-center;
-		margin-top: 0.75rem;
+		margin-top: calc(var(--richtext-spacing) * 0.75);
 		max-width: 65ch;
 		text-wrap: pretty;
 	}
@@ -44,7 +44,7 @@ body.mce-content-body,
 		display: inline;
 		height: 1em;
 		margin: 0 0.07em;
-		max-width: none !important;
+		max-width: none;
 		padding: 0;
 		vertical-align: -0.1em;
 		width: 1em;
@@ -63,6 +63,44 @@ body.mce-content-body,
 	.wpview-wrap iframe,
 	.wp-block-embed iframe {
 		width: 100%;
+	}
+
+	/* Alignment classes emitted by WordPress for images and captions. */
+	.aligncenter {
+		margin-inline: auto;
+		text-align: center;
+	}
+
+	img.aligncenter {
+		display: block;
+	}
+
+	> :is(figure, pre, table, blockquote).aligncenter {
+		width: min(100%, var(--richtext-measure));
+	}
+
+	.alignleft,
+	.alignright {
+		display: block;
+		float: none;
+		margin-inline: auto;
+	}
+
+	@media (min-width: 640px) {
+		.alignleft,
+		.alignright {
+			max-width: 50%;
+		}
+
+		.alignleft {
+			float: left;
+			margin: calc(var(--richtext-spacing) / 2) calc(var(--richtext-spacing) * 1.5) var(--richtext-spacing) 0;
+		}
+
+		.alignright {
+			float: right;
+			margin: calc(var(--richtext-spacing) / 2) 0 var(--richtext-spacing) calc(var(--richtext-spacing) * 1.5);
+		}
 	}
 
 	/* Older WP galleries and list blocks benefit from explicit spacing */
@@ -199,5 +237,17 @@ body.mce-content-body,
 	.wp-caption-dd,
 	.gallery-caption {
 		color: color-mix(in srgb, currentColor 75%, transparent);
+	}
+}
+
+@media print {
+	body.mce-content-body,
+	.rich-text {
+		.alignleft,
+		.alignright {
+			float: none;
+			margin-inline: 0;
+			max-width: 100%;
+		}
 	}
 }
