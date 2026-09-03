@@ -13,7 +13,7 @@
 
 /* Pre-flight Styles */
 @import './base/_global.css' layer(utilities);
-@import './base/_site.css' layer(utilities);
+@import './base/_editor.css';
 
 /* Utility Classes */
 @import './utilities/_elements.css';
