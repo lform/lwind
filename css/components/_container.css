@@ -96,10 +96,6 @@
 		max-width: var(--container-adaptive-lg, 1280px) !important;
 	}
 
-	@media (min-width: 1440px) {
-		max-width: var(--container-adaptive-xl, 1440px) !important;
-	}
-
 	/* Fix any nested containers so their padding does not stack */
 	.container,
 	[class*="container-"] {
