@@ -27,6 +27,7 @@
 @import '@lform/lwind/css/components/_flex-grid.css';
 
 /* Vendor Styling */
+@import '@lform/lwind/css/vendors/_wp-gutenberg.css';
 @import '@lform/lwind/css/vendors/_wp-richtext.css';
 @import '@lform/lwind/css/vendors/_wp-forms.css';
 @import '@lform/lwind/css/vendors/_wp-pagination.css' layer(utilities);
