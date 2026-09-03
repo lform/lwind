@@ -30,6 +30,31 @@
 				@apply text-white;
 			}
 		}
+
+		:not(pre) > code,
+		kbd,
+		mark {
+			background-color: color-mix(in srgb, var(--color-white) 18%, transparent);
+			color: currentColor;
+		}
+
+		blockquote {
+			background-color: color-mix(in srgb, var(--color-white) 10%, transparent);
+			color: currentColor;
+
+			cite {
+				color: color-mix(in srgb, currentColor 75%, transparent);
+			}
+		}
+
+		figcaption {
+			color: color-mix(in srgb, currentColor 75%, transparent);
+		}
+
+		table td {
+			border-color: color-mix(in srgb, currentColor 35%, transparent);
+			color: currentColor;
+		}
 	}
 
 	/* Element Spacing */
@@ -92,7 +117,7 @@
 		font-weight: var(--richtext-font-weight-heading-6);
 	}
 
-	/* Paragraph Styling */
+	/* Body and inline content */
 	p {
 		@apply leading-normal;
 		max-width: var(--richtext-measure);
@@ -100,9 +125,58 @@
 		text-wrap: pretty;
 	}
 
+	strong,
+	b {
+		font-weight: 700;
+	}
+
+	em,
+	i,
+	address {
+		font-style: italic;
+	}
+
+	u,
+	ins {
+		text-decoration-thickness: 0.08em;
+		text-underline-offset: 0.14em;
+	}
+
+	del,
+	s {
+		text-decoration-thickness: 0.08em;
+	}
+
+	mark {
+		background-color: color-mix(in srgb, var(--color-primary) 18%, transparent);
+		color: inherit;
+		padding-inline: 0.12em;
+	}
+
+	abbr[title] {
+		cursor: help;
+		text-decoration: underline dotted;
+		text-underline-offset: 0.14em;
+	}
+
+	small {
+		@apply -text-ms-1;
+	}
+
 	sup,
 	sub {
 		@apply -text-ms-2;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	sub {
+		bottom: -0.25em;
 	}
 
 	/* Link Styling */
@@ -120,10 +194,15 @@
 
 		&:focus-visible {
 			border-radius: var(--radius-sm);
-			outline: 1px dotted currentColor;
-			outline-offset: 2px;
+			outline: 2px solid currentColor;
+			outline-offset: 3px;
 			text-decoration: none;
 		}
+	}
+
+	a:has(> img) {
+		display: inline-block;
+		text-decoration: none;
 	}
 
 	/* Remove underline from buttons */
@@ -133,12 +212,21 @@
 		@apply !no-underline;
 	}
 
-	/* Inline Code */
+	/* Code and keyboard input */
 	:not(pre) > code {
 		@apply rounded-sm;
 		background-color: var(--color-gray-100);
 		background-color: color-mix(in srgb, var(--color-gray-100) 80%, transparent);
 		padding: 0.15em 0.4em;
+	}
+
+	kbd {
+		@apply rounded-sm -text-ms-1;
+		background-color: var(--color-gray-100);
+		border: 1px solid var(--color-gray-300);
+		box-shadow: 0 1px 0 var(--color-gray-300);
+		font-family: monospace;
+		padding: 0.1em 0.35em;
 	}
 
 	pre {
@@ -170,6 +258,10 @@
 		li {
 			margin-block: 0;
 			padding-left: 0.25rem;
+
+			+ li {
+				margin-block-start: 0.25rem;
+			}
 
 			> ol,
 			> ul {
@@ -207,6 +299,22 @@
 		list-style-type: upper-roman;
 	}
 
+	dl {
+		max-width: var(--richtext-measure);
+	}
+
+	dt {
+		font-weight: 700;
+	}
+
+	dd {
+		margin-inline-start: 1.5rem;
+
+		+ dt {
+			margin-block-start: var(--richtext-flow-space-sm);
+		}
+	}
+
 	/* Image & Caption Styling */
 	figure {
 		@apply flex flex-col items-center justify-center;
@@ -233,6 +341,11 @@
 		max-width: 100% !important;
 	}
 
+	audio {
+		max-width: 100%;
+		width: 100%;
+	}
+
 	/* Table Styling */
 	table {
 		@apply w-full;
@@ -241,6 +354,13 @@
 		margin-inline: 0;
 		overflow-x: auto;
 		white-space: nowrap;
+
+		caption {
+			@apply font-semibold text-left;
+			caption-side: top;
+			padding-block-end: 0.75rem;
+			white-space: normal;
+		}
 
 		tr {
 			th,
@@ -308,29 +428,32 @@
 	}
 
 	.alignleft,
-	.pull-left {
-		float: left;
-		margin: 0.5rem 1.5rem 1rem 0;
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
+	.pull-left,
 	.alignright,
 	.pull-right {
-		float: right;
-		margin: 0.5rem 0 1rem 1.5rem;
-		&:last-child {
-			margin-bottom: 0;
-		}
+		display: block;
+		float: none;
+		margin-inline: auto;
 	}
 
 	@media (min-width: 640px) {
-		.pull-left,
-		.pull-right,
 		.alignleft,
-		.alignright {
+		.pull-left,
+		.alignright,
+		.pull-right {
 			max-width: 50%;
+		}
+
+		.alignleft,
+		.pull-left {
+			float: left;
+			margin: 0.5rem 1.5rem 1rem 0;
+		}
+
+		.alignright,
+		.pull-right {
+			float: right;
+			margin: 0.5rem 0 1rem 1.5rem;
 		}
 	}
 
@@ -346,6 +469,12 @@
 		&[src*="video"] {
 			aspect-ratio: 16/9;
 			height: auto;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		a {
+			transition: none;
 		}
 	}
 }
